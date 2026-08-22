@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-22T15:10:54Z",
+  "last_updated": "2026-08-22T15:12:51Z",
   "platforms": [
     {
       "id": "codex",
@@ -10,7 +10,7 @@
       "signal_strength": "medium",
       "signal_level": "observing",
       "prediction_time": "2026-08-23T03:30:00Z",
-      "countdown_seconds": 44345,
+      "countdown_seconds": 44228,
       "prediction_window": {
         "start": "21:30",
         "end": "09:30"
@@ -144,7 +144,7 @@
       "signal_strength": "low",
       "signal_level": "cooling",
       "prediction_time": "2026-08-24T03:01:00Z",
-      "countdown_seconds": 129005,
+      "countdown_seconds": 128888,
       "prediction_window": {
         "start": "21:01",
         "end": "09:01"
@@ -242,7 +242,7 @@
       "signal_strength": "medium",
       "signal_level": "observing",
       "prediction_time": "2026-08-23T08:52:30Z",
-      "countdown_seconds": 63695,
+      "countdown_seconds": 63578,
       "prediction_window": {
         "start": "02:52",
         "end": "14:52"
@@ -332,7 +332,7 @@
       "signal_strength": "low",
       "signal_level": "cooling",
       "prediction_time": "2026-08-22T23:57:30Z",
-      "countdown_seconds": 31595,
+      "countdown_seconds": 31478,
       "prediction_window": {
         "start": "17:57",
         "end": "05:57"
@@ -350,8 +350,8 @@
       },
       "detail": {
         "judgment": {
-          "en": "Natural cycle candidate point is about 8.8h away; historical 24h baseline 44%. Official announcement triggered a downward adjustment, lowering short-term probability; No official reset preview or confirmation, so it cannot be marked as official_confirmed.",
-          "zh": "自然周期候选点约8.8小时后；历史24小时底座44%。 官方公告触发下调，压低短期概率； 没有官方重置预告或落地确认，因此不能标记为official_confirmed。"
+          "en": "Natural cycle candidate point is about 8.7h away; historical 24h baseline 44%. Official announcement triggered a downward adjustment, lowering short-term probability; No official reset preview or confirmation, so it cannot be marked as official_confirmed.",
+          "zh": "自然周期候选点约8.7小时后；历史24小时底座44%。 官方公告触发下调，压低短期概率； 没有官方重置预告或落地确认，因此不能标记为official_confirmed。"
         },
         "summary": {
           "en": "Currently in a cooling/observation phase; limited reset probability in the next 24h. Plan heavy workloads accordingly.",
@@ -422,7 +422,7 @@
       "signal_strength": "low",
       "signal_level": "cooling",
       "prediction_time": "2026-08-24T04:55:00Z",
-      "countdown_seconds": 135845,
+      "countdown_seconds": 135728,
       "prediction_window": {
         "start": "22:55",
         "end": "10:55"

@@ -1,0 +1,44 @@
+name: 数据更新
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'   # 每30分钟执行一次
+  workflow_dispatch:          # 支持手动触发
+
+permissions:
+  contents: write
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 安装依赖
+        run: |
+          pip install -r scripts/requirements.txt
+
+      - name: 运行采集脚本
+        run: |
+          python scripts/update.py
+        env:
+          WEWORK_WEBHOOK: ${{ secrets.WEWORK_WEBHOOK }}
+
+      - name: 刷新发言雷达（默认种子；配置 X_API_BEARER 后实时抓取）
+        run: |
+          python scripts/speaker_monitor.py
+        env:
+          X_API_BEARER: ${{ secrets.X_API_BEARER }}
+
+      - name: 提交更新
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "🤖 Auto update: 数据刷新"
+          file_pattern: "data/data.json data/fallback.js"

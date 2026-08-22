@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Reset Radar · 服务状态</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="detail-head">
+      <span class="title">📊 服务状态</span>
+      <span class="ptitle" id="refresh">🔄</span>
+    </header>
+
+    <main id="svc">
+      <div class="loading">正在加载服务状态…</div>
+    </main>
+
+    <nav class="bottomnav">
+      <a href="index.html" data-nav="home"><span class="ic">🏠</span>概览</a>
+      <a href="status.html" data-nav="status" class="active"><span class="ic">📊</span>服务状态</a>
+      <a href="about.html" data-nav="about"><span class="ic">ℹ️</span>关于</a>
+    </nav>
+  </div>
+
+  <script src="data/fallback.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/status.js"></script>
+</body>
+</html>

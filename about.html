@@ -1,68 +1,70 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Reset Radar · 关于</title>
+  <title>Reset Radar · About</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <div class="app">
     <header class="detail-head">
-      <a href="index.html" class="back">← 返回</a>
-      <span class="title">ℹ️ 关于 Reset Radar</span>
+      <a href="index.html" class="back" data-i18n="about.back">← Back</a>
+      <span class="title" data-i18n="about.title">ℹ️ About Reset Radar</span>
+      <button class="lang-switch" type="button" data-i18n-lang>中文</button>
       <span class="ptitle">⚡</span>
     </header>
 
     <main id="blocks">
       <div class="block">
-        <h3>⚡ 这是什么</h3>
-        <p>Reset Radar 是一个面向 AI 开发者的情报聚合与预测工具。它把模糊的"额度焦虑"转化成可量化的概率：实时预测各 AI 编码平台（Codex、Claude Code、Grok Build、Kimi、MiniMax 等）的额度重置时间，帮你合理安排工作节奏，避免开发被额度耗尽打断。</p>
+        <h3 data-i18n-html="about.whatTitle">⚡ What is this</h3>
+        <p data-i18n-html="about.what">Reset Radar is an intelligence aggregation and prediction tool for AI developers. It turns vague "quota anxiety" into quantifiable probabilities: it predicts quota reset timing for AI coding platforms (Codex, Claude Code, Grok Build, Kimi, MiniMax, etc.) in real time, helping you pace your work and avoid development interruptions from quota exhaustion.</p>
       </div>
 
       <div class="block">
-        <h3>🧮 预测方法</h3>
-        <p>采用"周期基线 + 信号加权"的规则引擎（无需机器学习）：</p>
+        <h3 data-i18n-html="about.methodTitle">🧮 Prediction method</h3>
+        <p data-i18n-html="about.methodIntro">A rules engine of "cycle baseline + signal weighting" (no machine learning):</p>
         <ul>
-          <li><b>周期基线</b>：根据最近多次重置间隔推算平均周期，结合"距上次重置多久"给出基础概率（上限 70%）。</li>
-          <li><b>信号加权</b>：扫描近 24 小时信号——官方重置公告 +30%、限额上调 −20%、模型/CLI 发布 +10%、社区恢复反馈 +5%、服务故障已恢复 0%。</li>
-          <li><b>最终概率</b> = 基础概率 + 信号调整，裁剪到 0–100%。</li>
+          <li data-i18n-html="about.method1"><b>Cycle baseline</b>: derive the average cycle from recent reset intervals, combine with "time since last reset" → baseline probability (cap 70%).</li>
+          <li data-i18n-html="about.method2"><b>Signal weighting</b>: scan last-24h signals — official reset announcement +30%, limit increase −20%, model/CLI release +10%, community recovery feedback +5%, service incident recovered 0%.</li>
+          <li data-i18n-html="about.method3"><b>Final probability</b> = baseline + signal adjustment, clamped to 0–100%.</li>
         </ul>
       </div>
 
       <div class="block">
-        <h3>📊 百分比 与 置信度 的关系</h3>
-        <p>两者<b>不是一回事</b>：</p>
+        <h3 data-i18n-html="about.relTitle">📊 Percentage vs. confidence</h3>
+        <p data-i18n-html="about.relIntro">The two are <b>not the same</b>:</p>
         <ul>
-          <li><b>重置概率（进度条 %）</b>：未来 24 小时内发生额度重置的<b>可能性</b>。</li>
-          <li><b>置信度（%）</b>：模型对这一次预测有多<b>靠谱</b>，由历史周期的<b>稳定性</b>决定——周期越规律，置信度越高。</li>
+          <li data-i18n-html="about.rel1"><b>Reset probability (progress %)</b>: the <b>likelihood</b> of a quota reset within the next 24 hours.</li>
+          <li data-i18n-html="about.rel2"><b>Confidence (%)</b>: how <b>reliable</b> this prediction is, determined by the <b>stability</b> of historical cycles — the more regular the cycle, the higher the confidence.</li>
         </ul>
-        <p>举例：<b>高概率 + 低置信度</b> = "看着快重置了，但历史周期很乱，仅供参考"；<b>低概率 + 高置信度</b> = "基本可以确定近期不会重置"。</p>
+        <p data-i18n-html="about.relExample">Example: <b>high probability + low confidence</b> = "looks like a reset is near, but the historical cycle is irregular — reference only"; <b>low probability + high confidence</b> = "fairly certain there won't be a reset soon".</p>
       </div>
 
       <div class="block">
-        <h3>🔌 数据来源</h3>
+        <h3 data-i18n-html="about.srcTitle">🔌 Data sources</h3>
         <ul>
-          <li>官方状态 API（OpenAI / Anthropic / xAI 等），优先直连，无需代理。</li>
-          <li>官方公告、模型发布、社区反馈等公开信号。</li>
-          <li>定时任务每 30 分钟刷新一次（GitHub Actions）。</li>
+          <li data-i18n-html="about.src1">Official status APIs (OpenAI / Anthropic / xAI etc.), direct connection preferred, no proxy needed.</li>
+          <li data-i18n-html="about.src2">Public signals: official announcements, model releases, community feedback.</li>
+          <li data-i18n-html="about.src3">Scheduled task refreshes every 30 minutes (GitHub Actions).</li>
         </ul>
       </div>
 
       <div class="block">
-        <h3>⚠️ 免责声明</h3>
-        <p>本工具为<b>非官方</b>的推算与情报聚合，所有数据仅为<b>参考预测</b>，不构成任何承诺。实际额度策略以各平台官方为准。Logo 版权归各自所有者所有。</p>
+        <h3 data-i18n-html="about.disTitle">⚠️ Disclaimer</h3>
+        <p data-i18n-html="about.dis">This tool is an <b>unofficial</b> estimation and intelligence aggregation; all data is <b>for reference only</b> and is not a guarantee. Actual quota policy is subject to each platform's official terms. Logos belong to their respective owners.</p>
       </div>
     </main>
 
     <nav class="bottomnav">
-      <a href="index.html" data-nav="home"><span class="ic">🏠</span>概览</a>
-      <a href="status.html" data-nav="status"><span class="ic">📊</span>服务状态</a>
-      <a href="about.html" data-nav="about" class="active"><span class="ic">ℹ️</span>关于</a>
+      <a href="index.html" data-nav="home"><span class="ic">🏠</span><span data-i18n="nav.home">Overview</span></a>
+      <a href="status.html" data-nav="status"><span class="ic">📊</span><span data-i18n="nav.status">Service Status</span></a>
+      <a href="about.html" data-nav="about" class="active"><span class="ic">ℹ️</span><span data-i18n="nav.about">About</span></a>
     </nav>
   </div>
 
   <script src="data/fallback.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/utils.js"></script>
   <script>
     // 关于页无需加载数据，仅高亮导航

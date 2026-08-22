@@ -74,6 +74,24 @@ body {
   flex-wrap: wrap;
 }
 .topbar .meta .dot { color: var(--accent); }
+.topbar .lang-switch { position: absolute; right: 16px; top: 14px; }
+
+/* ---------- 语言切换 ---------- */
+.lang-switch {
+  border: 1px solid var(--card-border);
+  background: var(--card);
+  color: var(--text-dim);
+  font-size: 11px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: inherit;
+  line-height: 1.4;
+  flex: 0 0 auto;
+  transition: color .2s, border-color .2s;
+}
+.lang-switch:hover { color: var(--text); border-color: var(--accent); }
+.lang-switch:active { transform: scale(.94); }
 
 /* ---------- Platform tabs ---------- */
 .tabs {

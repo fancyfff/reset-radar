@@ -24,6 +24,12 @@
 发言雷达账号见底部 SPEAKERS。
 """
 
+
+def bi(en, zh):
+    """双语文本：前端根据当前语言取 en / zh。"""
+    return {"en": en, "zh": zh}
+
+
 PLATFORMS = {
     "codex": {
         "name": "Codex",
@@ -34,22 +40,23 @@ PLATFORMS = {
         "status_api": "https://status.openai.com/api/v2/status.json",
         # 重置记录：最近在前。reason_type 仅作展示用（normal/milestone/...）
         "resets": [
-            {"time": "2026-08-21T03:30:00Z", "reason": "常规周期重置", "is_extra": False},
-            {"time": "2026-08-19T03:30:00Z", "reason": "常规周期重置", "is_extra": False},
-            {"time": "2026-08-17T03:30:00Z", "reason": "庆祝 Codex 活跃用户达到 1500 万", "reason_type": "milestone", "is_extra": True},
-            {"time": "2026-08-15T03:30:00Z", "type": "no_reset", "reason": "周期候选点未发生重置"},
+            {"time": "2026-08-21T03:30:00Z", "reason": bi("Regular cycle reset", "常规周期重置"), "is_extra": False},
+            {"time": "2026-08-19T03:30:00Z", "reason": bi("Regular cycle reset", "常规周期重置"), "is_extra": False},
+            {"time": "2026-08-17T03:30:00Z", "reason": bi("Celebrating 15M active Codex users", "庆祝 Codex 活跃用户达到 1500 万"), "reason_type": "milestone", "is_extra": True},
+            {"time": "2026-08-15T03:30:00Z", "type": "no_reset", "reason": bi("No reset at cycle candidate point", "周期候选点未发生重置")},
         ],
         "weekly_quota": {
             "pro_20x": 1291.37,
             "pro_5x": 322.84,
             "plus": 64.57,
             "trend": [2191, 1830, 1693, 1520, 1291.34],
-            "labels": ["8.14", "8.17", "8.20", "8.21", "今日"],
+            "labels": ["8.14", "8.17", "8.20", "8.21", bi("Today", "今日")],
         },
         "signals": [
             {
                 "kind": "community",
-                "text": "近24小时有独立恢复反馈与额度压力反馈，样本很小。",
+                "text": bi("Independent recovery & quota pressure feedback in the last 24h (small sample).",
+                          "近24小时有独立恢复反馈与额度压力反馈，样本很小。"),
             },
         ],
     },
@@ -61,15 +68,16 @@ PLATFORMS = {
         "status_base": "https://status.anthropic.com",
         "status_api": "https://status.anthropic.com/api/v2/status.json",
         "resets": [
-            {"time": "2026-08-22T03:00:00Z", "reason": "常规周期重置", "is_extra": False},
-            {"time": "2026-08-20T03:05:00Z", "reason": "常规周期重置", "is_extra": False},
-            {"time": "2026-08-18T02:58:00Z", "reason": "常规周期重置", "is_extra": False},
+            {"time": "2026-08-22T03:00:00Z", "reason": bi("Regular cycle reset", "常规周期重置"), "is_extra": False},
+            {"time": "2026-08-20T03:05:00Z", "reason": bi("Regular cycle reset", "常规周期重置"), "is_extra": False},
+            {"time": "2026-08-18T02:58:00Z", "reason": bi("Regular cycle reset", "常规周期重置"), "is_extra": False},
         ],
         "weekly_quota": None,
         "signals": [
             {
                 "kind": "service",
-                "text": "近24小时 multiple models 性能下降，属服务故障，不计入额度信号。",
+                "text": bi("Multiple models degraded in the last 24h (service incident, not a quota signal).",
+                          "近24小时 multiple models 性能下降，属服务故障，不计入额度信号。"),
             },
         ],
     },
@@ -81,15 +89,15 @@ PLATFORMS = {
         "status_base": "https://status.x.ai",
         "status_api": "https://status.x.ai/",
         "resets": [
-            {"time": "2026-08-21T09:00:00Z", "reason": "常规周期重置", "is_extra": False},
-            {"time": "2026-08-19T08:30:00Z", "reason": "常规周期重置", "is_extra": False},
-            {"time": "2026-08-17T09:15:00Z", "reason": "常规周期重置", "is_extra": False},
+            {"time": "2026-08-21T09:00:00Z", "reason": bi("Regular cycle reset", "常规周期重置"), "is_extra": False},
+            {"time": "2026-08-19T08:30:00Z", "reason": bi("Regular cycle reset", "常规周期重置"), "is_extra": False},
+            {"time": "2026-08-17T09:15:00Z", "reason": bi("Regular cycle reset", "常规周期重置"), "is_extra": False},
         ],
         "weekly_quota": None,
         "signals": [
             {
                 "kind": "community",
-                "text": "社区反馈样本有限，无法确认落地。",
+                "text": bi("Limited community feedback; cannot confirm a reset.", "社区反馈样本有限，无法确认落地。"),
             },
         ],
     },
@@ -101,15 +109,15 @@ PLATFORMS = {
         "status_base": "",
         "status_api": "",
         "resets": [
-            {"time": "2026-08-22T00:00:00Z", "reason": "常规周期重置", "is_extra": False},
-            {"time": "2026-08-21T00:10:00Z", "reason": "常规周期重置", "is_extra": False},
-            {"time": "2026-08-20T00:05:00Z", "reason": "常规周期重置", "is_extra": False},
+            {"time": "2026-08-22T00:00:00Z", "reason": bi("Regular cycle reset", "常规周期重置"), "is_extra": False},
+            {"time": "2026-08-21T00:10:00Z", "reason": bi("Regular cycle reset", "常规周期重置"), "is_extra": False},
+            {"time": "2026-08-20T00:05:00Z", "reason": bi("Regular cycle reset", "常规周期重置"), "is_extra": False},
         ],
         "weekly_quota": None,
         "signals": [
             {
                 "kind": "announcement",
-                "text": "官方公告：限额提高，短期额度更宽裕。",
+                "text": bi("Official: limit increase, more headroom in the short term.", "官方公告：限额提高，短期额度更宽裕。"),
             },
         ],
     },
@@ -121,9 +129,9 @@ PLATFORMS = {
         "status_base": "",
         "status_api": "",
         "resets": [
-            {"time": "2026-08-22T05:00:00Z", "reason": "常规周期重置", "is_extra": False},
-            {"time": "2026-08-20T04:50:00Z", "reason": "常规周期重置", "is_extra": False},
-            {"time": "2026-08-18T05:10:00Z", "reason": "常规周期重置", "is_extra": False},
+            {"time": "2026-08-22T05:00:00Z", "reason": bi("Regular cycle reset", "常规周期重置"), "is_extra": False},
+            {"time": "2026-08-20T04:50:00Z", "reason": bi("Regular cycle reset", "常规周期重置"), "is_extra": False},
+            {"time": "2026-08-18T05:10:00Z", "reason": bi("Regular cycle reset", "常规周期重置"), "is_extra": False},
         ],
         "weekly_quota": None,
         "signals": [],
@@ -141,30 +149,30 @@ SERVICE_STATUS = [
     {
         "platform_id": "codex",
         "platform_name": "Codex / ChatGPT Work",
-        "source": "OpenAI 官方状态",
+        "source": bi("OpenAI official status", "OpenAI 官方状态"),
         "status": "recovered",
-        "summary": "对话服务出现服务异常，已恢复",
+        "summary": bi("Chat service incident, now recovered", "对话服务出现服务异常，已恢复"),
         "events": [
-            {"time": "2026-08-13T23:19Z", "duration": "8小时39分钟", "status": "已恢复"},
-            {"time": "2026-08-12T05:35Z", "duration": "1小时07分钟", "status": "已恢复"},
+            {"time": "2026-08-13T23:19Z", "duration": bi("8h 39m", "8小时39分钟"), "status": bi("Recovered", "已恢复")},
+            {"time": "2026-08-12T05:35Z", "duration": bi("1h 07m", "1小时07分钟"), "status": bi("Recovered", "已恢复")},
         ],
     },
     {
         "platform_id": "claude",
         "platform_name": "Claude Code",
-        "source": "Anthropic 官方状态",
+        "source": bi("Anthropic official status", "Anthropic 官方状态"),
         "status": "recovered",
-        "summary": "multiple models 性能下降，已恢复",
+        "summary": bi("Multiple models degraded, now recovered", "multiple models 性能下降，已恢复"),
         "events": [
-            {"time": "2026-08-17T21:56Z", "duration": "1小时33分钟", "status": "已恢复"},
+            {"time": "2026-08-17T21:56Z", "duration": bi("1h 33m", "1小时33分钟"), "status": bi("Recovered", "已恢复")},
         ],
     },
     {
         "platform_id": "grok",
         "platform_name": "Grok Build",
-        "source": "xAI 官方状态",
+        "source": bi("xAI official status", "xAI 官方状态"),
         "status": "operational",
-        "summary": "全部系统运行正常",
+        "summary": bi("All systems operational", "全部系统运行正常"),
         "events": [],
     },
 ]
@@ -181,9 +189,9 @@ SPEAKERS = [
         "avatar": "",
         "platform": "codex",
         "seed_posts": [
-            {"time": "2026-08-22T13:49:00Z", "content": "回复的原帖 Tammie · @tammiesiew 呢，Claude？", "url": ""},
-            {"time": "2026-08-22T13:48:00Z", "content": "@tammiesiew Codex 没有什么可隐瞒的", "url": ""},
-            {"time": "2026-08-22T11:20:00Z", "content": "We just shipped a quota increase for Codex users.", "url": ""},
+            {"time": "2026-08-22T13:49:00Z", "content": bi("Replying to Tammie · @tammiesiew where's Claude?", "回复的原帖 Tammie · @tammiesiew 呢，Claude？"), "url": ""},
+            {"time": "2026-08-22T13:48:00Z", "content": bi("@tammiesiew Codex has nothing to hide", "@tammiesiew Codex 没有什么可隐瞒的"), "url": ""},
+            {"time": "2026-08-22T11:20:00Z", "content": bi("We just shipped a quota increase for Codex users.", "我们刚为 Codex 用户提升了额度。"), "url": ""},
         ],
     },
 ]

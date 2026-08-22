@@ -2,12 +2,12 @@
 
 function eventHtml(ev) {
   if (!ev) return "";
-  const ok = ev.status && ev.status.indexOf("已恢复") >= 0;
+  const ok = isRecovered(ev.status);
   return `
   <div class="svc-event">
-    <div class="st ${ok ? "ok" : "warn"}">${escapeHtml(ev.status || "事件")}</div>
-    ${ev.summary ? `<div class="desc">${escapeHtml(ev.summary)}</div>` : ""}
-    <div class="time">${escapeHtml(ev.time || "")}${ev.duration ? " — 持续 " + escapeHtml(ev.duration) : ""}</div>
+    <div class="st ${ok ? "ok" : "warn"}">${escapeHtml(I18N.pick(ev.status) || I18N.t("status.event"))}</div>
+    ${ev.summary ? `<div class="desc">${escapeHtml(I18N.pick(ev.summary))}</div>` : ""}
+    <div class="time">${escapeHtml(ev.time || "")}${ev.duration ? " · " + I18N.t("status.duration") + " " + escapeHtml(I18N.pick(ev.duration)) : ""}</div>
   </div>`;
 }
 
@@ -18,11 +18,11 @@ function groupHtml(g) {
     <div class="head">
       <div>
         <div class="pname">${escapeHtml(g.platform_name || g.platform_id)}</div>
-        <div class="src">${escapeHtml(g.source || "官方状态")}</div>
+        <div class="src">${escapeHtml(I18N.pick(g.source) || I18N.t("status.official"))}</div>
       </div>
-      <span class="badge ${ok ? "low" : "medium"}">${ok ? "✅ 正常" : "⚠️ " + escapeHtml(STATUS_LABEL[g.status] || g.status)}</span>
+      <span class="badge ${ok ? "low" : "medium"}">${ok ? I18N.t("status.okBadge") : "⚠️ " + escapeHtml(statusText(g.status) || g.status)}</span>
     </div>
-    ${g.summary && !g.events.length ? `<div class="svc-event"><div class="desc">${escapeHtml(g.summary)}</div></div>` : ""}
+    ${g.summary && !g.events.length ? `<div class="svc-event"><div class="desc">${escapeHtml(I18N.pick(g.summary))}</div></div>` : ""}
     ${(g.events || []).map(eventHtml).join("")}
   </div>`;
 }
@@ -31,10 +31,10 @@ async function init() {
   const root = document.getElementById("svc");
   try {
     const list = await API.getServiceStatus();
-    root.innerHTML = list.length ? list.map(groupHtml).join("") : `<div class="empty">暂无服务状态数据。</div>`;
+    root.innerHTML = list.length ? list.map(groupHtml).join("") : `<div class="empty">${I18N.t("status.empty")}</div>`;
     setActiveNav("status");
   } catch (e) {
-    root.innerHTML = `<div class="empty">数据加载失败：${escapeHtml(e.message)}</div>`;
+    root.innerHTML = `<div class="empty">${I18N.t("status.fail")}${escapeHtml(e.message)}</div>`;
   }
 }
 

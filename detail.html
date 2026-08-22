@@ -1,34 +1,36 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Reset Radar · 详情</title>
+  <title>Reset Radar · Details</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <div class="app">
     <header class="detail-head">
-      <a href="index.html" class="back">← 返回</a>
-      <span class="title" id="dtitle">详情</span>
+      <a href="index.html" class="back" data-i18n="detail.back">← Back</a>
+      <span class="title" id="dtitle" data-i18n="detail.title">Details</span>
+      <button class="lang-switch" type="button" data-i18n-lang>中文</button>
       <span class="ptitle" id="ptitle">⚡</span>
     </header>
 
     <div class="gauge" id="gauge">
-      <div class="loading">加载中…</div>
+      <div class="loading" data-i18n="detail.loading">Loading…</div>
     </div>
     <div id="statusline"></div>
 
     <main id="blocks"></main>
 
     <nav class="bottomnav">
-      <a href="index.html" data-nav="home"><span class="ic">🏠</span>概览</a>
-      <a href="status.html" data-nav="status"><span class="ic">📊</span>服务状态</a>
-      <a href="about.html" data-nav="about"><span class="ic">ℹ️</span>关于</a>
+      <a href="index.html" data-nav="home"><span class="ic">🏠</span><span data-i18n="nav.home">Overview</span></a>
+      <a href="status.html" data-nav="status"><span class="ic">📊</span><span data-i18n="nav.status">Service Status</span></a>
+      <a href="about.html" data-nav="about"><span class="ic">ℹ️</span><span data-i18n="nav.about">About</span></a>
     </nav>
   </div>
 
   <script src="data/fallback.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/utils.js"></script>
   <script src="js/api.js"></script>
   <script src="js/detail.js"></script>

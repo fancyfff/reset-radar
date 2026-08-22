@@ -1,3 +1,25 @@
+# ---- 环境与密钥（防误提交，一键生效）----
+# 环境变量文件
+.env
+.env.*
+!.env.example
+
+# 常见密钥 / 令牌 / 凭证
+*.pem
+*.key
+*.p12
+*.pfx
+*.env.*key
+credentials.json
+service-account*.json
+*.token
+*.bearer
+
+# 本地工具产物
+vault.txt
+secrets.*
+
+# ---- 发行物产物 ----
 __pycache__/
 *.pyc
 .venv/

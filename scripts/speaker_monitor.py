@@ -32,10 +32,17 @@ KEYWORDS = ["quota", "limit", "reset", "extension", "额度", "限制", "限额"
 X_API_BEARER = os.environ.get("X_API_BEARER", "").strip()
 
 
+def _text(v):
+    """把字符串或双语对象 {en, zh} 统一转成用于匹配的文本。"""
+    if isinstance(v, dict):
+        return ((v.get("en") or "") + " " + (v.get("zh") or "")).strip()
+    return str(v or "")
+
+
 def contains_keywords(text):
-    if not text:
+    low = _text(text).lower()
+    if not low:
         return False, []
-    low = text.lower()
     hit = [k for k in KEYWORDS if k.lower() in low]
     return (len(hit) > 0), hit
 

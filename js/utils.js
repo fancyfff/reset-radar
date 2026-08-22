@@ -1,17 +1,24 @@
 // 工具函数：时间格式化、信号映射、安全转义、数字动画
 
 const SIGNAL_META = {
-  high:   { label: "🔴 高概率",  cls: "high" },
-  medium: { label: "🟡 中等概率", cls: "medium" },
-  low:    { label: "🟢 冷却观察", cls: "low" },
-};
-
-const STATUS_LABEL = {
-  normal: "正常", operational: "正常", recovered: "已恢复", degraded: "降级",
+  high:   { cls: "high" },
+  medium: { cls: "medium" },
+  low:    { cls: "low" },
 };
 
 function signalMeta(strength) {
-  return SIGNAL_META[strength] || SIGNAL_META.low;
+  const key = SIGNAL_META[strength] ? strength : "low";
+  return { cls: SIGNAL_META[key].cls, label: I18N.t("sig." + key) };
+}
+
+function statusText(s) {
+  return I18N.t("st." + s) || I18N.t("st.normal");
+}
+
+// 双语字段 {en, zh} 或字符串是否表示「已恢复」
+function isRecovered(v) {
+  const s = (v && typeof v === "object") ? ((v.en || "") + " " + (v.zh || "")) : String(v || "");
+  return s.indexOf("Recovered") >= 0 || s.indexOf("已恢复") >= 0;
 }
 
 function colorFor(prob) {
@@ -82,28 +89,24 @@ function logoOrIcon(p) {
 }
 
 // ---------- 信号等级（状态文字）----------
-const SIGNAL_LEVEL = {
-  observing: "持续观察",
-  cooling: "冷却观察",
-};
 function signalLevelLabel(level) {
-  return SIGNAL_LEVEL[level] || "观察中";
+  return I18N.t("lvl." + level) || I18N.t("lvl.other");
 }
 
 // ---------- 倒计时格式化 ----------
 // 短格式：X天X小时X分钟（用于卡片）
 function fmtCountdown(sec) {
   sec = Math.max(0, Math.floor(sec || 0));
-  if (sec <= 0) return "已到预测窗口";
+  if (sec <= 0) return I18N.t("cd.window");
   const d = Math.floor(sec / 86400);
   const h = Math.floor((sec % 86400) / 3600);
   const m = Math.floor((sec % 3600) / 60);
-  return d > 0 ? `${d}天${h}小时${m}分` : `${h}小时${m}分`;
+  return d > 0 ? I18N.t("cd.fmtDays", { d: d, h: h, m: m }) : I18N.t("cd.fmtHours", { h: h, m: m });
 }
 // 时钟格式：Xd HH:MM:SS（用于详情页，可逐秒跳动）
 function fmtCountdownClock(sec) {
   sec = Math.max(0, Math.floor(sec || 0));
-  if (sec <= 0) return "窗口已到";
+  if (sec <= 0) return I18N.t("cd.clockWindow");
   const d = Math.floor(sec / 86400);
   const h = Math.floor((sec % 86400) / 3600);
   const m = Math.floor((sec % 3600) / 60);
@@ -115,7 +118,7 @@ function fmtCountdownClock(sec) {
 // ---------- 周额度趋势迷你图（纯 CSS 柱状）----------
 function quotaChartHtml(wq) {
   if (!wq || !Array.isArray(wq.trend) || !wq.trend.length) {
-    return `<p style="color:var(--text-dim)">暂无周额度数据（需人工维护）。</p>`;
+    return `<p style="color:var(--text-dim)">${I18N.t("quota.noData")}</p>`;
   }
   const vals = wq.trend;
   const max = Math.max(...vals);
@@ -126,13 +129,13 @@ function quotaChartHtml(wq) {
     return `<div class="qbar">
       <div class="qbar-val">$${Number(v).toLocaleString("en-US", { maximumFractionDigits: 0 })}</div>
       <div class="qbar-track"><i style="height:${pct}%"></i></div>
-      <div class="qbar-lab">${escapeHtml(labels[i] || "")}</div>
+      <div class="qbar-lab">${escapeHtml(I18N.pick(labels[i] || ""))}</div>
     </div>`;
   }).join("");
   const tiers = [];
-  if (wq.pro_20x != null) tiers.push(`<span>Pro·20×：<b>$${Number(wq.pro_20x).toLocaleString("en-US", { maximumFractionDigits: 2 })}</b></span>`);
-  if (wq.pro_5x != null) tiers.push(`<span>Pro·5×：<b>$${Number(wq.pro_5x).toLocaleString("en-US", { maximumFractionDigits: 2 })}</b></span>`);
-  if (wq.plus != null) tiers.push(`<span>Plus：<b>$${Number(wq.plus).toLocaleString("en-US", { maximumFractionDigits: 2 })}</b></span>`);
+  if (wq.pro_20x != null) tiers.push(`<span>${I18N.t("quota.tier20x")}<b>$${Number(wq.pro_20x).toLocaleString("en-US", { maximumFractionDigits: 2 })}</b></span>`);
+  if (wq.pro_5x != null) tiers.push(`<span>${I18N.t("quota.tier5x")}<b>$${Number(wq.pro_5x).toLocaleString("en-US", { maximumFractionDigits: 2 })}</b></span>`);
+  if (wq.plus != null) tiers.push(`<span>${I18N.t("quota.plus")}<b>$${Number(wq.plus).toLocaleString("en-US", { maximumFractionDigits: 2 })}</b></span>`);
   return `<div class="qchart">${bars}</div>` +
     (tiers.length ? `<div class="qtiers">${tiers.join("")}</div>` : "");
 }

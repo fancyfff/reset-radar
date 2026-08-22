@@ -55,8 +55,27 @@ MILESTONE_KW = ("庆祝", "里程碑", "milestone", "达到", "突破")
 RESET_WINDOW_H = 2.0
 
 # 公告关键词 -> 调整类型
-ANNOUNCE_UP = ["重置", "恢复额度", "额度已恢复", "已重置"]
-ANNOUNCE_DOWN = ["限额延长", "限额提高", "延期"]
+ANNOUNCE_UP = ["重置", "恢复额度", "额度已恢复", "已重置", "quota reset", "limit reset", "reset"]
+ANNOUNCE_DOWN = ["限额延长", "限额提高", "延期", "limit increase", "extension", "increase limit"]
+
+
+def bi(en, zh):
+    """双语文本：前端根据当前语言取 en / zh。"""
+    return {"en": en, "zh": zh}
+
+
+def reason_text(v):
+    """把字符串或双语对象统一转成用于关键词匹配的文本（en+zh 拼接）。"""
+    if isinstance(v, dict):
+        return ((v.get("en") or "") + " " + (v.get("zh") or "")).strip()
+    return str(v or "")
+
+
+def bi_pick(v, lang):
+    """从字符串或双语对象 {en, zh} 中取指定语言文案。"""
+    if isinstance(v, dict):
+        return v.get(lang) or v.get("en") or ""
+    return str(v or "")
 
 
 def parse_iso(s):
@@ -73,6 +92,7 @@ def parse_iso(s):
 
 
 def classify_announcement(text):
+    text = reason_text(text)  # 兼容字符串与双语对象 {en, zh}
     for kw in ANNOUNCE_DOWN:
         if kw in text:
             return "official_down"
@@ -96,30 +116,44 @@ def clamp(v, lo, hi):
 
 
 # ---------- 信号 / 重置记录 的真实源构建 ----------
-def build_signals(pid, cfg):
-    """自动抓取真实信号，并与 config 里的人工补充信号合并。"""
+def build_signals(pid, cfg, now=None):
+    """自动抓取真实信号，并与 config 里的人工补充信号合并。
+
+    now 用于「近 24h」时效过滤；不传则取当前 UTC。
+    """
+    now = now or datetime.now(timezone.utc)
     sigs = []
     for s in cfg.get("signals", []):          # 人工补充（种子）
         sigs.append(dict(s))
 
     # 1) GitHub Releases -> model_release（真实）
+    #    —— 只统计「近 24h」内发布的版本；同一平台近 24h 的多次发布合并为一条
+    #       model_release 信号，避免每条 +10 多次累加导致概率虚高（设计文档：扫描近 24h 信号）。
     repo = cfg.get("github_repo", "")
     if repo:
-        for rel in fetchers.fetch_github_releases(repo, 5):
+        recent = [
+            rel for rel in fetchers.fetch_github_releases(repo, 10)
+            if rel["published_at"] and (now - rel["published_at"]).total_seconds() <= 24 * 3600
+        ]
+        if recent:
+            names = ", ".join(rel["name"] for rel in recent)
             sigs.append({
                 "kind": "model_release",
-                "text": f"GitHub 发布 {rel['name']}（{rel['published_at'].strftime('%Y-%m-%d')}）",
+                "text": bi(f"GitHub release(s) in last 24h: {names}",
+                           f"近24小时 GitHub 发布：{names}"),
                 "source": "github",
-                "url": rel["html_url"],
+                "url": recent[0]["html_url"],
             })
 
     # 2) Statuspage Incidents -> service / 官方事件（真实）
     base = cfg.get("status_base", "")
     if base:
         for inc in fetchers.fetch_statuspage_incidents(base, 6):
+            date_s = inc['updated_at'].strftime('%Y-%m-%d')
             sigs.append({
                 "kind": "service",
-                "text": f"官方状态：{inc['name']}（{inc['status']}, {inc['updated_at'].strftime('%Y-%m-%d')}）",
+                "text": bi(f"Official status: {inc['name']} ({inc['status']}, {date_s})",
+                           f"官方状态：{inc['name']}（{inc['status']}, {date_s}）"),
                 "source": "statuspage",
                 "url": inc["shortlink"],
             })
@@ -144,13 +178,13 @@ def build_resets(pid, cfg):
 
     # 1) config.resets 种子
     for r in cfg.get("resets", []) or []:
-        add(r.get("time"), r.get("reason", "常规周期重置"),
+        add(r.get("time"), r.get("reason", bi("Regular cycle reset", "常规周期重置")),
             r.get("is_extra", False), r.get("type", "reset"), "seed")
 
     # 2) MANUAL_RESETS
     for r in getattr(config, "MANUAL_RESETS", []) or []:
         if r.get("id") == pid and r.get("time"):
-            add(r["time"], r.get("reason", "实测重置"), r.get("is_extra", False),
+            add(r["time"], r.get("reason", bi("Observed manual reset", "实测重置")), r.get("is_extra", False),
                 r.get("type", "reset"), "manual")
 
     # 3) data/resets.json（实测，优先）
@@ -158,7 +192,7 @@ def build_resets(pid, cfg):
         try:
             for r in json.load(open(RESETS_JSON, encoding="utf-8")):
                 if r.get("id") == pid and r.get("time"):
-                    add(r["time"], r.get("reason", "实测重置"), r.get("is_extra", False),
+                    add(r["time"], r.get("reason", bi("Observed manual reset", "实测重置")), r.get("is_extra", False),
                         r.get("type", "reset"), "observed")
         except Exception as e:
             print(f"  [warn] 读取 resets.json 失败: {e}")
@@ -186,7 +220,7 @@ def compute_platform(pid, cfg, now, resets, signals):
 
     # 重置类型自动判定（readme 5.2 第1条）：原因含「庆祝/里程碑/达到/突破」→ 额外重置
     for _, r in parsed:
-        if r["type"] == "reset" and any(k in r.get("reason", "") for k in MILESTONE_KW):
+        if r["type"] == "reset" and any(k in reason_text(r.get("reason", "")) for k in MILESTONE_KW):
             r["is_extra"] = True
 
     # 最近一次「重置」事件（含额外重置）→ 用于预测基准点
@@ -222,7 +256,7 @@ def compute_platform(pid, cfg, now, resets, signals):
             auto_no_resets.append({
                 "time": expected.strftime("%Y-%m-%dT%H:%M:%SZ"),
                 "type": "no_reset",
-                "reason": "周期候选点未发生重置（自动判定）",
+                "reason": bi("No reset at cycle candidate point (auto-detected)", "周期候选点未发生重置（自动判定）"),
                 "is_extra": False,
                 "source": "auto",
             })
@@ -230,21 +264,26 @@ def compute_platform(pid, cfg, now, resets, signals):
     since_h = max(0.0, (now - last_dt).total_seconds() / 3600.0)
     base = min(since_h / avg_cycle, 1.0) * BASE_WEIGHT * 100.0
 
-    # 信号加权
+    # 信号加权（model_release 无论多少条只计一次 +10，配合上面 24h 合并，去重防概率虚高）
     total_adj = 0
     model_signals, community_signals = [], []
     has_model_release = False
+    model_adjusted = False
     for sig in signals:
         adj = signal_adjustment(sig)
-        total_adj += adj
         kind = sig.get("kind")
         if kind == "model_release":
+            if not model_adjusted:
+                total_adj += adj
+                model_adjusted = True
             model_signals.append(sig.get("text", ""))
             has_model_release = True
-        elif kind == "community":
-            community_signals.append(sig.get("text", ""))
-        elif kind == "announcement":
-            model_signals.append(sig.get("text", ""))
+        else:
+            total_adj += adj
+            if kind == "community":
+                community_signals.append(sig.get("text", ""))
+            elif kind == "announcement":
+                model_signals.append(sig.get("text", ""))
 
     prob = clamp(round(base + total_adj), 0, 100)
 
@@ -275,49 +314,71 @@ def compute_platform(pid, cfg, now, resets, signals):
     # 上次重置（含原因 / 额外重置标记）
     last_reset = {
         "time": last_dt.strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "reason": last_meta.get("reason", "常规周期重置"),
+        "reason": last_meta.get("reason", bi("Regular cycle reset", "常规周期重置")),
         "reason_type": last_meta.get("reason_type", "normal" if not last_meta["is_extra"] else "milestone"),
         "is_extra_reset": bool(last_meta["is_extra"]),
     }
 
-    # 文案
+    # 文案（双语）
     hours_left = round(since_h - avg_cycle, 1)
     base_pct = round(base)
-    judgment = (
-        f"自然周期候选点约{abs(hours_left)}小时{'后' if hours_left < 0 else '前'}；"
-        f"历史24小时底座{base_pct}%。"
-    )
-    if last_meta["is_extra"]:
-        judgment += f"上次重置为额外重置（{last_meta.get('reason','')}），不计入平均周期；"
-    if has_model_release:
-        judgment += "官方发布信号带动概率上调；"
-    if total_adj < 0:
-        judgment += "官方公告触发下调，压低短期概率；"
-    judgment += "没有官方重置预告或落地确认，因此不能标记为official_confirmed。" if prob < 70 else "尚无官方确认，仅周期与信号驱动。"
 
-    summary = (
-        "未来24小时重置概率较高，但目前只有周期与信号，尚无官方确认。"
-        if prob >= 70 else
-        "当前处于额度冷却/观察期，未来24小时重置概率有限，建议合理安排重负载任务。"
+    if hours_left < 0:
+        j_en = f"Natural cycle candidate point is about {abs(hours_left)}h away; historical 24h baseline {base_pct}%."
+        j_zh = f"自然周期候选点约{abs(hours_left)}小时后；历史24小时底座{base_pct}%。"
+    else:
+        j_en = f"Natural cycle candidate point was about {hours_left}h ago; historical 24h baseline {base_pct}%."
+        j_zh = f"自然周期候选点约{hours_left}小时前；历史24小时底座{base_pct}%。"
+    if last_meta["is_extra"]:
+        j_en += f" The last reset was an extra reset ({bi_pick(last_meta.get('reason'), 'en')}), not counted in the average cycle;"
+        j_zh += f" 上次重置为额外重置（{bi_pick(last_meta.get('reason'), 'zh')}），不计入平均周期；"
+    if has_model_release:
+        j_en += " Official release signals push probability up;"
+        j_zh += " 官方发布信号带动概率上调；"
+    if total_adj < 0:
+        j_en += " Official announcement triggered a downward adjustment, lowering short-term probability;"
+        j_zh += " 官方公告触发下调，压低短期概率；"
+    if prob < 70:
+        j_en += " No official reset preview or confirmation, so it cannot be marked as official_confirmed."
+        j_zh += " 没有官方重置预告或落地确认，因此不能标记为official_confirmed。"
+    else:
+        j_en += " No official confirmation yet; driven by cycle and signals only."
+        j_zh += " 尚无官方确认，仅周期与信号驱动。"
+    judgment = bi(j_en, j_zh)
+
+    if prob >= 70:
+        summary = bi(
+            "Elevated reset probability in the next 24h, but currently only cycle and signals — no official confirmation yet.",
+            "未来24小时重置概率较高，但目前只有周期与信号，尚无官方确认。",
+        )
+    else:
+        summary = bi(
+            "Currently in a cooling/observation phase; limited reset probability in the next 24h. Plan heavy workloads accordingly.",
+            "当前处于额度冷却/观察期，未来24小时重置概率有限，建议合理安排重负载任务。",
+        )
+    quota_cycle = bi(
+        f"Natural cycle candidate point is about {round(avg_cycle, 1)}h (excluding extra resets); historical baseline {base_pct}%; no new official reset announcement.",
+        f"自然周期候选点约{round(avg_cycle, 1)}小时周期（排除额外重置）；历史底座{base_pct}%；官方重置公告暂无新信号。",
     )
-    quota_cycle = f"自然周期候选点约{round(avg_cycle,1)}小时周期（排除额外重置）；历史底座{base_pct}%；官方重置公告暂无新信号。"
 
     candidate_events = [{
         "type": "full_reset",
         "confidence": round(prob / 100.0, 2),
-        "description": "自然周期推算的候选额度恢复时点，并非官方重置预告。",
+        "description": bi("Natural-cycle candidate recovery point; not an official reset notice.",
+                          "自然周期推算的候选额度恢复时点，并非官方重置预告。"),
     }]
     if has_model_release:
         candidate_events.append({
             "type": "model_release",
             "confidence": 0.98,
-            "description": "官方发布信号；该发布尚未伴随额度重置确认。",
+            "description": bi("Official release signal; not yet accompanied by a reset confirmation.",
+                              "官方发布信号；该发布尚未伴随额度重置确认。"),
         })
 
     history_out = [{
         "time": r["time"],
         "type": r["type"],
-        "reason": r.get("reason", "常规周期重置"),
+        "reason": r.get("reason", bi("Regular cycle reset", "常规周期重置")),
         "is_extra": bool(r["is_extra"]),
         "source": r["source"],
     } for _, r in parsed]
@@ -382,7 +443,7 @@ def main():
     for pid, cfg in config.PLATFORMS.items():
         try:
             resets = build_resets(pid, cfg)
-            signals = build_signals(pid, cfg)
+            signals = build_signals(pid, cfg, now)
             p = compute_platform(pid, cfg, now, resets, signals)
             platforms.append(p)
             print(f"  - {p['name']:<12} prob={p['probability']:>3}%  conf={p['confidence']:>2}  {p['signal_strength']}  "

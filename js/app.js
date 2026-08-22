@@ -4,8 +4,8 @@ function renderTopMeta(data) {
   const el = document.getElementById("meta");
   const upd = data.last_updated ? fmtWhen(data.last_updated).split(" ")[1] : nowClock();
   el.innerHTML =
-    `<span class="dot">●</span> 最后更新: ${escapeHtml(upd)}` +
-    `<span>·</span><span>数据来源: 官方API</span>`;
+    `<span class="dot">●</span> ${I18N.t("meta.lastUpdated")}${escapeHtml(upd)}` +
+    `<span>·</span><span>${I18N.t("meta.source")}</span>`;
 }
 
 function renderTabs(platforms, activeId) {
@@ -39,16 +39,16 @@ function cardHtml(p) {
     <div class="divider"></div>
     <div class="bar"><i style="width:0%"></i></div>
     <div class="kv">
-      <span>预计重置: <b>${escapeHtml(pred)}</b></span>
-      <span>倒计时: <b>${escapeHtml(cd)}</b></span>
+      <span>${I18N.t("card.expected")}<b>${escapeHtml(pred)}</b></span>
+      <span>${I18N.t("card.countdown")}<b>${escapeHtml(cd)}</b></span>
     </div>
     <div class="kv">
-      <span>置信度: <b>${p.confidence}%</b></span>
+      <span>${I18N.t("card.confidence")}<b>${p.confidence}%</b></span>
       <span class="badge ${sm.cls}">${sm.label}</span>
     </div>
     <div class="kv">
       <span><span class="status-dot ${escapeHtml(p.status)}"></span> ${escapeHtml(lvl)}</span>
-      <span class="cta">查看详情 →</span>
+      <span class="cta">${I18N.t("card.view")}</span>
     </div>
   </a>`;
 }
@@ -80,7 +80,7 @@ async function init() {
     renderCards(platforms, null);
     setActiveNav("home");
   } catch (e) {
-    root.innerHTML = `<div class="empty">数据加载失败：${escapeHtml(e.message)}</div>`;
+    root.innerHTML = `<div class="empty">${I18N.t("home.fail")}${escapeHtml(e.message)}</div>`;
   }
 }
 

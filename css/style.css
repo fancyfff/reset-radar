@@ -339,3 +339,17 @@ body {
   .gauge-grid { grid-template-columns: repeat(4, 1fr); }
 }
 
+/* 回退数据徽标：data_source=seed 时提示当前数值来自种子/回退而非实时抓取 */
+.seed-badge {
+  font-style: normal;
+  font-size: 11px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  white-space: nowrap;
+  color: #FFB455;
+  background: rgba(255, 180, 85, 0.14);
+  border: 1px solid rgba(255, 180, 85, 0.35);
+  margin-left: 6px;
+  vertical-align: 1px;
+}
+

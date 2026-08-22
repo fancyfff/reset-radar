@@ -119,10 +119,13 @@ def clamp(v, lo, hi):
 def build_signals(pid, cfg, now=None):
     """自动抓取真实信号，并与 config 里的人工补充信号合并。
 
+    返回 (sigs, real_fetched)：real_fetched=True 表示本轮至少有一个真实数据源
+    （GitHub 或 Statuspage）抓取成功；抓取失败/未配置则回退种子。
     now 用于「近 24h」时效过滤；不传则取当前 UTC。
     """
     now = now or datetime.now(timezone.utc)
     sigs = []
+    real_fetched = False
     for s in cfg.get("signals", []):          # 人工补充（种子）
         sigs.append(dict(s))
 
@@ -131,8 +134,10 @@ def build_signals(pid, cfg, now=None):
     #       model_release 信号，避免每条 +10 多次累加导致概率虚高（设计文档：扫描近 24h 信号）。
     repo = cfg.get("github_repo", "")
     if repo:
+        releases, ok = fetchers.fetch_github_releases(repo, 10)
+        real_fetched = real_fetched or ok
         recent = [
-            rel for rel in fetchers.fetch_github_releases(repo, 10)
+            rel for rel in releases
             if rel["published_at"] and (now - rel["published_at"]).total_seconds() <= 24 * 3600
         ]
         if recent:
@@ -148,7 +153,9 @@ def build_signals(pid, cfg, now=None):
     # 2) Statuspage Incidents -> service / 官方事件（真实）
     base = cfg.get("status_base", "")
     if base:
-        for inc in fetchers.fetch_statuspage_incidents(base, 6):
+        incidents, ok = fetchers.fetch_statuspage_incidents(base, 6)
+        real_fetched = real_fetched or ok
+        for inc in incidents:
             date_s = inc['updated_at'].strftime('%Y-%m-%d')
             sigs.append({
                 "kind": "service",
@@ -157,7 +164,7 @@ def build_signals(pid, cfg, now=None):
                 "source": "statuspage",
                 "url": inc["shortlink"],
             })
-    return sigs
+    return sigs, real_fetched
 
 
 def build_resets(pid, cfg):
@@ -423,7 +430,7 @@ def maybe_refresh_service_status():
                 base = cfg.get("status_base")
                 break
         if base:
-            indicator = fetchers.fetch_statuspage_status(base)
+            indicator, _ok = fetchers.fetch_statuspage_status(base)
             if indicator in ("none", "ok"):
                 item["status"] = "operational"
             elif indicator == "minor":
@@ -439,20 +446,30 @@ def maybe_refresh_service_status():
 def main():
     now = datetime.now(timezone.utc)
     print(f"[Reset Radar] 开始计算 @ {now.isoformat()}")
-    platforms = []
+    platforms, degraded = [], []
     for pid, cfg in config.PLATFORMS.items():
         try:
             resets = build_resets(pid, cfg)
-            signals = build_signals(pid, cfg, now)
+            signals, real_fetched = build_signals(pid, cfg, now)
             p = compute_platform(pid, cfg, now, resets, signals)
+            p["data_source"] = "live" if real_fetched else "seed"   # 前端据此显示「回退数据」徽标
+            if not real_fetched:
+                degraded.append(pid)
             platforms.append(p)
             print(f"  - {p['name']:<12} prob={p['probability']:>3}%  conf={p['confidence']:>2}  {p['signal_strength']}  "
-                  f"countdown={p['countdown_seconds']}s  signals={len(signals)}")
+                  f"countdown={p['countdown_seconds']}s  signals={len(signals)}  src={p['data_source']}")
         except Exception as e:
             print(f"  [error] {pid}: {e}")
 
     service_status = maybe_refresh_service_status()
     speakers = speaker_monitor.build_speakers(now)
+
+    # 全降级保护：本轮无任何平台抓到真实数据源 → 不写盘，保留上次真实数据，
+    # 避免「last_updated 更新、数值却来自种子」的静默假象，也不产生虚假 commit。
+    live_count = sum(1 for pl in platforms if pl.get("data_source") == "live")
+    if platforms and live_count == 0:
+        print("[warn] 本轮所有平台均未抓到真实数据源（全降级），跳过写入 data.json / fallback.js，保留上次数据。")
+        return
 
     out = {
         "last_updated": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -460,6 +477,8 @@ def main():
         "service_status": service_status,
         "speakers": speakers,
     }
+    if degraded:
+        out["degraded"] = degraded
 
     os.makedirs(DATA_DIR, exist_ok=True)
     with open(DATA_JSON, "w", encoding="utf-8") as f:

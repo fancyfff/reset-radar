@@ -84,7 +84,7 @@ def fetch_github_releases(repo, count=6):
     """
     data = _get_json(f"https://api.github.com/repos/{repo}/releases?per_page={count}")
     if not isinstance(data, list):
-        return []
+        return [], False
     out = []
     for rel in data[:count]:
         dt = _parse_iso(rel.get("published_at"))
@@ -96,7 +96,7 @@ def fetch_github_releases(repo, count=6):
             "name": (rel.get("name") or rel.get("tag_name") or "").strip() or rel.get("tag_name", ""),
             "html_url": rel.get("html_url", "") or "",
         })
-    return out
+    return out, True
 
 
 def fetch_statuspage_incidents(base_url, limit=8):
@@ -106,7 +106,7 @@ def fetch_statuspage_incidents(base_url, limit=8):
     """
     data = _get_json(f"{base_url.rstrip('/')}/api/v2/incidents.json")
     if not isinstance(data, dict):
-        return []
+        return [], False
     out = []
     for inc in data.get("incidents", [])[:limit]:
         dt = _parse_iso(inc.get("updated_at") or inc.get("created_at"))
@@ -119,12 +119,12 @@ def fetch_statuspage_incidents(base_url, limit=8):
             "status": inc.get("status", "") or "",
             "shortlink": inc.get("shortlink", "") or "",
         })
-    return out
+    return out, True
 
 
 def fetch_statuspage_status(base_url):
     """返回当前状态 indicator: none/ok/minor/major/critical，或 None。"""
     data = _get_json(f"{base_url.rstrip('/')}/api/v2/status.json")
     if not isinstance(data, dict):
-        return None
-    return data.get("status", {}).get("indicator")
+        return None, False
+    return data.get("status", {}).get("indicator"), True

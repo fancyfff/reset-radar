@@ -33,7 +33,7 @@ function cardHtml(p) {
   return `
   <a class="card card-link" href="detail.html?id=${encodeURIComponent(p.id)}">
     <div class="row1">
-      <div class="pname">${logoOrIcon(p)}${escapeHtml(p.name)}</div>
+      <div class="pname">${logoOrIcon(p)}${escapeHtml(p.name)}${p.data_source === "seed" ? ` <i class="seed-badge">${I18N.t("badge.seed")}</i>` : ""}</div>
       <div class="prob" data-prob="${p.probability}">0<small>%</small></div>
     </div>
     <div class="divider"></div>

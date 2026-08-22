@@ -93,7 +93,7 @@ function lastResetHtml(lr) {
 
 function render(p, speakers) {
   document.getElementById("ptitle").innerHTML = logoOrIcon(p);
-  document.getElementById("dtitle").textContent = p.name;
+  document.getElementById("dtitle").innerHTML = escapeHtml(p.name) + (p.data_source === "seed" ? ` <i class="seed-badge">${I18N.t("badge.seed")}</i>` : "");
   const stLabel = statusText(p.status);
   const win = p.prediction_window ? `${escapeHtml(p.prediction_window.start)} ~ ${escapeHtml(p.prediction_window.end)}` : "—";
   const lvl = signalLevelLabel(p.signal_level);

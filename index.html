@@ -44,7 +44,7 @@
 <body>
   <div class="app">
     <header class="topbar">
-      <div class="brand">⚡ Reset Radar</div>
+      <div class="brand"><span class="brand-ic" data-icon="radar" data-size="20"></span>Reset Radar</div>
       <div class="meta" id="meta">
         <span class="dot">●</span> <span data-i18n="meta.loading">Loading…</span>
       </div>
@@ -58,14 +58,15 @@
     </main>
 
     <nav class="bottomnav">
-      <a href="index.html" data-nav="home" class="active"><span class="ic">🏠</span><span data-i18n="nav.home">Overview</span></a>
-      <a href="status.html" data-nav="status"><span class="ic">📊</span><span data-i18n="nav.status">Service Status</span></a>
-      <a href="about.html" data-nav="about"><span class="ic">ℹ️</span><span data-i18n="nav.about">About</span></a>
+      <a href="index.html" data-nav="home" class="active"><span class="ic" data-icon="home"></span><span data-i18n="nav.home">Overview</span></a>
+      <a href="status.html" data-nav="status"><span class="ic" data-icon="chart"></span><span data-i18n="nav.status">Service Status</span></a>
+      <a href="about.html" data-nav="about"><span class="ic" data-icon="info"></span><span data-i18n="nav.about">About</span></a>
     </nav>
   </div>
 
   <script src="data/fallback.js"></script>
   <script src="js/i18n.js"></script>
+  <script src="js/icons.js"></script>
   <script src="js/utils.js"></script>
   <script src="js/api.js"></script>
   <script src="js/app.js"></script>

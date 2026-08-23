@@ -242,6 +242,15 @@ body {
 .bottomnav a .ic { font-size: 18px; }
 .bottomnav a.active { color: var(--accent); }
 
+/* ---------- 内联 SVG 图标（Tabler/Lucide，MIT/ISC，免费可商用） ---------- */
+.icon-svg { flex: 0 0 auto; display: inline-block; }
+.topbar .brand .icon-svg { vertical-align: -0.22em; }
+.bottomnav a .icon-svg { width: 18px; height: 18px; }
+.ic-inline { display: inline-flex; align-items: center; vertical-align: middle; }
+.ic-inline .icon-svg { vertical-align: middle; }
+.ic-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; flex: 0 0 auto; }
+.brand-ic { display: inline-flex; align-items: center; color: var(--accent); }
+
 .loading { text-align: center; padding: 40px 0; color: var(--text-dim); font-size: 13px; }
 .empty { text-align: center; padding: 40px 0; color: var(--text-dim); font-size: 13px; }
 

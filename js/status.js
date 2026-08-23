@@ -33,6 +33,7 @@ async function init() {
     const list = await API.getServiceStatus();
     root.innerHTML = list.length ? list.map(groupHtml).join("") : `<div class="empty">${I18N.t("status.empty")}</div>`;
     setActiveNav("status");
+    window.ICON.decorate(document.body);
   } catch (e) {
     root.innerHTML = `<div class="empty">${I18N.t("status.fail")}${escapeHtml(e.message)}</div>`;
   }

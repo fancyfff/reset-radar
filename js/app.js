@@ -68,6 +68,7 @@ function renderCards(platforms, activeId) {
     bar.style.background = `linear-gradient(90deg, ${colorFor(target)}, var(--accent-2))`;
     requestAnimationFrame(() => { bar.style.width = target + "%"; });
   });
+  window.ICON.decorate(document.body);
 }
 
 async function init() {

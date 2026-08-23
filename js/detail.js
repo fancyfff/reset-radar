@@ -144,6 +144,7 @@ function render(p, speakers) {
 
   document.getElementById("blocks").innerHTML = blocks;
   document.getElementById("statusline").innerHTML = `<span class="status-dot ${escapeHtml(p.status)}"></span> ${escapeHtml(stLabel)}`;
+  window.ICON.decorate(document.body);
 }
 
 async function init() {

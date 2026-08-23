@@ -44,7 +44,9 @@ reset-radar/
 │   └── fallback.js       # 内嵌数据的离线回退副本（file:// 直开也能用）
 ├── scripts/
 │   ├── update.py         # 主引擎：抓取→预测→写 data.json / fallback.js
-│   ├── speaker_monitor.py# 发言雷达：构建 speakers（默认种子）
+│   ├── speaker_monitor.py# 发言雷达：构建 speakers（x_tweets.json 真实数据优先，缺省回退种子）
+│   ├── x_snippet.js      # 浏览器控制台片段：手动抓取某账号 X 推文（凭据不离开浏览器）
+│   ├── merge_x_tweets.py # 把抓取的推文合并进 data/x_tweets.json + data.json / fallback.js
 │   ├── record_reset.py   # 记录一次实测重置（写入 data/resets.json，日常维护用）
 │   ├── fetchers.py       # GitHub Release / Statuspage 抓取（标准库）
 │   ├── config.py         # 平台配置：重置记录/信号/额度趋势/SPEAKERS
@@ -265,36 +267,84 @@ git push
 
 ---
 
-## 9. 验证清单
+## 9. 发言雷达：用 X 真实推文替换种子（可选，手动）
 
-### 9.1 功能（手机浏览器或 DevTools 移动视图）
+> **背景**：X 的公开推文**没有免费 + 稳定 + 服务器端定时获取**的渠道（官方 API 需付费 $100/月，违背 ToS 的第三方爬取不稳且封号风险高）。
+> 因此本方案用**浏览器登录态手动抓取**：你在已登录 X 的浏览器控制台跑一个片段，从页面 DOM 提取推文，存成快照交给仓库。
+> 凭据（cookie / 密码）全程不离开浏览器，不经过脚本、不落库、不提交 git，仅本机运行时生效。
+>
+> `speaker_monitor.py` 的取数优先级为：**本地真实数据 `data/x_tweets.json` ＞ X API（需付费 Bearer）＞ 种子**。
+> 只要 `data/x_tweets.json` 存在且包含某 handle，定时任务每次就会优先使用其中的真实推文，否则回退种子。
+
+### 9.1 对每个想追踪的 X 账号执行一次
+
+以账号 `@thsottiaux` 为例（其他账号重复同样步骤即可，最终都合并进同一个 `data/x_tweets.json`）：
+
+1. 在**能访问 X 的网络环境**用浏览器登录 x.com，打开该账号主页：
+   `https://x.com/thsottiaux`
+2. 按 **F12 → Console**，粘贴 [scripts/x_snippet.js](../scripts/x_snippet.js) 全部代码后回车。
+3. 控制台会打印 JSON 并**自动复制到剪贴板**（内容即该账号近几条推文）。
+   - 若推文不够，先滚动页面加载更多，再运行一次。
+4. 把复制的 JSON 保存成本地文件，例如：
+   `data/x_tweets_thsottiaux.json`
+
+```powershell
+cd d:\Learning\doit\cursor-ws\reset-radar
+# 在第3步粘贴 JSON 并保存后，运行合并脚本：
+python scripts/merge_x_tweets.py data/x_tweets_thsottiaux.json
+```
+
+合并脚本会：
+- 把该账号推文写入统一的 `data/x_tweets.json`（多账号结构 `posts_by_handle`，**只覆盖该 handle、保留其它账号**）；
+- 更新 `data/data.json` 中对应发言雷达账号的 `recent_posts`，并按关键词（quota/limit/reset 等）标注命中、重算 `last_activity` 等；
+- 同步写 `data/fallback.js`。
+
+### 9.2 提交并推送（让线上生效）
+
+```powershell
+cd d:\Learning\doit\cursor-ws\reset-radar
+git add data/x_tweets.json data/data.json data/fallback.js
+git commit -m "speakers: 用 X 真实推文替换 @thsottiaux 演示种子"
+git push
+```
+
+推送后定时任务每次都会以 `data/x_tweets.json` 为准；以后想加新账号，按 9.1 再抓一次合并即可（同一文件、不同 handle）。
+样式与渲染：前端 `I18N.pick` 同时兼容「纯字符串」与「双语对象」，因此真实推文可直接展示，无需改前端。
+
+> 注意：`data/x_tweets.json` 一旦提交会随仓库公开（公共仓库），内容为对应账号的公开推文，无敏感信息；若某账号协议上不宜留存，可只本地维护并加入 `.gitignore`。
+
+---
+
+## 10. 验证清单
+
+### 10.1 功能（手机浏览器或 DevTools 移动视图）
 - [ ] 首页：平台卡片、概率动画、倒计时正向、Tab 切换
 - [ ] 详情页：仪表盘、判断/摘要/信号、历史重置记录（含自动 `no_reset`）、周额度趋势、🗣️ 发言雷达
 - [ ] 服务状态页、关于页正常
 - [ ] 底部导航 3 项（概览/服务状态/关于），无 404
 - [ ] 语言切换（中/英）可用
 
-### 9.2 数据与定时
+### 10.2 数据与定时
 - [ ] 「最后更新」每 30 分钟自动刷新
 - [ ] Actions 连续 3 次运行成功
 - [ ] `data.json` 的 `last_updated` 与最新 commit 一致
 - [ ] 手动触发 `Run workflow` 有效
 
-### 9.3 缓存与降级
+### 10.3 缓存与降级
 - [ ] 部署后页面能加载最新数据（前端已用 `?t=` 与 `no-store`）
 - [ ] 断网/抓取失败时页面仍可用（fallback 逻辑）
 
-### 9.4 通知（若配置）
+### 10.4 通知（若配置）
 - [ ] 企业微信群收到一次测试/异常告警
 
-### 9.5 域名（可选升级）
+### 10.5 域名（可选升级）
 - [ ] 自定义域名 DNS CNAME 指向 `*.pages.dev`，SSL 自动生效
 
 ---
 
-## 10. 成本核算与风险
+## 11. 成本核算与风险
 
-### 10.1 成本
+### 11.1 成本
 | 项 | 免费路径 | 付费升级 |
 |---|---|---|
 | GitHub + Actions | ¥0（公共仓库） | 私有仓库也可免费（额度偏紧） |
@@ -303,17 +353,17 @@ git push
 | 企业微信 | ¥0 | ¥0 |
 | X 实时 | ¥0（种子） | 约 $100/月（不建议） |
 
-### 10.2 风险与对策
+### 11.2 风险与对策
 | 风险 | 对策 |
 |---|---|
 | 私有仓库 Actions 分钟超标 | 用公共仓库，或 cron 降为每小时 |
 | 每 30 分钟一次 commit 使提交历史膨胀 | 已限定 `file_pattern` 只提交数据文件；长期可合并历史 |
 | 种子/重置数据过期，预测失真 | 用 `record_reset.py` 定期维护；发言种子随 `speaker_monitor.py` 更新 |
-| X 无免费源导致发言雷达无实时数据 | 文档与页面已如实标注「种子驱动」，避免误导 |
+| X 无免费源导致发言雷达无实时数据 | 用「第 9 节」手动抓取真实推文；仍无则页面如实标注「种子驱动」，避免误导 |
 
 ---
 
-## 11. 上线后例行
+## 12. 上线后例行
 
 - **每周**：用 `record_reset.py` 补录观察到的重置，保持预测准确。
 - **每月**：检查 Actions 运行统计（仓库 → Actions → Usage），确认不超免费额度。

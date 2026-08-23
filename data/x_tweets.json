@@ -1,0 +1,45 @@
+{
+  "handle": "thsottiaux",
+  "posts": [
+    {
+      "time": "2026-08-22T05:24:01.000Z",
+      "content": "Update on rate limits in Codex. We do see that for some users the cache hit rate has been worse this week than the stable state the weeks before. This could explain that usage is draining somewhat faster for those users as hitting the cache consistently is an important component",
+      "url": "https://x.com/thsottiaux/status/2091033630147854385"
+    },
+    {
+      "time": "2026-08-22T04:06:48.000Z",
+      "content": "@ajambrosino\n thought it was too hard to upload music to twitter, so he just prompted a whole music app hosted on ChatGPT Sites into existence just to share his album",
+      "url": "https://x.com/thsottiaux/status/2091014197144596734"
+    },
+    {
+      "time": "2026-08-22T00:50:36.000Z",
+      "content": "The banked reset has landed, I repeat, the banked reset has landed. Have an amazing weekend.",
+      "url": "https://x.com/thsottiaux/status/2090964822422949999"
+    },
+    {
+      "time": "2026-08-21T23:40:34.000Z",
+      "content": "The banked reset will be there by 8pm PST. For all paid users of ChatGPT Work and Codex. Do with this information what you may.",
+      "url": "https://x.com/thsottiaux/status/2090947196107764189"
+    },
+    {
+      "time": "2026-08-21T19:43:11.000Z",
+      "content": "Sol shines brighter today. Efficiency, reliability and performance are the name of the game.",
+      "url": "https://x.com/thsottiaux/status/2090887457915232269"
+    },
+    {
+      "time": "2026-08-21T11:43:19.000Z",
+      "content": "It's me again. I come bearing great news. \n\nFirst of all, we have hit 20M active users for Codex some time this week. Second of all, this is cause for celebration and during the day we will credit every Codex and ChatGPT Work user with a BANKED reset that you can use at your own",
+      "url": "https://x.com/thsottiaux/status/2090766694897619318"
+    },
+    {
+      "time": "2026-08-21T05:39:04.000Z",
+      "content": "We've investigated a few messages about codex usage limits being different. That's not something we change without engaging the community and being transparent.\n\nWhat we did see is that when talking to affected users many were using sub2api. Converting a subscription into api",
+      "url": "https://x.com/thsottiaux/status/2090675027670978569"
+    },
+    {
+      "time": "2026-08-21T02:46:59.000Z",
+      "content": "Yay, you can now make transparent images in ChatGPT and through the API with GPT-Image-2. Here is a cactus cactus I am about to print and put on my laptop.",
+      "url": "https://x.com/thsottiaux/status/2090631723302469995"
+    }
+  ]
+}

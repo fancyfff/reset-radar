@@ -31,6 +31,33 @@ KEYWORDS = ["quota", "limit", "reset", "extension", "额度", "限制", "限额"
 
 X_API_BEARER = os.environ.get("X_API_BEARER", "").strip()
 
+# 若存在本仓库的「X 真实抓取」数据文件，则优先读取（方案 A：优先真实数据）。
+# 该文件由 scripts/x_snippet.js 在浏览器里抓取、scripts/merge_x_tweets.py 合并/生成。
+# 格式（多账号）：{"posts_by_handle": {"@handle": [{"time","content","url"}, ...], ...}}
+X_TWEETS_JSON = os.path.join(ROOT, "data", "x_tweets.json")
+_TWEETS_CACHE = None
+
+
+def _load_x_tweets(handle):
+    """读取 data/x_tweets.json 中属于该 handle 的推文；无文件/无匹配返回 []。"""
+    global _TWEETS_CACHE
+    if _TWEETS_CACHE is None:
+        try:
+            with open(X_TWEETS_JSON, encoding="utf-8") as f:
+                _TWEETS_CACHE = json.load(f)
+        except (OSError, ValueError):
+            _TWEETS_CACHE = {}
+    data = _TWEETS_CACHE or {}
+    key = handle.lstrip("@").lower()
+    # 多账号结构首选；兼容旧式单一 handle 顶层
+    by_handle = data.get("posts_by_handle")
+    if by_handle:
+        posts = by_handle.get(handle) or by_handle.get(key) or []
+        return [dict(p) for p in (posts or [])]
+    if data.get("handle", "").lstrip("@").lower() == key:
+        return [dict(p) for p in (data.get("posts") or [])]
+    return []
+
 
 def _text(v):
     """把字符串或双语对象 {en, zh} 统一转成用于匹配的文本。"""
@@ -107,8 +134,10 @@ def build_speakers(now=None):
     out = []
     for sp in config.SPEAKERS:
         handle = sp.get("handle", "")
-        # 实时优先，失败回退种子
-        posts = _fetch_x_posts(handle, 20) if X_API_BEARER else []
+        # 优先级：本地真实抓取(x_tweets.json) > X API > 种子
+        posts = _load_x_tweets(handle)
+        if not posts and X_API_BEARER:
+            posts = _fetch_x_posts(handle, 20)
         if not posts:
             posts = [dict(p) for p in sp.get("seed_posts", [])]
 

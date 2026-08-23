@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-23T04:13:22Z",
+  "last_updated": "2026-08-23T04:58:35Z",
   "platforms": [
     {
       "id": "codex",
@@ -28,8 +28,8 @@
       },
       "detail": {
         "judgment": {
-          "en": "Natural cycle candidate point was about 0.7h ago; historical 24h baseline 70%. Official release signals push probability up; No official confirmation yet; driven by cycle and signals only.",
-          "zh": "自然周期候选点约0.7小时前；历史24小时底座70%。 官方发布信号带动概率上调； 尚无官方确认，仅周期与信号驱动。"
+          "en": "Natural cycle candidate point was about 1.5h ago; historical 24h baseline 70%. Official release signals push probability up; No official confirmation yet; driven by cycle and signals only.",
+          "zh": "自然周期候选点约1.5小时前；历史24小时底座70%。 官方发布信号带动概率上调； 尚无官方确认，仅周期与信号驱动。"
         },
         "summary": {
           "en": "Elevated reset probability in the next 24h, but currently only cycle and signals — no official confirmation yet.",
@@ -141,11 +141,11 @@
       "name": "Claude Code",
       "icon": "🤖",
       "logo": "assets/anthropic.svg",
-      "probability": 47,
-      "signal_strength": "medium",
-      "signal_level": "observing",
+      "probability": 38,
+      "signal_strength": "low",
+      "signal_level": "cooling",
       "prediction_time": "2026-08-24T03:01:00Z",
-      "countdown_seconds": 82057,
+      "countdown_seconds": 79344,
       "prediction_window": {
         "start": "21:01",
         "end": "09:01"
@@ -163,39 +163,26 @@
       },
       "detail": {
         "judgment": {
-          "en": "Natural cycle candidate point is about 22.8h away; historical 24h baseline 37%. Official release signals push probability up; No official reset preview or confirmation, so it cannot be marked as official_confirmed.",
-          "zh": "自然周期候选点约22.8小时后；历史24小时底座37%。 官方发布信号带动概率上调； 没有官方重置预告或落地确认，因此不能标记为official_confirmed。"
+          "en": "Natural cycle candidate point is about 22.0h away; historical 24h baseline 38%. No official reset preview or confirmation, so it cannot be marked as official_confirmed.",
+          "zh": "自然周期候选点约22.0小时后；历史24小时底座38%。 没有官方重置预告或落地确认，因此不能标记为official_confirmed。"
         },
         "summary": {
           "en": "Currently in a cooling/observation phase; limited reset probability in the next 24h. Plan heavy workloads accordingly.",
           "zh": "当前处于额度冷却/观察期，未来24小时重置概率有限，建议合理安排重负载任务。"
         },
-        "model_signals": [
-          {
-            "en": "GitHub release(s) in last 24h: v2.1.241, v2.1.240",
-            "zh": "近24小时 GitHub 发布：v2.1.241, v2.1.240"
-          }
-        ],
+        "model_signals": [],
         "community_signals": [],
         "quota_cycle": {
-          "en": "Natural cycle candidate point is about 48.0h (excluding extra resets); historical baseline 37%; no new official reset announcement.",
-          "zh": "自然周期候选点约48.0小时周期（排除额外重置）；历史底座37%；官方重置公告暂无新信号。"
+          "en": "Natural cycle candidate point is about 48.0h (excluding extra resets); historical baseline 38%; no new official reset announcement.",
+          "zh": "自然周期候选点约48.0小时周期（排除额外重置）；历史底座38%；官方重置公告暂无新信号。"
         },
         "candidate_events": [
           {
             "type": "full_reset",
-            "confidence": 0.47,
+            "confidence": 0.38,
             "description": {
               "en": "Natural-cycle candidate recovery point; not an official reset notice.",
               "zh": "自然周期推算的候选额度恢复时点，并非官方重置预告。"
-            }
-          },
-          {
-            "type": "model_release",
-            "confidence": 0.98,
-            "description": {
-              "en": "Official release signal; not yet accompanied by a reset confirmation.",
-              "zh": "官方发布信号；该发布尚未伴随额度重置确认。"
             }
           }
         ],
@@ -240,11 +227,11 @@
       "name": "Grok Build",
       "icon": "⚡",
       "logo": "assets/grok.svg",
-      "probability": 65,
+      "probability": 66,
       "signal_strength": "medium",
       "signal_level": "observing",
       "prediction_time": "2026-08-23T08:52:30Z",
-      "countdown_seconds": 16747,
+      "countdown_seconds": 14034,
       "prediction_window": {
         "start": "02:52",
         "end": "14:52"
@@ -262,8 +249,8 @@
       },
       "detail": {
         "judgment": {
-          "en": "Natural cycle candidate point is about 4.7h away; historical 24h baseline 63%. No official reset preview or confirmation, so it cannot be marked as official_confirmed.",
-          "zh": "自然周期候选点约4.7小时后；历史24小时底座63%。 没有官方重置预告或落地确认，因此不能标记为official_confirmed。"
+          "en": "Natural cycle candidate point is about 3.9h away; historical 24h baseline 64%. No official reset preview or confirmation, so it cannot be marked as official_confirmed.",
+          "zh": "自然周期候选点约3.9小时后；历史24小时底座64%。 没有官方重置预告或落地确认，因此不能标记为official_confirmed。"
         },
         "summary": {
           "en": "Currently in a cooling/observation phase; limited reset probability in the next 24h. Plan heavy workloads accordingly.",
@@ -277,13 +264,13 @@
           }
         ],
         "quota_cycle": {
-          "en": "Natural cycle candidate point is about 47.9h (excluding extra resets); historical baseline 63%; no new official reset announcement.",
-          "zh": "自然周期候选点约47.9小时周期（排除额外重置）；历史底座63%；官方重置公告暂无新信号。"
+          "en": "Natural cycle candidate point is about 47.9h (excluding extra resets); historical baseline 64%; no new official reset announcement.",
+          "zh": "自然周期候选点约47.9小时周期（排除额外重置）；历史底座64%；官方重置公告暂无新信号。"
         },
         "candidate_events": [
           {
             "type": "full_reset",
-            "confidence": 0.65,
+            "confidence": 0.66,
             "description": {
               "en": "Natural-cycle candidate recovery point; not an official reset notice.",
               "zh": "自然周期推算的候选额度恢复时点，并非官方重置预告。"
@@ -353,8 +340,8 @@
       },
       "detail": {
         "judgment": {
-          "en": "Natural cycle candidate point was about 4.3h ago; historical 24h baseline 70%. Official announcement triggered a downward adjustment, lowering short-term probability; No official reset preview or confirmation, so it cannot be marked as official_confirmed.",
-          "zh": "自然周期候选点约4.3小时前；历史24小时底座70%。 官方公告触发下调，压低短期概率； 没有官方重置预告或落地确认，因此不能标记为official_confirmed。"
+          "en": "Natural cycle candidate point was about 5.0h ago; historical 24h baseline 70%. Official announcement triggered a downward adjustment, lowering short-term probability; No official reset preview or confirmation, so it cannot be marked as official_confirmed.",
+          "zh": "自然周期候选点约5.0小时前；历史24小时底座70%。 官方公告触发下调，压低短期概率； 没有官方重置预告或落地确认，因此不能标记为official_confirmed。"
         },
         "summary": {
           "en": "Currently in a cooling/observation phase; limited reset probability in the next 24h. Plan heavy workloads accordingly.",
@@ -425,18 +412,18 @@
         ],
         "weekly_quota": null
       },
-      "data_source": "live"
+      "data_source": "seed"
     },
     {
       "id": "minimax",
       "name": "MiniMax",
       "icon": "🎯",
       "logo": "assets/minimax.svg",
-      "probability": 34,
+      "probability": 35,
       "signal_strength": "low",
       "signal_level": "cooling",
       "prediction_time": "2026-08-24T04:55:00Z",
-      "countdown_seconds": 88897,
+      "countdown_seconds": 86184,
       "prediction_window": {
         "start": "22:55",
         "end": "10:55"
@@ -454,8 +441,8 @@
       },
       "detail": {
         "judgment": {
-          "en": "Natural cycle candidate point is about 24.7h away; historical 24h baseline 34%. No official reset preview or confirmation, so it cannot be marked as official_confirmed.",
-          "zh": "自然周期候选点约24.7小时后；历史24小时底座34%。 没有官方重置预告或落地确认，因此不能标记为official_confirmed。"
+          "en": "Natural cycle candidate point is about 23.9h away; historical 24h baseline 35%. No official reset preview or confirmation, so it cannot be marked as official_confirmed.",
+          "zh": "自然周期候选点约23.9小时后；历史24小时底座35%。 没有官方重置预告或落地确认，因此不能标记为official_confirmed。"
         },
         "summary": {
           "en": "Currently in a cooling/observation phase; limited reset probability in the next 24h. Plan heavy workloads accordingly.",
@@ -464,13 +451,13 @@
         "model_signals": [],
         "community_signals": [],
         "quota_cycle": {
-          "en": "Natural cycle candidate point is about 47.9h (excluding extra resets); historical baseline 34%; no new official reset announcement.",
-          "zh": "自然周期候选点约47.9小时周期（排除额外重置）；历史底座34%；官方重置公告暂无新信号。"
+          "en": "Natural cycle candidate point is about 47.9h (excluding extra resets); historical baseline 35%; no new official reset announcement.",
+          "zh": "自然周期候选点约47.9小时周期（排除额外重置）；历史底座35%；官方重置公告暂无新信号。"
         },
         "candidate_events": [
           {
             "type": "full_reset",
-            "confidence": 0.34,
+            "confidence": 0.35,
             "description": {
               "en": "Natural-cycle candidate recovery point; not an official reset notice.",
               "zh": "自然周期推算的候选额度恢复时点，并非官方重置预告。"
@@ -511,7 +498,7 @@
         ],
         "weekly_quota": null
       },
-      "data_source": "live"
+      "data_source": "seed"
     }
   ],
   "service_status": [
@@ -678,6 +665,8 @@
     }
   ],
   "degraded": [
-    "grok"
+    "grok",
+    "kimi",
+    "minimax"
   ]
 }

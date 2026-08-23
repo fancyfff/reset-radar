@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-23T11:10:09Z",
+  "last_updated": "2026-08-23T11:11:37Z",
   "platforms": [
     {
       "id": "codex",
@@ -155,7 +155,7 @@
       "signal_strength": "medium",
       "signal_level": "observing",
       "prediction_time": "2026-08-24T03:01:00Z",
-      "countdown_seconds": 57050,
+      "countdown_seconds": 56962,
       "prediction_window": {
         "start": "21:01",
         "end": "09:01"
@@ -456,7 +456,7 @@
       "signal_strength": "medium",
       "signal_level": "observing",
       "prediction_time": "2026-08-24T04:55:00Z",
-      "countdown_seconds": 63890,
+      "countdown_seconds": 63802,
       "prediction_window": {
         "start": "22:55",
         "end": "10:55"

@@ -48,6 +48,10 @@ ADJ = {                      # 信号调整幅度（百分点）
     "community": 5,          # 社区额度恢复反馈（API来源）
     "service": 0,            # 服务故障已恢复，不调整额度
 }
+# 手写种子信号（config.signals 中无真实 source 的人工补充）权重折扣：
+# 概率以 GitHub Release / Statuspage 真实自有源为主，人工补充信号只起次要微调，
+# 避免「依赖手写文本推测」抬高或压低概率。真实源（携带 source）保持原权重。
+SEED_ADJ_SCALE = 0.3
 
 # 重置类型自动判定：原因含以下关键词 → 标记为「额外重置」（不计入平均周期）
 MILESTONE_KW = ("庆祝", "里程碑", "milestone", "达到", "突破")
@@ -272,12 +276,15 @@ def compute_platform(pid, cfg, now, resets, signals):
     base = min(since_h / avg_cycle, 1.0) * BASE_WEIGHT * 100.0
 
     # 信号加权（model_release 无论多少条只计一次 +10，配合上面 24h 合并，去重防概率虚高）
+    # 手写种子信号（无 source）按其种类权重再打 SEED_ADJ_SCALE 折扣，让概率以真实自有源为主。
     total_adj = 0
     model_signals, community_signals = [], []
     has_model_release = False
     model_adjusted = False
     for sig in signals:
         adj = signal_adjustment(sig)
+        if not sig.get("source"):
+            adj = adj * SEED_ADJ_SCALE    # 人工补充种子信号降权
         kind = sig.get("kind")
         if kind == "model_release":
             if not model_adjusted:

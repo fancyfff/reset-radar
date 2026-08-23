@@ -430,6 +430,8 @@ def maybe_refresh_service_status():
     """尽力请求官方状态 API，失败则沿用配置种子。"""
     statuses = []
     for g in config.SERVICE_STATUS:
+        if config.PLATFORMS.get(g.get("platform_id", {}), {}).get("hidden"):
+            continue
         item = dict(g)
         base = None
         for pid, cfg in config.PLATFORMS.items():
@@ -456,6 +458,9 @@ def main():
     platforms, degraded = [], []
     for pid, cfg in config.PLATFORMS.items():
         try:
+            if cfg.get("hidden"):
+                print(f"  - {cfg.get('name', pid)}  [hidden] 跳过")
+                continue
             resets = build_resets(pid, cfg)
             signals, real_fetched = build_signals(pid, cfg, now)
             p = compute_platform(pid, cfg, now, resets, signals)

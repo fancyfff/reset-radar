@@ -48,7 +48,6 @@
       "quota.tier20x": "Pro·20×: ",
       "quota.tier5x": "Pro·5×: ",
       "quota.plus": "Plus: ",
-      "kw.join": ", ",
 
       // ---------- 详情页 ----------
       "detail.back": "← Back",
@@ -68,7 +67,6 @@
       "d.eventsTitle": "🎯 Candidate events",
       "d.historyTitle": "📜 Reset history",
       "d.quotaTitle": "📊 Weekly quota trend",
-      "d.speakerTitle": "🗣️ Speech radar",
       "d.noSignals": "No signals.",
       "d.noEvents": "No candidate events.",
       "d.noRecords": "No records.",
@@ -76,14 +74,6 @@
       "d.regularReset": "Regular reset",
       "d.extraReset": "✨ Extra reset · not counted in regular cycle",
       "d.extraSuffix": " · Extra reset",
-      "d.noRecentPosts": "No recent posts.",
-      "d.noSpeaker": "No tracked speaker for this platform (configure SPEAKERS in config.py).",
-      "d.active": "Active",
-      "d.quiet": "Quiet recently",
-      "d.kwHit": "⚠️ Keywords: ",
-      "d.kwNone": "🔍 No keywords",
-      "d.today": "Today",
-      "d.postsToday": "posts",
       "d.notFound": "Platform not found.",
       "d.fail": "Failed to load data: ",
 
@@ -157,7 +147,6 @@
       "quota.tier20x": "Pro·20×：",
       "quota.tier5x": "Pro·5×：",
       "quota.plus": "Plus：",
-      "kw.join": "、",
 
       "detail.back": "← 返回",
       "detail.title": "详情",
@@ -176,7 +165,6 @@
       "d.eventsTitle": "🎯 候选事件",
       "d.historyTitle": "📜 历史重置记录",
       "d.quotaTitle": "📊 周额度趋势",
-      "d.speakerTitle": "🗣️ 发言雷达",
       "d.noSignals": "暂无信号。",
       "d.noEvents": "无候选事件。",
       "d.noRecords": "暂无记录。",
@@ -184,14 +172,6 @@
       "d.regularReset": "常规重置",
       "d.extraReset": "✨ 额外重置 · 不计入常规周期",
       "d.extraSuffix": " · 额外重置",
-      "d.noRecentPosts": "暂无近期发言。",
-      "d.noSpeaker": "暂无追踪该平台的关键人物发言（可在 config.py 的 SPEAKERS 中配置）。",
-      "d.active": "发言中",
-      "d.quiet": "近期安静",
-      "d.kwHit": "⚠️ 含关键词：",
-      "d.kwNone": "🔍 无关键词",
-      "d.today": "今日",
-      "d.postsToday": "条动态",
       "d.notFound": "未找到该平台。",
       "d.fail": "数据加载失败：",
 
@@ -233,9 +213,10 @@
   try { lang = localStorage.getItem(STORE) || "en"; } catch (e) {}
   if (!DICT[lang]) lang = "en";
 
-  function t(key, vars) {
+  function t(key, vars, fallback) {
     var v = (DICT[lang] || {})[key];
-    var s = (v === undefined || v === null) ? key : v;
+    // 找不到 key 时：传了 fallback 用 fallback，否则用 key 本身
+    var s = (v === undefined || v === null) ? (fallback === undefined ? key : fallback) : v;
     if (vars) {
       for (var k in vars) {
         s = s.split("{" + k + "}").join(vars[k]);
@@ -257,10 +238,14 @@
 
   function applyStatic() {
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
-      el.textContent = t(el.getAttribute("data-i18n"));
+      // 用 HTML 里的原始占位文本兜底，避免 key 缺失时显示成 "nav.*"
+      var fb = el.getAttribute("data-i18n-fb");
+      if (fb === null) { fb = el.textContent; el.setAttribute("data-i18n-fb", fb); }
+      el.textContent = t(el.getAttribute("data-i18n"), null, fb);
     });
     document.querySelectorAll("[data-i18n-html]").forEach(function (el) {
-      el.innerHTML = t(el.getAttribute("data-i18n-html"));
+      var fb = el.innerHTML;
+      el.innerHTML = t(el.getAttribute("data-i18n-html"), null, fb);
     });
     document.querySelectorAll("[data-i18n-lang]").forEach(function (el) {
       el.textContent = lang === "zh" ? "EN" : "中文";

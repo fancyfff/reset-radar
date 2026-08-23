@@ -34,9 +34,4 @@ const API = {
     const d = await this.load();
     return d.service_status || [];
   },
-
-  async getSpeakers() {
-    const d = await this.load();
-    return d.speakers || [];
-  },
 };

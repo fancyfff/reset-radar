@@ -42,43 +42,6 @@ function historyHtml(arr) {
   }).join("") + `</div>`;
 }
 
-// 发言雷达：展示与当前平台关联的关键人物发言（每个账号一张卡片）
-function speakerPostsHtml(sp) {
-  const active = sp.is_active;
-  const statusCls = active ? "low" : "medium";
-  const statusTxt = active ? I18N.t("d.active") : I18N.t("d.quiet");
-  const posts = (sp.recent_posts || []).map((p) => {
-    const kw = p.has_keywords;
-    const kwHtml = kw
-      ? `<div class="sp-kw">${I18N.t("d.kwHit")}${escapeHtml((p.keywords || []).join(I18N.t("kw.join")))}</div>`
-      : `<div class="sp-kw dim">${I18N.t("d.kwNone")}</div>`;
-    const url = p.url ? ` <a class="sp-link" href="${escapeHtml(p.url)}" target="_blank" rel="noopener">↗</a>` : "";
-    return `<div class="sp-post ${kw ? "hit" : ""}">
-      <div class="sp-head"><b>${escapeHtml(sp.name)}</b> <span class="sp-handle">${escapeHtml(sp.handle)}</span> <span class="sp-time">${escapeHtml(fmtWhen(p.time))}</span></div>
-      <div class="sp-content">${escapeHtml(I18N.pick(p.content || ""))}${url}</div>
-      ${kwHtml}
-    </div>`;
-  }).join("") || `<p style="color:var(--text-dim)">${I18N.t("d.noRecentPosts")}</p>`;
-
-  return `<div class="block sp-card">
-    <div class="sp-top">
-      <div>
-        <div class="sp-title">${escapeHtml(sp.name)}</div>
-        <div class="sp-sub">${escapeHtml(sp.handle)} · ${I18N.t("d.today")} <b>${sp.post_count_today || 0}</b> ${I18N.t("d.postsToday")}</div>
-      </div>
-      <span class="badge ${statusCls}"><span class="status-dot ${active ? "operational" : "degraded"}"></span> ${statusTxt}</span>
-    </div>
-    <div class="sp-posts">${posts}</div>
-  </div>`;
-}
-
-function speakersSectionHtml(speakers) {
-  if (!speakers || !speakers.length) {
-    return section(I18N.t("d.speakerTitle"), `<p style="color:var(--text-dim)">${I18N.t("d.noSpeaker")}</p>`);
-  }
-  return section(I18N.t("d.speakerTitle"), speakers.map(speakerPostsHtml).join(""));
-}
-
 // 上次重置原因块
 function lastResetHtml(lr) {
   if (!lr) return `<p style="color:var(--text-dim)">${I18N.t("d.noLastReset")}</p>`;
@@ -91,10 +54,9 @@ function lastResetHtml(lr) {
   </div>`;
 }
 
-function render(p, speakers) {
+function render(p) {
   document.getElementById("ptitle").innerHTML = logoOrIcon(p);
   document.getElementById("dtitle").innerHTML = escapeHtml(p.name) + (p.data_source === "seed" ? ` <i class="seed-badge">${I18N.t("badge.seed")}</i>` : "");
-  const stLabel = statusText(p.status);
   const win = p.prediction_window ? `${escapeHtml(p.prediction_window.start)} ~ ${escapeHtml(p.prediction_window.end)}` : "—";
   const lvl = signalLevelLabel(p.signal_level);
   const pred = p.prediction_time ? fmtWhen(p.prediction_time) : "—";
@@ -139,11 +101,9 @@ function render(p, speakers) {
     section(I18N.t("d.eventsTitle"), eventsHtml(d.candidate_events)),
     section(I18N.t("d.historyTitle"), historyHtml(d.history)),
     section(I18N.t("d.quotaTitle"), quotaChartHtml(d.weekly_quota)),
-    speakersSectionHtml(speakers),
   ].join("");
 
   document.getElementById("blocks").innerHTML = blocks;
-  document.getElementById("statusline").innerHTML = `<span class="status-dot ${escapeHtml(p.status)}"></span> ${escapeHtml(stLabel)}`;
   window.ICON.decorate(document.body);
 }
 
@@ -151,11 +111,10 @@ async function init() {
   const id = new URLSearchParams(location.search).get("id");
   const root = document.getElementById("blocks");
   try {
-    const [p, allSpeakers] = await Promise.all([API.getPlatform(id), API.getSpeakers()]);
+    const [p] = await Promise.all([API.getPlatform(id)]);
     if (!p) { root.innerHTML = `<div class="empty">${I18N.t("d.notFound")}</div>`; return; }
     document.title = `Reset Radar · ${p.name}`;
-    const speakers = (allSpeakers || []).filter((s) => s.platform === p.id);
-    render(p, speakers);
+    render(p);
   } catch (e) {
     root.innerHTML = `<div class="empty">${I18N.t("d.fail")}${escapeHtml(e.message)}</div>`;
   }

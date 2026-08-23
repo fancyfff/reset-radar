@@ -117,7 +117,9 @@
       "about.src2": "Public signals: official announcements, model releases, community feedback.",
       "about.src3": "Scheduled task refreshes every 30 minutes (GitHub Actions).",
       "about.disTitle": "⚠️ Disclaimer",
-      "about.dis": "This tool is an <b>unofficial</b> estimation and intelligence aggregation; all data is <b>for reference only</b> and is not a guarantee. Actual quota policy is subject to each platform's official terms. Logos belong to their respective owners."
+      "about.dis": "This tool is an <b>unofficial</b> estimation and intelligence aggregation; all data is <b>for reference only</b> and is not a guarantee. Actual quota policy is subject to each platform's official terms. Logos belong to their respective owners.",
+      "about.followTitle": "📣 Follow & contact",
+      "about.followIntro": "Follow Reset Radar for reset news, updates and signals:",
     },
 
     zh: {
@@ -221,7 +223,9 @@
       "about.src2": "官方公告、模型发布、社区反馈等公开信号。",
       "about.src3": "定时任务每 30 分钟刷新一次（GitHub Actions）。",
       "about.disTitle": "⚠️ 免责声明",
-      "about.dis": "本工具为<b>非官方</b>的推算与情报聚合，所有数据仅为<b>参考预测</b>，不构成任何承诺。实际额度策略以各平台官方为准。Logo 版权归各自所有者所有。"
+      "about.dis": "本工具为<b>非官方</b>的推算与情报聚合，所有数据仅为<b>参考预测</b>，不构成任何承诺。实际额度策略以各平台官方为准。Logo 版权归各自所有者所有。",
+      "about.followTitle": "📣 关注与联系",
+      "about.followIntro": "关注 Reset Radar，获取重置动态、更新与信号：",
     }
   };
 

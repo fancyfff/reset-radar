@@ -202,6 +202,18 @@ body {
 .block { margin: 14px 16px; background: var(--card); border: 1px solid var(--card-border); border-radius: var(--radius); padding: 14px 16px; }
 .block h3 { font-size: 14px; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
 .block p { font-size: 13px; color: var(--text); }
+.block .social { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; }
+.block .social a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 13px;
+  border: 1px solid var(--card-border);
+  background: var(--card);
+  padding: 4px 10px;
+  border-radius: 999px;
+  transition: color .2s, border-color .2s;
+}
+.block .social a:hover { color: var(--text); border-color: var(--accent); }
 .block ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
 .block li { font-size: 13px; color: var(--text); padding-left: 16px; position: relative; }
 .block li::before { content: "•"; position: absolute; left: 2px; color: var(--accent); }

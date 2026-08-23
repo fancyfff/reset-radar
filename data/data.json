@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-23T12:47:37Z",
+  "last_updated": "2026-08-23T12:49:47Z",
   "platforms": [
     {
       "id": "codex",
@@ -155,7 +155,7 @@
       "signal_strength": "medium",
       "signal_level": "observing",
       "prediction_time": "2026-08-24T03:01:00Z",
-      "countdown_seconds": 51202,
+      "countdown_seconds": 51072,
       "prediction_window": {
         "start": "21:01",
         "end": "09:01"
@@ -272,8 +272,8 @@
       },
       "detail": {
         "judgment": {
-          "en": "Natural cycle candidate point was about 3.9h ago; historical 24h baseline 70%. No official confirmation yet; driven by cycle and signals only.",
-          "zh": "自然周期候选点约3.9小时前；历史24小时底座70%。 尚无官方确认，仅周期与信号驱动。"
+          "en": "Natural cycle candidate point was about 4.0h ago; historical 24h baseline 70%. No official confirmation yet; driven by cycle and signals only.",
+          "zh": "自然周期候选点约4.0小时前；历史24小时底座70%。 尚无官方确认，仅周期与信号驱动。"
         },
         "summary": {
           "en": "Elevated reset probability in the next 24h, but currently only cycle and signals — no official confirmation yet.",
@@ -373,8 +373,8 @@
       },
       "detail": {
         "judgment": {
-          "en": "Natural cycle candidate point was about 12.8h ago; historical 24h baseline 70%. Official announcement triggered a downward adjustment, lowering short-term probability; No official reset preview or confirmation, so it cannot be marked as official_confirmed.",
-          "zh": "自然周期候选点约12.8小时前；历史24小时底座70%。 官方公告触发下调，压低短期概率； 没有官方重置预告或落地确认，因此不能标记为official_confirmed。"
+          "en": "Natural cycle candidate point was about 12.9h ago; historical 24h baseline 70%. Official announcement triggered a downward adjustment, lowering short-term probability; No official reset preview or confirmation, so it cannot be marked as official_confirmed.",
+          "zh": "自然周期候选点约12.9小时前；历史24小时底座70%。 官方公告触发下调，压低短期概率； 没有官方重置预告或落地确认，因此不能标记为official_confirmed。"
         },
         "summary": {
           "en": "Currently in a cooling/observation phase; limited reset probability in the next 24h. Plan heavy workloads accordingly.",
@@ -456,7 +456,7 @@
       "signal_strength": "medium",
       "signal_level": "observing",
       "prediction_time": "2026-08-24T04:55:00Z",
-      "countdown_seconds": 58042,
+      "countdown_seconds": 57912,
       "prediction_window": {
         "start": "22:55",
         "end": "10:55"
@@ -542,7 +542,7 @@
       "signal_strength": "medium",
       "signal_level": "observing",
       "prediction_time": "2026-08-24T12:02:30Z",
-      "countdown_seconds": 83692,
+      "countdown_seconds": 83562,
       "prediction_window": {
         "start": "06:02",
         "end": "18:02"
@@ -641,7 +641,7 @@
       "signal_strength": "medium",
       "signal_level": "observing",
       "prediction_time": "2026-08-24T16:02:30Z",
-      "countdown_seconds": 98092,
+      "countdown_seconds": 97962,
       "prediction_window": {
         "start": "10:02",
         "end": "22:02"
@@ -777,7 +777,7 @@
         "en": "Anthropic official status",
         "zh": "Anthropic 官方状态"
       },
-      "status": "recovered",
+      "status": "operational",
       "summary": {
         "en": "Multiple models degraded, now recovered",
         "zh": "multiple models 性能下降，已恢复"

@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /detail.html
 
 Sitemap: https://limitreset.dev/sitemap.xml

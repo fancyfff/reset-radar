@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-23T03:27:12Z",
+  "last_updated": "2026-08-23T03:49:41Z",
   "platforms": [
     {
       "id": "codex",
@@ -10,7 +10,7 @@
       "signal_strength": "high",
       "signal_level": "observing",
       "prediction_time": "2026-08-23T03:30:00Z",
-      "countdown_seconds": 167,
+      "countdown_seconds": 0,
       "prediction_window": {
         "start": "21:30",
         "end": "09:30"
@@ -28,8 +28,8 @@
       },
       "detail": {
         "judgment": {
-          "en": "Natural cycle candidate point was about -0.0h ago; historical 24h baseline 70%. Official release signals push probability up; No official confirmation yet; driven by cycle and signals only.",
-          "zh": "自然周期候选点约-0.0小时前；历史24小时底座70%。 官方发布信号带动概率上调； 尚无官方确认，仅周期与信号驱动。"
+          "en": "Natural cycle candidate point was about 0.3h ago; historical 24h baseline 70%. Official release signals push probability up; No official confirmation yet; driven by cycle and signals only.",
+          "zh": "自然周期候选点约0.3小时前；历史24小时底座70%。 官方发布信号带动概率上调； 尚无官方确认，仅周期与信号驱动。"
         },
         "summary": {
           "en": "Elevated reset probability in the next 24h, but currently only cycle and signals — no official confirmation yet.",
@@ -145,7 +145,7 @@
       "signal_strength": "medium",
       "signal_level": "observing",
       "prediction_time": "2026-08-24T03:01:00Z",
-      "countdown_seconds": 84827,
+      "countdown_seconds": 83478,
       "prediction_window": {
         "start": "21:01",
         "end": "09:01"
@@ -163,8 +163,8 @@
       },
       "detail": {
         "judgment": {
-          "en": "Natural cycle candidate point is about 23.6h away; historical 24h baseline 36%. Official release signals push probability up; No official reset preview or confirmation, so it cannot be marked as official_confirmed.",
-          "zh": "自然周期候选点约23.6小时后；历史24小时底座36%。 官方发布信号带动概率上调； 没有官方重置预告或落地确认，因此不能标记为official_confirmed。"
+          "en": "Natural cycle candidate point is about 23.2h away; historical 24h baseline 36%. Official release signals push probability up; No official reset preview or confirmation, so it cannot be marked as official_confirmed.",
+          "zh": "自然周期候选点约23.2小时后；历史24小时底座36%。 官方发布信号带动概率上调； 没有官方重置预告或落地确认，因此不能标记为official_confirmed。"
         },
         "summary": {
           "en": "Currently in a cooling/observation phase; limited reset probability in the next 24h. Plan heavy workloads accordingly.",
@@ -240,11 +240,11 @@
       "name": "Grok Build",
       "icon": "⚡",
       "logo": "assets/grok.svg",
-      "probability": 67,
+      "probability": 68,
       "signal_strength": "medium",
       "signal_level": "observing",
       "prediction_time": "2026-08-23T08:52:30Z",
-      "countdown_seconds": 19517,
+      "countdown_seconds": 18168,
       "prediction_window": {
         "start": "02:52",
         "end": "14:52"
@@ -262,8 +262,8 @@
       },
       "detail": {
         "judgment": {
-          "en": "Natural cycle candidate point is about 5.4h away; historical 24h baseline 62%. No official reset preview or confirmation, so it cannot be marked as official_confirmed.",
-          "zh": "自然周期候选点约5.4小时后；历史24小时底座62%。 没有官方重置预告或落地确认，因此不能标记为official_confirmed。"
+          "en": "Natural cycle candidate point is about 5.0h away; historical 24h baseline 63%. No official reset preview or confirmation, so it cannot be marked as official_confirmed.",
+          "zh": "自然周期候选点约5.0小时后；历史24小时底座63%。 没有官方重置预告或落地确认，因此不能标记为official_confirmed。"
         },
         "summary": {
           "en": "Currently in a cooling/observation phase; limited reset probability in the next 24h. Plan heavy workloads accordingly.",
@@ -277,13 +277,13 @@
           }
         ],
         "quota_cycle": {
-          "en": "Natural cycle candidate point is about 47.9h (excluding extra resets); historical baseline 62%; no new official reset announcement.",
-          "zh": "自然周期候选点约47.9小时周期（排除额外重置）；历史底座62%；官方重置公告暂无新信号。"
+          "en": "Natural cycle candidate point is about 47.9h (excluding extra resets); historical baseline 63%; no new official reset announcement.",
+          "zh": "自然周期候选点约47.9小时周期（排除额外重置）；历史底座63%；官方重置公告暂无新信号。"
         },
         "candidate_events": [
           {
             "type": "full_reset",
-            "confidence": 0.67,
+            "confidence": 0.68,
             "description": {
               "en": "Natural-cycle candidate recovery point; not an official reset notice.",
               "zh": "自然周期推算的候选额度恢复时点，并非官方重置预告。"
@@ -353,8 +353,8 @@
       },
       "detail": {
         "judgment": {
-          "en": "Natural cycle candidate point was about 3.5h ago; historical 24h baseline 70%. Official announcement triggered a downward adjustment, lowering short-term probability; No official reset preview or confirmation, so it cannot be marked as official_confirmed.",
-          "zh": "自然周期候选点约3.5小时前；历史24小时底座70%。 官方公告触发下调，压低短期概率； 没有官方重置预告或落地确认，因此不能标记为official_confirmed。"
+          "en": "Natural cycle candidate point was about 3.9h ago; historical 24h baseline 70%. Official announcement triggered a downward adjustment, lowering short-term probability; No official reset preview or confirmation, so it cannot be marked as official_confirmed.",
+          "zh": "自然周期候选点约3.9小时前；历史24小时底座70%。 官方公告触发下调，压低短期概率； 没有官方重置预告或落地确认，因此不能标记为official_confirmed。"
         },
         "summary": {
           "en": "Currently in a cooling/observation phase; limited reset probability in the next 24h. Plan heavy workloads accordingly.",
@@ -436,7 +436,7 @@
       "signal_strength": "low",
       "signal_level": "cooling",
       "prediction_time": "2026-08-24T04:55:00Z",
-      "countdown_seconds": 91667,
+      "countdown_seconds": 90318,
       "prediction_window": {
         "start": "22:55",
         "end": "10:55"
@@ -454,8 +454,8 @@
       },
       "detail": {
         "judgment": {
-          "en": "Natural cycle candidate point is about 25.5h away; historical 24h baseline 33%. No official reset preview or confirmation, so it cannot be marked as official_confirmed.",
-          "zh": "自然周期候选点约25.5小时后；历史24小时底座33%。 没有官方重置预告或落地确认，因此不能标记为official_confirmed。"
+          "en": "Natural cycle candidate point is about 25.1h away; historical 24h baseline 33%. No official reset preview or confirmation, so it cannot be marked as official_confirmed.",
+          "zh": "自然周期候选点约25.1小时后；历史24小时底座33%。 没有官方重置预告或落地确认，因此不能标记为official_confirmed。"
         },
         "summary": {
           "en": "Currently in a cooling/observation phase; limited reset probability in the next 24h. Plan heavy workloads accordingly.",
@@ -600,45 +600,79 @@
       "handle": "@thsottiaux",
       "avatar": "",
       "platform": "codex",
-      "last_activity": "2026-08-22T13:49:00Z",
+      "last_activity": "2026-08-22T05:24:01Z",
       "post_count_today": 0,
       "is_active": false,
       "recent_posts": [
         {
-          "time": "2026-08-22T13:49:00Z",
-          "content": {
-            "en": "Replying to Tammie · @tammiesiew where's Claude?",
-            "zh": "回复的原帖 Tammie · @tammiesiew 呢，Claude？"
-          },
-          "url": "",
+          "time": "2026-08-22T05:24:01.000Z",
+          "content": "Update on rate limits in Codex. We do see that for some users the cache hit rate has been worse this week than the stable state the weeks before. This could explain that usage is draining somewhat faster for those users as hitting the cache consistently is an important component",
+          "url": "https://x.com/thsottiaux/status/2091033630147854385",
+          "has_keywords": true,
+          "keywords": [
+            "limit",
+            "codex"
+          ]
+        },
+        {
+          "time": "2026-08-22T04:06:48.000Z",
+          "content": "@ajambrosino\n thought it was too hard to upload music to twitter, so he just prompted a whole music app hosted on ChatGPT Sites into existence just to share his album",
+          "url": "https://x.com/thsottiaux/status/2091014197144596734",
           "has_keywords": false,
           "keywords": []
         },
         {
-          "time": "2026-08-22T13:48:00Z",
-          "content": {
-            "en": "@tammiesiew Codex has nothing to hide",
-            "zh": "@tammiesiew Codex 没有什么可隐瞒的"
-          },
-          "url": "",
+          "time": "2026-08-22T00:50:36.000Z",
+          "content": "The banked reset has landed, I repeat, the banked reset has landed. Have an amazing weekend.",
+          "url": "https://x.com/thsottiaux/status/2090964822422949999",
           "has_keywords": true,
           "keywords": [
+            "reset"
+          ]
+        },
+        {
+          "time": "2026-08-21T23:40:34.000Z",
+          "content": "The banked reset will be there by 8pm PST. For all paid users of ChatGPT Work and Codex. Do with this information what you may.",
+          "url": "https://x.com/thsottiaux/status/2090947196107764189",
+          "has_keywords": true,
+          "keywords": [
+            "reset",
             "codex"
           ]
         },
         {
-          "time": "2026-08-22T11:20:00Z",
-          "content": {
-            "en": "We just shipped a quota increase for Codex users.",
-            "zh": "我们刚为 Codex 用户提升了额度。"
-          },
-          "url": "",
+          "time": "2026-08-21T19:43:11.000Z",
+          "content": "Sol shines brighter today. Efficiency, reliability and performance are the name of the game.",
+          "url": "https://x.com/thsottiaux/status/2090887457915232269",
+          "has_keywords": false,
+          "keywords": []
+        },
+        {
+          "time": "2026-08-21T11:43:19.000Z",
+          "content": "It's me again. I come bearing great news. \n\nFirst of all, we have hit 20M active users for Codex some time this week. Second of all, this is cause for celebration and during the day we will credit every Codex and ChatGPT Work user with a BANKED reset that you can use at your own",
+          "url": "https://x.com/thsottiaux/status/2090766694897619318",
           "has_keywords": true,
           "keywords": [
-            "quota",
-            "额度",
+            "reset",
             "codex"
           ]
+        },
+        {
+          "time": "2026-08-21T05:39:04.000Z",
+          "content": "We've investigated a few messages about codex usage limits being different. That's not something we change without engaging the community and being transparent.\n\nWhat we did see is that when talking to affected users many were using sub2api. Converting a subscription into api",
+          "url": "https://x.com/thsottiaux/status/2090675027670978569",
+          "has_keywords": true,
+          "keywords": [
+            "limit",
+            "codex"
+          ]
+        },
+        {
+          "time": "2026-08-21T02:46:59.000Z",
+          "content": "Yay, you can now make transparent images in ChatGPT and through the API with GPT-Image-2. Here is a cactus cactus I am about to print and put on my laptop.",
+          "url": "https://x.com/thsottiaux/status/2090631723302469995",
+          "has_keywords": false,
+          "keywords": []
         }
       ]
     }

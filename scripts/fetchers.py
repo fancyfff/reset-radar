@@ -28,17 +28,21 @@ import subprocess
 import sys
 from datetime import datetime, timezone
 
-UA = {"User-Agent": "ResetRadar/1.0 (+scheduled quota radar)"}
-HTTP_TIMEOUT = 12
+# 浏览器 UA：status.x.ai 等站用 Cloudflare 类防护，非浏览器 UA 常被 403/直接断开。
+# 用真实浏览器 UA 可明显提高此类站点抓取通过率。
+UA = {"User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                     "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")}
+HTTP_TIMEOUT = 15
 RETRIES = 2
 
 # 子进程内执行的极简抓取脚本：成功则原样打印响应体，失败则退出码非 0。
+# 子进程同样使用浏览器 UA（统一传给脚本，避免重复硬编码）。
 _FETCH_SCRIPT = (
     "import sys, json, urllib.request\n"
-    "url = sys.argv[1]\n"
-    "req = urllib.request.Request(url, headers={'User-Agent': 'ResetRadar/1.0'})\n"
+    "url, ua = sys.argv[1], sys.argv[2]\n"
+    "req = urllib.request.Request(url, headers={'User-Agent': ua})\n"
     "try:\n"
-    "    with urllib.request.urlopen(req, timeout=12) as r:\n"
+    "    with urllib.request.urlopen(req, timeout=15) as r:\n"
     "        sys.stdout.write(r.read().decode('utf-8', 'replace'))\n"
     "except Exception:\n"
     "    sys.exit(3)\n"
@@ -52,7 +56,7 @@ def _get_json(url):
     for _ in range(RETRIES + 1):
         try:
             proc = subprocess.run(
-                [sys.executable, "-c", _FETCH_SCRIPT, url],
+                [sys.executable, "-c", _FETCH_SCRIPT, url, UA["User-Agent"]],
                 capture_output=True, text=True,
                 start_new_session=True,          # 新会话：与主进程隔离
                 timeout=HTTP_TIMEOUT + 6,

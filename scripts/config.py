@@ -105,7 +105,7 @@ PLATFORMS = {
         "name": "Kimi",
         "icon": "🌊",
         "logo": "assets/kimi.svg",
-        "github_repo": "",
+        "github_repo": "MoonshotAI/kimi-code",
         "status_base": "",
         "status_api": "",
         "resets": [
@@ -125,7 +125,7 @@ PLATFORMS = {
         "name": "MiniMax",
         "icon": "🎯",
         "logo": "assets/minimax.svg",
-        "github_repo": "",
+        "github_repo": "MiniMax-AI/cli",
         "status_base": "",
         "status_api": "",
         "resets": [

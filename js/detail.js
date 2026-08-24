@@ -24,9 +24,12 @@ function eventsHtml(arr) {
 }
 
 // 历史重置记录：常规重置 / 额外重置 / 未重置 三种标记
+// 只展示「实测确认」的真实记录（source = observed / manual）；种子(seed)与
+// 自动判定(auto)的重置/未重置点属于推测或占位数据，不向用户展示。
 function historyHtml(arr) {
-  if (!arr || !arr.length) return `<p style="color:var(--text-dim)">${I18N.t("d.noRecords")}</p>`;
-  return `<div class="timeline">` + arr.map((h) => {
+  const real = (arr || []).filter((h) => h && h.source && h.source !== "seed" && h.source !== "auto");
+  if (!real.length) return `<p style="color:var(--text-dim)">${I18N.t("d.noRecords")}</p>`;
+  return `<div class="timeline">` + real.map((h) => {
     const isNo = h.type === "no_reset";
     const isExtra = h.is_extra;
     const cls = isNo ? "tl-no" : isExtra ? "tl-extra" : "tl-reset";
@@ -54,20 +57,34 @@ function lastResetHtml(lr) {
   </div>`;
 }
 
+// 上次重置区块：仅在确有「实测确认」重置记录时展示，种子/推测数据不展示
+function lastResetBlockHtml(lr, title) {
+  const src = lr && lr.source;
+  if (!src || src === "seed" || src === "auto") return "";
+  return section(title, lastResetHtml(lr));
+}
+
+// 历史重置区块：无「实测确认」记录时整块不展示，避免空标题或展示推测数据
+function historyBlockHtml(d, title) {
+  const real = (d.history || []).filter((h) => h && h.source && h.source !== "seed" && h.source !== "auto");
+  if (!real.length) return "";
+  return section(title, historyHtml(real));
+}
+
 // 生成平台详情 HTML（gauge + 各分析区块），容器无关，供详情页与首页内联复用
 function platformDetailInner(p) {
   const lvl = signalLevelLabel(p.signal_level);
   const pred = p.prediction_time ? fmtWhen(p.prediction_time) : "—";
   const d = p.detail || {};
   const blocks = [
-    section(I18N.t("d.lastResetTitle"), lastResetHtml(p.last_reset)),
+    lastResetBlockHtml(p.last_reset, I18N.t("d.lastResetTitle")),
     section(I18N.t("d.judgmentTitle"), `<p>${escapeHtml(I18N.pick(d.judgment) || "—")}</p>`),
     section(I18N.t("d.summaryTitle"), `<p>${escapeHtml(I18N.pick(d.summary) || "—")}</p>`),
     section(I18N.t("d.modelTitle"), listHtml(d.model_signals)),
     section(I18N.t("d.communityTitle"), listHtml(d.community_signals)),
     section(I18N.t("d.cycleTitle"), `<p>${escapeHtml(I18N.pick(d.quota_cycle) || "—")}</p>`),
     section(I18N.t("d.eventsTitle"), eventsHtml(d.candidate_events)),
-    section(I18N.t("d.historyTitle"), historyHtml(d.history)),
+    historyBlockHtml(d, I18N.t("d.historyTitle")),
     section(I18N.t("d.quotaTitle"), quotaChartHtml(d.weekly_quota)),
   ].join("");
   return `

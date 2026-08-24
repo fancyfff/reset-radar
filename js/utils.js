@@ -69,13 +69,13 @@ function tzAbbr() {
   return "GMT" + sign + h + (m ? ":" + String(m).padStart(2, "0") : "");
 }
 
-// 解析 ISO 时间字符串为本地可读（附加本地时区缩写）
+// 解析 ISO 时间字符串为本地可读（已换算为浏览器本地时刻；不再附加时区后缀，用户看到的即当地时间，无需换算）
 function fmtWhen(iso) {
   if (!iso) return "—";
   const d = new Date(iso);
   if (isNaN(d)) return iso;
   const p = (n) => String(n).padStart(2, "0");
-  return `${p(d.getMonth() + 1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())} ${tzAbbr()}`;
+  return `${p(d.getMonth() + 1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}`;
 }
 
 function toast(msg) {

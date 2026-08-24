@@ -329,12 +329,13 @@ def compute_platform(pid, cfg, now, resets, signals):
     start = (prediction_time - timedelta(hours=6)).strftime("%H:%M")
     end = (prediction_time + timedelta(hours=6)).strftime("%H:%M")
 
-    # 上次重置（含原因 / 额外重置标记）
+    # 上次重置（含原因 / 额外重置标记）。source 标记是否实测，前端据此决定是否展示。
     last_reset = {
         "time": last_dt.strftime("%Y-%m-%dT%H:%M:%SZ"),
         "reason": last_meta.get("reason", bi("Regular cycle reset", "常规周期重置")),
         "reason_type": last_meta.get("reason_type", "normal" if not last_meta["is_extra"] else "milestone"),
         "is_extra_reset": bool(last_meta["is_extra"]),
+        "source": last_meta.get("source", "seed"),
     }
 
     # 文案（双语）

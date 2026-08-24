@@ -52,13 +52,7 @@ PLATFORMS = {
             "trend": [2191, 1830, 1693, 1520, 1291.34],
             "labels": ["8.14", "8.17", "8.20", "8.21", bi("Today", "今日")],
         },
-        "signals": [
-            {
-                "kind": "community",
-                "text": bi("Independent recovery & quota pressure feedback in the last 24h (small sample).",
-                          "近24小时有独立恢复反馈与额度压力反馈，样本很小。"),
-            },
-        ],
+        "signals": [],
     },
     "claude": {
         "name": "Claude Code",
@@ -94,12 +88,7 @@ PLATFORMS = {
             {"time": "2026-08-17T09:15:00Z", "reason": bi("Regular cycle reset", "常规周期重置"), "is_extra": False},
         ],
         "weekly_quota": None,
-        "signals": [
-            {
-                "kind": "community",
-                "text": bi("Limited community feedback; cannot confirm a reset.", "社区反馈样本有限，无法确认落地。"),
-            },
-        ],
+        "signals": [],
     },
     "kimi": {
         "name": "Kimi",

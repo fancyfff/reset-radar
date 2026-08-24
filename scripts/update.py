@@ -154,7 +154,24 @@ def build_signals(pid, cfg, now=None):
                 "url": recent[0]["html_url"],
             })
 
-    # 2) Statuspage Incidents -> service / 官方事件（真实）
+    # 2) GitHub Issues/Discussions -> community 社区信号（真实，取代手写种子）
+    if repo:
+        issues, i_ok = fetchers.fetch_github_community_issues(repo)
+        real_fetched = real_fetched or i_ok
+        recent_issues = [
+            i for i in issues
+            if (now - i["created_at"]).total_seconds() <= 24 * 3600
+        ]
+        for i in recent_issues[:3]:
+            sigs.append({
+                "kind": "community",
+                "text": bi(f"Community: {i['title']} (issue #{i['number']})",
+                           f"社区：{i['title']}（issue #{i['number']}）"),
+                "source": "github",
+                "url": i["html_url"],
+            })
+
+    # 3) Statuspage Incidents -> service / 官方事件（真实）
     base = cfg.get("status_base", "")
     if base:
         incidents, ok = fetchers.fetch_statuspage_incidents(base, 6)

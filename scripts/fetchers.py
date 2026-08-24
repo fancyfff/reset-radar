@@ -27,6 +27,7 @@ import os
 import subprocess
 import sys
 from datetime import datetime, timezone
+from urllib.parse import urlencode
 
 # 浏览器 UA：status.x.ai 等站用 Cloudflare 类防护，非浏览器 UA 常被 403/直接断开。
 # 用真实浏览器 UA 可明显提高此类站点抓取通过率。
@@ -99,6 +100,37 @@ def fetch_github_releases(repo, count=6):
             "tag": rel.get("tag_name", "") or "",
             "name": (rel.get("name") or rel.get("tag_name") or "").strip() or rel.get("tag_name", ""),
             "html_url": rel.get("html_url", "") or "",
+        })
+    return out, True
+
+
+def fetch_github_community_issues(repo, keywords=("quota", "reset", "limit"), limit=8):
+    """repo 形如 'openai/codex'。通过 GitHub 搜索 API 抓取仓库里涉及额度/重置的
+    issue / 讨论（真实用户反馈），作为 community 社区信号来源。
+
+    使用 Search API（未认证 10 次/分钟/IP，周期任务足够）。只保留 issue，
+    剔除 PR。返回 [{"created_at": datetime, "title": str, "number": int,
+    "html_url": str, "comments": int}]，失败返回 ([], False)。
+    """
+    q = f'repo:{repo} is:issue ({" OR ".join(keywords)})'
+    url = "https://api.github.com/search/issues?" + urlencode(
+        {"q": q, "sort": "created", "order": "desc", "per_page": limit})
+    data = _get_json(url)
+    if not isinstance(data, dict):
+        return [], False
+    out = []
+    for it in data.get("items", [])[:limit]:
+        if "pull_request" in it:          # 搜索结果可能含 PR，过滤
+            continue
+        dt = _parse_iso(it.get("created_at"))
+        if not dt:
+            continue
+        out.append({
+            "created_at": dt,
+            "title": it.get("title", ""),
+            "number": it.get("number"),
+            "html_url": it.get("html_url", ""),
+            "comments": it.get("comments", 0),
         })
     return out, True
 

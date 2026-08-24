@@ -19,6 +19,9 @@ service-account*.json
 vault.txt
 secrets.*
 
+# 监控脚本本地状态（记录已处理过的预测点，勿提交）
+data/.monitor_state.json
+
 # ---- 发行物产物 ----
 __pycache__/
 *.pyc

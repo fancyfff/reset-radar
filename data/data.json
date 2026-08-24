@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-24T14:08:23Z",
+  "last_updated": "2026-08-24T14:10:30Z",
   "platforms": [
     {
       "id": "codex",
@@ -10,7 +10,7 @@
       "signal_strength": "high",
       "signal_level": "observing",
       "prediction_time": "2026-08-25T03:30:00Z",
-      "countdown_seconds": 48096,
+      "countdown_seconds": 47969,
       "prediction_window": {
         "start": "21:30",
         "end": "09:30"
@@ -28,8 +28,8 @@
       },
       "detail": {
         "judgment": {
-          "en": "Natural cycle candidate point was about 34.6h ago; historical 24h baseline 70%. Official release signals push probability up; No official confirmation yet; driven by cycle and signals only.",
-          "zh": "自然周期候选点约34.6小时前；历史24小时底座70%。 官方发布信号带动概率上调； 尚无官方确认，仅周期与信号驱动。"
+          "en": "Natural cycle candidate point was about 34.7h ago; historical 24h baseline 70%. Official release signals push probability up; No official confirmation yet; driven by cycle and signals only.",
+          "zh": "自然周期候选点约34.7小时前；历史24小时底座70%。 官方发布信号带动概率上调； 尚无官方确认，仅周期与信号驱动。"
         },
         "summary": {
           "en": "Elevated reset probability in the next 24h, but currently only cycle and signals — no official confirmation yet.",
@@ -155,7 +155,7 @@
       "signal_strength": "high",
       "signal_level": "observing",
       "prediction_time": "2026-08-26T03:02:00Z",
-      "countdown_seconds": 132816,
+      "countdown_seconds": 132689,
       "prediction_window": {
         "start": "21:02",
         "end": "09:02"
@@ -173,8 +173,8 @@
       },
       "detail": {
         "judgment": {
-          "en": "Natural cycle candidate point was about 11.1h ago; historical 24h baseline 70%. No official confirmation yet; driven by cycle and signals only.",
-          "zh": "自然周期候选点约11.1小时前；历史24小时底座70%。 尚无官方确认，仅周期与信号驱动。"
+          "en": "Natural cycle candidate point was about 11.2h ago; historical 24h baseline 70%. No official confirmation yet; driven by cycle and signals only.",
+          "zh": "自然周期候选点约11.2小时前；历史24小时底座70%。 尚无官方确认，仅周期与信号驱动。"
         },
         "summary": {
           "en": "Elevated reset probability in the next 24h, but currently only cycle and signals — no official confirmation yet.",
@@ -251,7 +251,7 @@
       "signal_strength": "high",
       "signal_level": "observing",
       "prediction_time": "2026-08-25T08:45:00Z",
-      "countdown_seconds": 66996,
+      "countdown_seconds": 66869,
       "prediction_window": {
         "start": "02:45",
         "end": "14:45"
@@ -352,7 +352,7 @@
       "signal_strength": "medium",
       "signal_level": "observing",
       "prediction_time": "2026-08-24T23:52:30Z",
-      "countdown_seconds": 35046,
+      "countdown_seconds": 34919,
       "prediction_window": {
         "start": "17:52",
         "end": "05:52"
@@ -453,7 +453,7 @@
       "signal_strength": "high",
       "signal_level": "observing",
       "prediction_time": "2026-08-26T04:50:00Z",
-      "countdown_seconds": 139296,
+      "countdown_seconds": 139169,
       "prediction_window": {
         "start": "22:50",
         "end": "10:50"
@@ -471,8 +471,8 @@
       },
       "detail": {
         "judgment": {
-          "en": "Natural cycle candidate point was about 9.2h ago; historical 24h baseline 70%. No official confirmation yet; driven by cycle and signals only.",
-          "zh": "自然周期候选点约9.2小时前；历史24小时底座70%。 尚无官方确认，仅周期与信号驱动。"
+          "en": "Natural cycle candidate point was about 9.3h ago; historical 24h baseline 70%. No official confirmation yet; driven by cycle and signals only.",
+          "zh": "自然周期候选点约9.3小时前；历史24小时底座70%。 尚无官方确认，仅周期与信号驱动。"
         },
         "summary": {
           "en": "Elevated reset probability in the next 24h, but currently only cycle and signals — no official confirmation yet.",
@@ -549,7 +549,7 @@
       "signal_strength": "high",
       "signal_level": "observing",
       "prediction_time": "2026-08-26T12:05:00Z",
-      "countdown_seconds": 165396,
+      "countdown_seconds": 165269,
       "prediction_window": {
         "start": "06:05",
         "end": "18:05"
@@ -645,7 +645,7 @@
       "signal_strength": "high",
       "signal_level": "observing",
       "prediction_time": "2026-08-24T16:02:30Z",
-      "countdown_seconds": 6846,
+      "countdown_seconds": 6719,
       "prediction_window": {
         "start": "10:02",
         "end": "22:02"

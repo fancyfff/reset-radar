@@ -305,6 +305,23 @@ body {
   #cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
+/* ---------- 首页内联详情：桌面端自适应 ---------- */
+/* 内联详情是 #cards 的一个子项，桌面端需跨满网格，并让模块在宽屏下错落排布，
+   而不是像移动端那样被挤压成单列（单列会造成每个模块宽度≈移动端）。 */
+@media (min-width: 768px) {
+  .inline-detail { grid-column: 1 / -1; }
+  .inline-detail .gauge,
+  .inline-detail .block { margin-left: 0; margin-right: 0; }
+  .inline-detail .blocks {
+    /* 用 CSS 多列做等间距瀑布流：每个模块保持自身高度、同列间距均匀，
+       避免网格定行高导致矮模块下方留白、间距忽大忽小 */
+    column-count: 2;
+    column-gap: 16px;
+  }
+  .inline-detail .block { break-inside: avoid; }
+  .inline-detail .block h3 { font-size: 15px; }
+}
+
 /* ---------- 详情 gauge 网格 ---------- */
 .gauge-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 12px; margin-top: 12px; }
 .gauge-grid > div { display: flex; flex-direction: column; gap: 2px; }

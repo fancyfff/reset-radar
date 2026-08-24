@@ -22,6 +22,7 @@
 
       // ---------- 首页 ----------
       "home.loading": "Loading prediction data…",
+      "tabs.all": "Overview",
       "card.expected": "Expected reset: ",
       "card.countdown": "Countdown: ",
       "card.confidence": "Confidence: ",
@@ -122,6 +123,7 @@
       "meta.source": "数据来源: 官方API",
 
       "home.loading": "正在加载预测数据…",
+      "tabs.all": "总览",
       "card.expected": "预计重置: ",
       "card.countdown": "倒计时: ",
       "card.confidence": "置信度: ",

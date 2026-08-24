@@ -2,7 +2,9 @@
 
 function renderTopMeta(data) {
   const el = document.getElementById("meta");
-  const upd = data.last_updated ? fmtWhen(data.last_updated).split(" ")[1] : nowClock();
+  const upd = data.last_updated
+    ? fmtWhen(data.last_updated).split(" ").slice(1).join(" ")
+    : nowClock() + " " + tzAbbr();
   el.innerHTML =
     `<span class="dot">●</span> ${I18N.t("meta.lastUpdated")}${escapeHtml(upd)}` +
     `<span>·</span><span>${I18N.t("meta.source")}</span>`;
@@ -10,19 +12,42 @@ function renderTopMeta(data) {
 
 function renderTabs(platforms, activeId) {
   const wrap = document.getElementById("tabs");
-  wrap.innerHTML = platforms
+  const activeKey = activeId ? activeId : "";
+  const allChip =
+    `<div class="tab ${activeKey === "" ? "active" : ""}" data-id="">${escapeHtml(I18N.t("tabs.all"))}</div>`;
+  wrap.innerHTML = allChip + platforms
     .map(
       (p) =>
-        `<div class="tab ${p.id === activeId ? "active" : ""}" data-id="${escapeHtml(p.id)}">${logoOrIcon(p)} ${escapeHtml(p.name)}</div>`
+        `<div class="tab ${p.id === activeKey ? "active" : ""}" data-id="${escapeHtml(p.id)}">${logoOrIcon(p)} ${escapeHtml(p.name)}</div>`
     )
     .join("");
   wrap.querySelectorAll(".tab").forEach((t) => {
     t.addEventListener("click", () => {
-      const id = t.dataset.id;
-      wrap.querySelectorAll(".tab").forEach((x) => x.classList.toggle("active", x.dataset.id === id));
-      renderCards(platforms, id);
+      const id = t.dataset.id || null;
+      window.__activeId = id;
+      wrap.querySelectorAll(".tab").forEach((x) => x.classList.toggle("active", (x.dataset.id || null) === id));
+      selectPlatform(platforms, id);
     });
   });
+}
+
+// 选中某平台 → 在首页内联展示该平台完整详情（不跳转详情页）；回到 Overview 则展示概览卡片
+function selectPlatform(platforms, selectedId) {
+  const root = document.getElementById("cards");
+  if (!selectedId) {
+    renderCards(platforms, null);
+    return;
+  }
+  const p = platforms.find((x) => x.id === selectedId);
+  if (!p) {
+    renderCards(platforms, null);
+    return;
+  }
+  const d = document.createElement("div");
+  d.className = "inline-detail";
+  root.innerHTML = "";
+  root.appendChild(d);
+  renderPlatformDetail(d, p);
 }
 
 function cardHtml(p) {
@@ -77,8 +102,9 @@ async function init() {
     const data = await API.load();
     renderTopMeta(data);
     const platforms = data.platforms || [];
-    renderTabs(platforms, null);
-    renderCards(platforms, null);
+    const activeId = window.__activeId || null;
+    renderTabs(platforms, activeId);
+    selectPlatform(platforms, activeId);
     setActiveNav("home");
   } catch (e) {
     root.innerHTML = `<div class="empty">${I18N.t("home.fail")}${escapeHtml(e.message)}</div>`;

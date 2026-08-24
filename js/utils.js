@@ -60,13 +60,22 @@ function nowClock() {
   return `${p(d.getHours())}:${p(d.getMinutes())}`;
 }
 
-// 解析 ISO 时间字符串为本地可读
+// 本地时区缩写（如 GMT+8 / GMT-7），符合英语用户直接参照当地时间的习惯
+function tzAbbr() {
+  const off = -new Date().getTimezoneOffset(); // 东为正，单位分钟
+  const sign = off >= 0 ? "+" : "-";
+  const h = Math.floor(Math.abs(off) / 60);
+  const m = Math.abs(off) % 60;
+  return "GMT" + sign + h + (m ? ":" + String(m).padStart(2, "0") : "");
+}
+
+// 解析 ISO 时间字符串为本地可读（附加本地时区缩写）
 function fmtWhen(iso) {
   if (!iso) return "—";
   const d = new Date(iso);
   if (isNaN(d)) return iso;
   const p = (n) => String(n).padStart(2, "0");
-  return `${p(d.getMonth() + 1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}`;
+  return `${p(d.getMonth() + 1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())} ${tzAbbr()}`;
 }
 
 function toast(msg) {

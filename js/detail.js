@@ -54,42 +54,10 @@ function lastResetHtml(lr) {
   </div>`;
 }
 
-function render(p) {
-  document.getElementById("ptitle").innerHTML = logoOrIcon(p);
-  document.getElementById("dtitle").innerHTML = escapeHtml(p.name) + (p.data_source === "seed" ? ` <i class="seed-badge">${I18N.t("badge.seed")}</i>` : "");
-  const win = p.prediction_window ? `${escapeHtml(p.prediction_window.start)} ~ ${escapeHtml(p.prediction_window.end)}` : "—";
+// 生成平台详情 HTML（gauge + 各分析区块），容器无关，供详情页与首页内联复用
+function platformDetailInner(p) {
   const lvl = signalLevelLabel(p.signal_level);
   const pred = p.prediction_time ? fmtWhen(p.prediction_time) : "—";
-
-  // gauge（含倒计时，逐秒跳动）
-  const g = document.getElementById("gauge");
-  g.innerHTML = `
-    <div class="big" data-prob="${p.probability}" style="color:${colorFor(p.probability)}">0%</div>
-    <div class="bar"><i style="width:0%;background:linear-gradient(90deg,${colorFor(p.probability)},var(--accent-2))"></i></div>
-    <div class="gauge-grid">
-      <div><span class="gl">${I18N.t("g.expected")}</span><b>${escapeHtml(pred)}</b></div>
-      <div><span class="gl">${I18N.t("g.countdown")}</span><b id="cd">${escapeHtml(fmtCountdownClock(p.countdown_seconds))}</b></div>
-      <div><span class="gl">${I18N.t("g.confidence")}</span><b>${p.confidence}%</b></div>
-      <div><span class="gl">${I18N.t("g.signal")}</span><b>${escapeHtml(lvl)}</b></div>
-    </div>`;
-  const bigEl = g.querySelector(".big");
-  const tgt = p.probability;
-  countUp(bigEl, tgt);
-  setTimeout(() => { bigEl.innerHTML = tgt + "%"; }, 950);
-  requestAnimationFrame(() => { g.querySelector(".bar > i").style.width = tgt + "%"; });
-
-  // 倒计时跳动
-  let remain = Math.max(0, Math.floor(p.countdown_seconds || 0));
-  const cdEl = g.querySelector("#cd");
-  if (cdEl && remain > 0) {
-    clearInterval(window.__cdTimer);
-    window.__cdTimer = setInterval(() => {
-      remain -= 1;
-      if (remain <= 0) { cdEl.textContent = I18N.t("detail.windowReached"); clearInterval(window.__cdTimer); return; }
-      cdEl.textContent = fmtCountdownClock(remain);
-    }, 1000);
-  }
-
   const d = p.detail || {};
   const blocks = [
     section(I18N.t("d.lastResetTitle"), lastResetHtml(p.last_reset)),
@@ -102,16 +70,57 @@ function render(p) {
     section(I18N.t("d.historyTitle"), historyHtml(d.history)),
     section(I18N.t("d.quotaTitle"), quotaChartHtml(d.weekly_quota)),
   ].join("");
+  return `
+  <div class="gauge">
+    <div class="big" data-prob="${p.probability}" style="color:${colorFor(p.probability)}">0%</div>
+    <div class="bar"><i style="width:0%;background:linear-gradient(90deg,${colorFor(p.probability)},var(--accent-2))"></i></div>
+    <div class="gauge-grid">
+      <div><span class="gl">${I18N.t("g.expected")}</span><b>${escapeHtml(pred)}</b></div>
+      <div><span class="gl">${I18N.t("g.countdown")}</span><b class="cd">${escapeHtml(fmtCountdownClock(p.countdown_seconds))}</b></div>
+      <div><span class="gl">${I18N.t("g.confidence")}</span><b>${p.confidence}%</b></div>
+      <div><span class="gl">${I18N.t("g.signal")}</span><b>${escapeHtml(lvl)}</b></div>
+    </div>
+  </div>
+  <div class="blocks">${blocks}</div>`;
+}
 
-  document.getElementById("blocks").innerHTML = blocks;
-  window.ICON.decorate(document.body);
+// 将平台详情渲染进指定容器 root（详情页 + 首页内联共用）
+function renderPlatformDetail(root, p) {
+  if (!root || !p) return;
+  if (window.__cdTimer) { clearInterval(window.__cdTimer); window.__cdTimer = null; }
+  root.innerHTML = platformDetailInner(p);
+  const g = root.querySelector(".gauge");
+  const bigEl = g.querySelector(".big");
+  const tgt = p.probability;
+  countUp(bigEl, tgt);
+  setTimeout(() => { bigEl.innerHTML = tgt + "%"; }, 950);
+  requestAnimationFrame(() => { g.querySelector(".bar > i").style.width = tgt + "%"; });
+  // 倒计时跳动
+  let remain = Math.max(0, Math.floor(p.countdown_seconds || 0));
+  const cdEl = g.querySelector(".cd");
+  if (cdEl && remain > 0) {
+    window.__cdTimer = setInterval(() => {
+      remain -= 1;
+      if (remain <= 0) { cdEl.textContent = I18N.t("detail.windowReached"); clearInterval(window.__cdTimer); window.__cdTimer = null; return; }
+      cdEl.textContent = fmtCountdownClock(remain);
+    }, 1000);
+  }
+  window.ICON.decorate(root);
+}
+
+function render(p) {
+  document.getElementById("ptitle").innerHTML = logoOrIcon(p);
+  document.getElementById("dtitle").innerHTML = escapeHtml(p.name) + (p.data_source === "seed" ? ` <i class="seed-badge">${I18N.t("badge.seed")}</i>` : "");
+  renderPlatformDetail(document.getElementById("detail"), p);
 }
 
 async function init() {
+  // 首页内联复用时容器 #detail 不存在，直接跳过（由 app.js 调用 renderPlatformDetail）
+  const root = document.getElementById("detail");
+  if (!root) return;
   const id = new URLSearchParams(location.search).get("id");
-  const root = document.getElementById("blocks");
   try {
-    const [p] = await Promise.all([API.getPlatform(id)]);
+    const p = await API.getPlatform(id);
     if (!p) { root.innerHTML = `<div class="empty">${I18N.t("d.notFound")}</div>`; return; }
     document.title = `Reset Radar · ${p.name}`;
     render(p);

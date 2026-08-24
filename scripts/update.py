@@ -320,6 +320,10 @@ def compute_platform(pid, cfg, now, resets, signals):
 
     # 预测时间 + 倒计时
     prediction_time = last_dt + timedelta(hours=avg_cycle)
+    # 预测点已过且未发生重置 → 顺延到下一个未来候选周期（保持倒计时始终面向未来）
+    if avg_cycle > 0 and prediction_time < now:
+        cycles_passed = int((now - prediction_time).total_seconds() // (avg_cycle * 3600)) + 1
+        prediction_time += timedelta(hours=avg_cycle * cycles_passed)
     countdown_seconds = max(0, int((prediction_time - now).total_seconds()))
     # 预测窗口：期望重置点前后各 6 小时
     start = (prediction_time - timedelta(hours=6)).strftime("%H:%M")

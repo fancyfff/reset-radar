@@ -1,0 +1,485 @@
+[
+  {
+    "id": "evt_codex_202608170330",
+    "product_id": "codex",
+    "event_type": "global_reset",
+    "scope": {
+      "type": "global"
+    },
+    "effective_at": "2026-08-17T03:30:00Z",
+    "detected_at": "2026-08-17T03:30:00Z",
+    "announced_at": null,
+    "reset_kind": "extra",
+    "status": "seed",
+    "reason": {
+      "en": "Celebrating 15M active Codex users",
+      "zh": "庆祝 Codex 活跃用户达到 1500 万"
+    },
+    "source": {
+      "type": "seed",
+      "provider": "seed",
+      "url": null
+    },
+    "confidence": 0.45
+  },
+  {
+    "id": "evt_codex_202608190330",
+    "product_id": "codex",
+    "event_type": "regular_reset",
+    "scope": {
+      "type": "account"
+    },
+    "effective_at": "2026-08-19T03:30:00Z",
+    "detected_at": "2026-08-19T03:30:00Z",
+    "announced_at": null,
+    "reset_kind": "regular",
+    "status": "seed",
+    "reason": {
+      "en": "Regular cycle reset",
+      "zh": "常规周期重置"
+    },
+    "source": {
+      "type": "seed",
+      "provider": "seed",
+      "url": null
+    },
+    "confidence": 0.45
+  },
+  {
+    "id": "evt_codex_202608210330",
+    "product_id": "codex",
+    "event_type": "regular_reset",
+    "scope": {
+      "type": "account"
+    },
+    "effective_at": "2026-08-21T03:30:00Z",
+    "detected_at": "2026-08-21T03:30:00Z",
+    "announced_at": null,
+    "reset_kind": "regular",
+    "status": "seed",
+    "reason": {
+      "en": "Regular cycle reset",
+      "zh": "常规周期重置"
+    },
+    "source": {
+      "type": "seed",
+      "provider": "seed",
+      "url": null
+    },
+    "confidence": 0.45
+  },
+  {
+    "id": "evt_claude_202608180258",
+    "product_id": "claude",
+    "event_type": "regular_reset",
+    "scope": {
+      "type": "account"
+    },
+    "effective_at": "2026-08-18T02:58:00Z",
+    "detected_at": "2026-08-18T02:58:00Z",
+    "announced_at": null,
+    "reset_kind": "regular",
+    "status": "seed",
+    "reason": {
+      "en": "Regular cycle reset",
+      "zh": "常规周期重置"
+    },
+    "source": {
+      "type": "seed",
+      "provider": "seed",
+      "url": null
+    },
+    "confidence": 0.45
+  },
+  {
+    "id": "evt_claude_202608200305",
+    "product_id": "claude",
+    "event_type": "regular_reset",
+    "scope": {
+      "type": "account"
+    },
+    "effective_at": "2026-08-20T03:05:00Z",
+    "detected_at": "2026-08-20T03:05:00Z",
+    "announced_at": null,
+    "reset_kind": "regular",
+    "status": "seed",
+    "reason": {
+      "en": "Regular cycle reset",
+      "zh": "常规周期重置"
+    },
+    "source": {
+      "type": "seed",
+      "provider": "seed",
+      "url": null
+    },
+    "confidence": 0.45
+  },
+  {
+    "id": "evt_claude_202608220300",
+    "product_id": "claude",
+    "event_type": "regular_reset",
+    "scope": {
+      "type": "account"
+    },
+    "effective_at": "2026-08-22T03:00:00Z",
+    "detected_at": "2026-08-22T03:00:00Z",
+    "announced_at": null,
+    "reset_kind": "regular",
+    "status": "seed",
+    "reason": {
+      "en": "Regular cycle reset",
+      "zh": "常规周期重置"
+    },
+    "source": {
+      "type": "seed",
+      "provider": "seed",
+      "url": null
+    },
+    "confidence": 0.45
+  },
+  {
+    "id": "evt_grok_202608170915",
+    "product_id": "grok",
+    "event_type": "regular_reset",
+    "scope": {
+      "type": "account"
+    },
+    "effective_at": "2026-08-17T09:15:00Z",
+    "detected_at": "2026-08-17T09:15:00Z",
+    "announced_at": null,
+    "reset_kind": "regular",
+    "status": "seed",
+    "reason": {
+      "en": "Regular cycle reset",
+      "zh": "常规周期重置"
+    },
+    "source": {
+      "type": "seed",
+      "provider": "seed",
+      "url": null
+    },
+    "confidence": 0.45
+  },
+  {
+    "id": "evt_grok_202608190830",
+    "product_id": "grok",
+    "event_type": "regular_reset",
+    "scope": {
+      "type": "account"
+    },
+    "effective_at": "2026-08-19T08:30:00Z",
+    "detected_at": "2026-08-19T08:30:00Z",
+    "announced_at": null,
+    "reset_kind": "regular",
+    "status": "seed",
+    "reason": {
+      "en": "Regular cycle reset",
+      "zh": "常规周期重置"
+    },
+    "source": {
+      "type": "seed",
+      "provider": "seed",
+      "url": null
+    },
+    "confidence": 0.45
+  },
+  {
+    "id": "evt_grok_202608210900",
+    "product_id": "grok",
+    "event_type": "regular_reset",
+    "scope": {
+      "type": "account"
+    },
+    "effective_at": "2026-08-21T09:00:00Z",
+    "detected_at": "2026-08-21T09:00:00Z",
+    "announced_at": null,
+    "reset_kind": "regular",
+    "status": "seed",
+    "reason": {
+      "en": "Regular cycle reset",
+      "zh": "常规周期重置"
+    },
+    "source": {
+      "type": "seed",
+      "provider": "seed",
+      "url": null
+    },
+    "confidence": 0.45
+  },
+  {
+    "id": "evt_kimi_202608200005",
+    "product_id": "kimi",
+    "event_type": "regular_reset",
+    "scope": {
+      "type": "account"
+    },
+    "effective_at": "2026-08-20T00:05:00Z",
+    "detected_at": "2026-08-20T00:05:00Z",
+    "announced_at": null,
+    "reset_kind": "regular",
+    "status": "seed",
+    "reason": {
+      "en": "Regular cycle reset",
+      "zh": "常规周期重置"
+    },
+    "source": {
+      "type": "seed",
+      "provider": "seed",
+      "url": null
+    },
+    "confidence": 0.45
+  },
+  {
+    "id": "evt_kimi_202608210010",
+    "product_id": "kimi",
+    "event_type": "regular_reset",
+    "scope": {
+      "type": "account"
+    },
+    "effective_at": "2026-08-21T00:10:00Z",
+    "detected_at": "2026-08-21T00:10:00Z",
+    "announced_at": null,
+    "reset_kind": "regular",
+    "status": "seed",
+    "reason": {
+      "en": "Regular cycle reset",
+      "zh": "常规周期重置"
+    },
+    "source": {
+      "type": "seed",
+      "provider": "seed",
+      "url": null
+    },
+    "confidence": 0.45
+  },
+  {
+    "id": "evt_kimi_202608220000",
+    "product_id": "kimi",
+    "event_type": "regular_reset",
+    "scope": {
+      "type": "account"
+    },
+    "effective_at": "2026-08-22T00:00:00Z",
+    "detected_at": "2026-08-22T00:00:00Z",
+    "announced_at": null,
+    "reset_kind": "regular",
+    "status": "seed",
+    "reason": {
+      "en": "Regular cycle reset",
+      "zh": "常规周期重置"
+    },
+    "source": {
+      "type": "seed",
+      "provider": "seed",
+      "url": null
+    },
+    "confidence": 0.45
+  },
+  {
+    "id": "evt_minimax_202608180510",
+    "product_id": "minimax",
+    "event_type": "regular_reset",
+    "scope": {
+      "type": "account"
+    },
+    "effective_at": "2026-08-18T05:10:00Z",
+    "detected_at": "2026-08-18T05:10:00Z",
+    "announced_at": null,
+    "reset_kind": "regular",
+    "status": "seed",
+    "reason": {
+      "en": "Regular cycle reset",
+      "zh": "常规周期重置"
+    },
+    "source": {
+      "type": "seed",
+      "provider": "seed",
+      "url": null
+    },
+    "confidence": 0.45
+  },
+  {
+    "id": "evt_minimax_202608200450",
+    "product_id": "minimax",
+    "event_type": "regular_reset",
+    "scope": {
+      "type": "account"
+    },
+    "effective_at": "2026-08-20T04:50:00Z",
+    "detected_at": "2026-08-20T04:50:00Z",
+    "announced_at": null,
+    "reset_kind": "regular",
+    "status": "seed",
+    "reason": {
+      "en": "Regular cycle reset",
+      "zh": "常规周期重置"
+    },
+    "source": {
+      "type": "seed",
+      "provider": "seed",
+      "url": null
+    },
+    "confidence": 0.45
+  },
+  {
+    "id": "evt_minimax_202608220500",
+    "product_id": "minimax",
+    "event_type": "regular_reset",
+    "scope": {
+      "type": "account"
+    },
+    "effective_at": "2026-08-22T05:00:00Z",
+    "detected_at": "2026-08-22T05:00:00Z",
+    "announced_at": null,
+    "reset_kind": "regular",
+    "status": "seed",
+    "reason": {
+      "en": "Regular cycle reset",
+      "zh": "常规周期重置"
+    },
+    "source": {
+      "type": "seed",
+      "provider": "seed",
+      "url": null
+    },
+    "confidence": 0.45
+  },
+  {
+    "id": "evt_antigravity_202608181155",
+    "product_id": "antigravity",
+    "event_type": "regular_reset",
+    "scope": {
+      "type": "account"
+    },
+    "effective_at": "2026-08-18T11:55:00Z",
+    "detected_at": "2026-08-18T11:55:00Z",
+    "announced_at": null,
+    "reset_kind": "regular",
+    "status": "seed",
+    "reason": {
+      "en": "Regular cycle reset",
+      "zh": "常规周期重置"
+    },
+    "source": {
+      "type": "seed",
+      "provider": "seed",
+      "url": null
+    },
+    "confidence": 0.45
+  },
+  {
+    "id": "evt_antigravity_202608201205",
+    "product_id": "antigravity",
+    "event_type": "regular_reset",
+    "scope": {
+      "type": "account"
+    },
+    "effective_at": "2026-08-20T12:05:00Z",
+    "detected_at": "2026-08-20T12:05:00Z",
+    "announced_at": null,
+    "reset_kind": "regular",
+    "status": "seed",
+    "reason": {
+      "en": "Regular cycle reset",
+      "zh": "常规周期重置"
+    },
+    "source": {
+      "type": "seed",
+      "provider": "seed",
+      "url": null
+    },
+    "confidence": 0.45
+  },
+  {
+    "id": "evt_antigravity_202608221200",
+    "product_id": "antigravity",
+    "event_type": "regular_reset",
+    "scope": {
+      "type": "account"
+    },
+    "effective_at": "2026-08-22T12:00:00Z",
+    "detected_at": "2026-08-22T12:00:00Z",
+    "announced_at": null,
+    "reset_kind": "regular",
+    "status": "seed",
+    "reason": {
+      "en": "Regular cycle reset",
+      "zh": "常规周期重置"
+    },
+    "source": {
+      "type": "seed",
+      "provider": "seed",
+      "url": null
+    },
+    "confidence": 0.45
+  },
+  {
+    "id": "evt_qwen_code_202608181555",
+    "product_id": "qwen_code",
+    "event_type": "regular_reset",
+    "scope": {
+      "type": "account"
+    },
+    "effective_at": "2026-08-18T15:55:00Z",
+    "detected_at": "2026-08-18T15:55:00Z",
+    "announced_at": null,
+    "reset_kind": "regular",
+    "status": "seed",
+    "reason": {
+      "en": "Regular cycle reset",
+      "zh": "常规周期重置"
+    },
+    "source": {
+      "type": "seed",
+      "provider": "seed",
+      "url": null
+    },
+    "confidence": 0.45
+  },
+  {
+    "id": "evt_qwen_code_202608201610",
+    "product_id": "qwen_code",
+    "event_type": "regular_reset",
+    "scope": {
+      "type": "account"
+    },
+    "effective_at": "2026-08-20T16:10:00Z",
+    "detected_at": "2026-08-20T16:10:00Z",
+    "announced_at": null,
+    "reset_kind": "regular",
+    "status": "seed",
+    "reason": {
+      "en": "Regular cycle reset",
+      "zh": "常规周期重置"
+    },
+    "source": {
+      "type": "seed",
+      "provider": "seed",
+      "url": null
+    },
+    "confidence": 0.45
+  },
+  {
+    "id": "evt_qwen_code_202608221600",
+    "product_id": "qwen_code",
+    "event_type": "regular_reset",
+    "scope": {
+      "type": "account"
+    },
+    "effective_at": "2026-08-22T16:00:00Z",
+    "detected_at": "2026-08-22T16:00:00Z",
+    "announced_at": null,
+    "reset_kind": "regular",
+    "status": "seed",
+    "reason": {
+      "en": "Regular cycle reset",
+      "zh": "常规周期重置"
+    },
+    "source": {
+      "type": "seed",
+      "provider": "seed",
+      "url": null
+    },
+    "confidence": 0.45
+  }
+]

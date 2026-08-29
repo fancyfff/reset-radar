@@ -29,6 +29,7 @@ from datetime import datetime, timezone, timedelta
 import config
 import fetchers
 import speaker_monitor
+import v2
 
 # ---------- 路径 ----------
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -36,6 +37,10 @@ ROOT = os.path.dirname(HERE)
 DATA_DIR = os.path.join(ROOT, "data")
 DATA_JSON = os.path.join(DATA_DIR, "data.json")
 FALLBACK_JS = os.path.join(DATA_DIR, "fallback.js")
+EVENTS_JSON = os.path.join(DATA_DIR, "events.json")
+OBSERVATIONS_JSON = os.path.join(DATA_DIR, "observations.json")
+FORECASTS_JSON = os.path.join(DATA_DIR, "forecasts.json")
+EVALUATION_JSON = os.path.join(DATA_DIR, "evaluation.json")
 RESETS_JSON = os.path.join(DATA_DIR, "resets.json")
 
 # ---------- 规则参数 ----------
@@ -132,6 +137,8 @@ def build_signals(pid, cfg, now=None):
     real_fetched = False
     for s in cfg.get("signals", []):          # 人工补充（种子）
         sigs.append(dict(s))
+    if os.environ.get("RESET_RADAR_OFFLINE") == "1":
+        return sigs, False
 
     # 1) GitHub Releases -> model_release（真实）
     #    —— 只统计「近 24h」内发布的版本；同一平台近 24h 的多次发布合并为一条
@@ -450,6 +457,8 @@ def compute_platform(pid, cfg, now, resets, signals):
 
 def maybe_refresh_service_status():
     """尽力请求官方状态 API，失败则沿用配置种子。"""
+    if os.environ.get("RESET_RADAR_OFFLINE") == "1":
+        return [dict(item) for item in config.SERVICE_STATUS if not config.PLATFORMS.get(item.get("platform_id"), {}).get("hidden")]
     statuses = []
     for g in config.SERVICE_STATUS:
         if config.PLATFORMS.get(g.get("platform_id", {}), {}).get("hidden"):
@@ -477,7 +486,7 @@ def maybe_refresh_service_status():
 def main():
     now = datetime.now(timezone.utc)
     print(f"[Reset Radar] 开始计算 @ {now.isoformat()}")
-    platforms, degraded = [], []
+    platforms, degraded, platform_inputs = [], [], []
     for pid, cfg in config.PLATFORMS.items():
         try:
             if cfg.get("hidden"):
@@ -490,34 +499,49 @@ def main():
             if not real_fetched:
                 degraded.append(pid)
             platforms.append(p)
+            platform_inputs.append((pid, cfg, resets, signals, p["data_source"]))
             print(f"  - {p['name']:<12} prob={p['probability']:>3}%  conf={p['confidence']:>2}  {p['signal_strength']}  "
                   f"countdown={p['countdown_seconds']}s  signals={len(signals)}  src={p['data_source']}")
         except Exception as e:
             print(f"  [error] {pid}: {e}")
 
     service_status = maybe_refresh_service_status()
-    speakers = speaker_monitor.build_speakers(now)
+    speakers = [] if os.environ.get("RESET_RADAR_OFFLINE") == "1" else speaker_monitor.build_speakers(now)
 
     # 全降级保护：本轮无任何平台抓到真实数据源 → 不写盘，保留上次真实数据，
     # 避免「last_updated 更新、数值却来自种子」的静默假象，也不产生虚假 commit。
     live_count = sum(1 for pl in platforms if pl.get("data_source") == "live")
     if platforms and live_count == 0:
-        print("[warn] 本轮所有平台均未抓到真实数据源（全降级），跳过写入 data.json / fallback.js，保留上次数据。")
-        return
+        # During the one-time V2 migration an existing V1 snapshot cannot be
+        # kept: the V2 frontend needs the new ledger shape even offline.
+        existing_version = None
+        try:
+            with open(DATA_JSON, encoding="utf-8") as f:
+                existing_version = json.load(f).get("schema_version")
+        except Exception:
+            pass
+        if existing_version == "2.0":
+            print("[warn] 本轮所有平台均未抓到真实数据源（全降级），保留上次 V2 数据。")
+            return
+        print("[warn] 全部数据源降级；正在写入一次 V2 种子迁移快照。")
 
-    out = {
-        "last_updated": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "platforms": platforms,
-        "service_status": service_status,
-        "speakers": speakers,
-    }
+    out = v2.build(now, platform_inputs, service_status, speakers)
     if degraded:
-        out["degraded"] = degraded
+        out["data_freshness"]["degraded_products"] = degraded
 
     os.makedirs(DATA_DIR, exist_ok=True)
     with open(DATA_JSON, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=2)
     print(f"[ok] 已写入 {DATA_JSON}")
+
+    # Keep the durable V2 ledgers independently addressable for audits and evaluation.
+    for path, value in ((EVENTS_JSON, out["events"]), (OBSERVATIONS_JSON, out["observations"]),
+                        (FORECASTS_JSON, out["forecasts"])):
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(value, f, ensure_ascii=False, indent=2)
+    with open(EVALUATION_JSON, "w", encoding="utf-8") as f:
+        json.dump({"generated_at": out["generated_at"], "status": "insufficient_resolved_forecasts",
+                   "metrics": {"brier_score": None, "mae_hours": None}}, f, ensure_ascii=False, indent=2)
 
     # 同步 fallback.js 供本地 file:// 预览
     with open(FALLBACK_JS, "w", encoding="utf-8") as f:

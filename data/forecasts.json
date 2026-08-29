@@ -1,0 +1,450 @@
+[
+  {
+    "id": "fc_recovery_codex_202608291016",
+    "product_id": "codex",
+    "target": {
+      "type": "normal_recovery",
+      "window_id": "codex_primary"
+    },
+    "generated_at": "2026-08-29T10:16:40Z",
+    "prediction": {
+      "expected_at": "2026-08-31T03:30:00Z",
+      "interval": {
+        "p50": "2026-08-31T03:30:00Z",
+        "p80": "2026-08-31T04:00:00Z",
+        "p95": "2026-08-31T04:30:00Z"
+      }
+    },
+    "model": {
+      "name": "robust_recovery_v1",
+      "version": "1.0"
+    },
+    "evidence": {
+      "observed_cycles": 1,
+      "median_cycle_hours": 48.0,
+      "mad_hours": 0.0
+    },
+    "confidence": 0.04,
+    "resolution": {
+      "status": "pending"
+    }
+  },
+  {
+    "id": "fc_hazard_codex_202608291016",
+    "product_id": "codex",
+    "target": {
+      "type": "global_reset",
+      "horizon_hours": 24
+    },
+    "generated_at": "2026-08-29T10:16:40Z",
+    "prediction": {
+      "probability": 0.0782,
+      "expected_at": null,
+      "interval": {
+        "p50": null,
+        "p80": null,
+        "p95": null
+      }
+    },
+    "model": {
+      "name": "hazard_v1",
+      "version": "1.0"
+    },
+    "evidence": {
+      "historical_events": 1,
+      "recent_signals": 0,
+      "independent_sources": 0,
+      "signal_score": 0.0
+    },
+    "calibration": {
+      "status": "experimental"
+    },
+    "resolution": {
+      "status": "pending"
+    }
+  },
+  {
+    "id": "fc_recovery_claude_202608291016",
+    "product_id": "claude",
+    "target": {
+      "type": "normal_recovery",
+      "window_id": "claude_primary"
+    },
+    "generated_at": "2026-08-29T10:16:40Z",
+    "prediction": {
+      "expected_at": "2026-08-30T02:40:00Z",
+      "interval": {
+        "p50": "2026-08-30T02:40:00Z",
+        "p80": "2026-08-30T03:10:00Z",
+        "p95": "2026-08-30T03:40:00Z"
+      }
+    },
+    "model": {
+      "name": "robust_recovery_v1",
+      "version": "1.0"
+    },
+    "evidence": {
+      "observed_cycles": 2,
+      "median_cycle_hours": 47.92,
+      "mad_hours": 0.1
+    },
+    "confidence": 0.09,
+    "resolution": {
+      "status": "pending"
+    }
+  },
+  {
+    "id": "fc_hazard_claude_202608291016",
+    "product_id": "claude",
+    "target": {
+      "type": "global_reset",
+      "horizon_hours": 24
+    },
+    "generated_at": "2026-08-29T10:16:40Z",
+    "prediction": {
+      "probability": 0.0024,
+      "expected_at": null,
+      "interval": {
+        "p50": null,
+        "p80": null,
+        "p95": null
+      }
+    },
+    "model": {
+      "name": "hazard_v1",
+      "version": "1.0"
+    },
+    "evidence": {
+      "historical_events": 0,
+      "recent_signals": 1,
+      "independent_sources": 1,
+      "signal_score": -0.008
+    },
+    "calibration": {
+      "status": "experimental"
+    },
+    "resolution": {
+      "status": "pending"
+    }
+  },
+  {
+    "id": "fc_recovery_grok_202608291016",
+    "product_id": "grok",
+    "target": {
+      "type": "normal_recovery",
+      "window_id": "grok_primary"
+    },
+    "generated_at": "2026-08-29T10:16:40Z",
+    "prediction": {
+      "expected_at": "2026-08-29T11:00:00Z",
+      "interval": {
+        "p50": "2026-08-29T11:00:00Z",
+        "p80": "2026-08-29T12:07:30Z",
+        "p95": "2026-08-29T13:15:00Z"
+      }
+    },
+    "model": {
+      "name": "robust_recovery_v1",
+      "version": "1.0"
+    },
+    "evidence": {
+      "observed_cycles": 2,
+      "median_cycle_hours": 48.5,
+      "mad_hours": 0.62
+    },
+    "confidence": 0.09,
+    "resolution": {
+      "status": "pending"
+    }
+  },
+  {
+    "id": "fc_hazard_grok_202608291016",
+    "product_id": "grok",
+    "target": {
+      "type": "global_reset",
+      "horizon_hours": 24
+    },
+    "generated_at": "2026-08-29T10:16:40Z",
+    "prediction": {
+      "probability": 0.0024,
+      "expected_at": null,
+      "interval": {
+        "p50": null,
+        "p80": null,
+        "p95": null
+      }
+    },
+    "model": {
+      "name": "hazard_v1",
+      "version": "1.0"
+    },
+    "evidence": {
+      "historical_events": 0,
+      "recent_signals": 0,
+      "independent_sources": 0,
+      "signal_score": 0.0
+    },
+    "calibration": {
+      "status": "experimental"
+    },
+    "resolution": {
+      "status": "pending"
+    }
+  },
+  {
+    "id": "fc_recovery_kimi_202608291016",
+    "product_id": "kimi",
+    "target": {
+      "type": "normal_recovery",
+      "window_id": "kimi_primary"
+    },
+    "generated_at": "2026-08-29T10:16:40Z",
+    "prediction": {
+      "expected_at": "2026-08-29T22:40:00Z",
+      "interval": {
+        "p50": "2026-08-29T22:40:00Z",
+        "p80": "2026-08-29T23:10:00Z",
+        "p95": "2026-08-29T23:40:00Z"
+      }
+    },
+    "model": {
+      "name": "robust_recovery_v1",
+      "version": "1.0"
+    },
+    "evidence": {
+      "observed_cycles": 2,
+      "median_cycle_hours": 23.83,
+      "mad_hours": 0.12
+    },
+    "confidence": 0.09,
+    "resolution": {
+      "status": "pending"
+    }
+  },
+  {
+    "id": "fc_hazard_kimi_202608291016",
+    "product_id": "kimi",
+    "target": {
+      "type": "global_reset",
+      "horizon_hours": 24
+    },
+    "generated_at": "2026-08-29T10:16:40Z",
+    "prediction": {
+      "probability": 0.0024,
+      "expected_at": null,
+      "interval": {
+        "p50": null,
+        "p80": null,
+        "p95": null
+      }
+    },
+    "model": {
+      "name": "hazard_v1",
+      "version": "1.0"
+    },
+    "evidence": {
+      "historical_events": 0,
+      "recent_signals": 1,
+      "independent_sources": 1,
+      "signal_score": 0.04
+    },
+    "calibration": {
+      "status": "experimental"
+    },
+    "resolution": {
+      "status": "pending"
+    }
+  },
+  {
+    "id": "fc_recovery_minimax_202608291016",
+    "product_id": "minimax",
+    "target": {
+      "type": "normal_recovery",
+      "window_id": "minimax_primary"
+    },
+    "generated_at": "2026-08-29T10:16:40Z",
+    "prediction": {
+      "expected_at": "2026-08-30T05:40:00Z",
+      "interval": {
+        "p50": "2026-08-30T05:40:00Z",
+        "p80": "2026-08-30T06:10:00Z",
+        "p95": "2026-08-30T06:40:00Z"
+      }
+    },
+    "model": {
+      "name": "robust_recovery_v1",
+      "version": "1.0"
+    },
+    "evidence": {
+      "observed_cycles": 2,
+      "median_cycle_hours": 48.17,
+      "mad_hours": 0.25
+    },
+    "confidence": 0.09,
+    "resolution": {
+      "status": "pending"
+    }
+  },
+  {
+    "id": "fc_hazard_minimax_202608291016",
+    "product_id": "minimax",
+    "target": {
+      "type": "global_reset",
+      "horizon_hours": 24
+    },
+    "generated_at": "2026-08-29T10:16:40Z",
+    "prediction": {
+      "probability": 0.0024,
+      "expected_at": null,
+      "interval": {
+        "p50": null,
+        "p80": null,
+        "p95": null
+      }
+    },
+    "model": {
+      "name": "hazard_v1",
+      "version": "1.0"
+    },
+    "evidence": {
+      "historical_events": 0,
+      "recent_signals": 0,
+      "independent_sources": 0,
+      "signal_score": 0.0
+    },
+    "calibration": {
+      "status": "experimental"
+    },
+    "resolution": {
+      "status": "pending"
+    }
+  },
+  {
+    "id": "fc_recovery_antigravity_202608291016",
+    "product_id": "antigravity",
+    "target": {
+      "type": "normal_recovery",
+      "window_id": "antigravity_primary"
+    },
+    "generated_at": "2026-08-29T10:16:40Z",
+    "prediction": {
+      "expected_at": "2026-08-30T11:40:00Z",
+      "interval": {
+        "p50": "2026-08-30T11:40:00Z",
+        "p80": "2026-08-30T12:10:00Z",
+        "p95": "2026-08-30T12:40:00Z"
+      }
+    },
+    "model": {
+      "name": "robust_recovery_v1",
+      "version": "1.0"
+    },
+    "evidence": {
+      "observed_cycles": 2,
+      "median_cycle_hours": 47.92,
+      "mad_hours": 0.12
+    },
+    "confidence": 0.09,
+    "resolution": {
+      "status": "pending"
+    }
+  },
+  {
+    "id": "fc_hazard_antigravity_202608291016",
+    "product_id": "antigravity",
+    "target": {
+      "type": "global_reset",
+      "horizon_hours": 24
+    },
+    "generated_at": "2026-08-29T10:16:40Z",
+    "prediction": {
+      "probability": 0.0024,
+      "expected_at": null,
+      "interval": {
+        "p50": null,
+        "p80": null,
+        "p95": null
+      }
+    },
+    "model": {
+      "name": "hazard_v1",
+      "version": "1.0"
+    },
+    "evidence": {
+      "historical_events": 0,
+      "recent_signals": 0,
+      "independent_sources": 0,
+      "signal_score": 0.0
+    },
+    "calibration": {
+      "status": "experimental"
+    },
+    "resolution": {
+      "status": "pending"
+    }
+  },
+  {
+    "id": "fc_recovery_qwen_code_202608291016",
+    "product_id": "qwen_code",
+    "target": {
+      "type": "normal_recovery",
+      "window_id": "qwen_code_primary"
+    },
+    "generated_at": "2026-08-29T10:16:40Z",
+    "prediction": {
+      "expected_at": "2026-08-30T15:20:00Z",
+      "interval": {
+        "p50": "2026-08-30T15:20:00Z",
+        "p80": "2026-08-30T15:50:00Z",
+        "p95": "2026-08-30T16:20:00Z"
+      }
+    },
+    "model": {
+      "name": "robust_recovery_v1",
+      "version": "1.0"
+    },
+    "evidence": {
+      "observed_cycles": 2,
+      "median_cycle_hours": 47.83,
+      "mad_hours": 0.21
+    },
+    "confidence": 0.09,
+    "resolution": {
+      "status": "pending"
+    }
+  },
+  {
+    "id": "fc_hazard_qwen_code_202608291016",
+    "product_id": "qwen_code",
+    "target": {
+      "type": "global_reset",
+      "horizon_hours": 24
+    },
+    "generated_at": "2026-08-29T10:16:40Z",
+    "prediction": {
+      "probability": 0.0024,
+      "expected_at": null,
+      "interval": {
+        "p50": null,
+        "p80": null,
+        "p95": null
+      }
+    },
+    "model": {
+      "name": "hazard_v1",
+      "version": "1.0"
+    },
+    "evidence": {
+      "historical_events": 0,
+      "recent_signals": 0,
+      "independent_sources": 0,
+      "signal_score": 0.0
+    },
+    "calibration": {
+      "status": "experimental"
+    },
+    "resolution": {
+      "status": "pending"
+    }
+  }
+]

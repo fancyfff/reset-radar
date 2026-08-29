@@ -1,0 +1,18 @@
+[
+  {
+    "id": "obs_codex_202608150330",
+    "product_id": "codex",
+    "observed_at": "2026-08-15T03:30:00Z",
+    "observation_type": "no_reset_observed",
+    "value": {
+      "candidate_at": "2026-08-15T03:30:00Z",
+      "result": "not_reset"
+    },
+    "source": {
+      "type": "seed",
+      "provider": "seed",
+      "url": null
+    },
+    "confidence": 0.4
+  }
+]

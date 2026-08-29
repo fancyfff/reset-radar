@@ -390,3 +390,25 @@ body {
   vertical-align: 1px;
 }
 
+/* ---------- V2 answer dashboard ---------- */
+.hero, .dashboard-section, .detail-hero { margin: 14px 16px; }
+.hero { padding: 4px 0; }
+.hero > p { color: var(--text-dim); font-size: 13px; margin: 8px 0; }
+.answer-list, .next-list, .radar-list { border: 1px solid var(--card-border); border-radius: var(--radius); overflow: hidden; background: var(--card); }
+.answer-row, .next-list a, .radar-row, .event-row { color: var(--text); text-decoration: none; display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 12px 14px; border-bottom: 1px solid var(--card-border); }
+.answer-row:last-child, .next-list a:last-child, .radar-row:last-child, .event-row:last-child { border-bottom: 0; }
+.answer-name, .radar-row > span { display: flex; align-items: center; gap: 8px; font-weight: 700; }
+.answer-row small, .radar-row small { display: block; color: var(--text-dim); font-size: 11px; font-weight: 400; text-align: right; }
+.availability { color: var(--ok); font-size: 11px; letter-spacing: .08em; }
+.dashboard-section h2 { font-size: 12px; letter-spacing: .08em; color: var(--text-dim); margin: 18px 0 8px; }
+.dashboard-section h2 em { color: var(--accent); font-style: normal; float: right; }
+.next-list a b, .radar-row b { font-variant-numeric: tabular-nums; }
+.event-row { font-size: 12px; }.event-row span:last-child { color: var(--text-dim); }
+.section-copy, .muted { color: var(--text-dim); font-size: 12px; margin: 0 0 8px; }
+.detail-hero { padding: 18px 16px; border: 1px solid var(--card-border); border-radius: var(--radius); background: var(--card); }
+.detail-hero h1 { margin: 6px 0; font-size: 24px; }.detail-hero p { color: var(--text-dim); }
+.window-row, .hazard { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; }
+.window-row small { display: block; color: var(--text-dim); }.window-confidence { color: var(--accent); font-weight: 700; }
+.why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }.why-grid span { color: var(--text-dim); font-size: 11px; }.why-grid b { display: block; color: var(--text); font-size: 13px; }
+.hazard b { font-size: 30px; }
+

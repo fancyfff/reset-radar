@@ -1,0 +1,8 @@
+{
+  "generated_at": "2026-08-29T10:16:40Z",
+  "status": "insufficient_resolved_forecasts",
+  "metrics": {
+    "brier_score": null,
+    "mae_hours": null
+  }
+}

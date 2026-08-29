@@ -132,8 +132,10 @@ def build(now, platform_inputs, service_status, speakers):
         extra_events = [dt for dt, row in reset_points if row.get("is_extra")]
         hazard, evidence = hazard_probability(extra_events, reset_points[0][0], now, product_signals)
         expected_at = recovery["expected_at"]
+        # Public sources cannot inspect a visitor's account quota. Never infer
+        # availability from a release, a status page, or a seed cycle.
         states.append({
-            "product_id": pid, "availability": "available", "overall_state": "cooling", "updated_at": iso(now),
+            "product_id": pid, "availability": "unknown", "overall_state": "unknown", "updated_at": iso(now),
             "windows": [{"window_id": primary_window, "state": "available", "reset_at": iso(expected_at),
                          "countdown_seconds": max(0, int((expected_at - now).total_seconds())),
                          "usage_percent": None, "confidence": confidence,

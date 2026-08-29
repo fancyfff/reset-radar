@@ -1,10 +1,10 @@
 {
   "schema_version": "2.0",
-  "generated_at": "2026-08-29T10:16:40Z",
+  "generated_at": "2026-08-29T10:31:30Z",
   "data_freshness": {
-    "status": "fresh",
+    "status": "degraded",
     "max_age_seconds": 1800,
-    "sources_ok": 7,
+    "sources_ok": 0,
     "sources_failed": 0,
     "degraded_products": [
       "codex",
@@ -345,15 +345,15 @@
   "current_state": [
     {
       "product_id": "codex",
-      "availability": "available",
-      "overall_state": "cooling",
-      "updated_at": "2026-08-29T10:16:40Z",
+      "availability": "unknown",
+      "overall_state": "unknown",
+      "updated_at": "2026-08-29T10:31:30Z",
       "windows": [
         {
           "window_id": "codex_primary",
           "state": "available",
           "reset_at": "2026-08-31T03:30:00Z",
-          "countdown_seconds": 148399,
+          "countdown_seconds": 147509,
           "usage_percent": null,
           "confidence": 0.04,
           "source": "estimated"
@@ -362,15 +362,15 @@
     },
     {
       "product_id": "claude",
-      "availability": "available",
-      "overall_state": "cooling",
-      "updated_at": "2026-08-29T10:16:40Z",
+      "availability": "unknown",
+      "overall_state": "unknown",
+      "updated_at": "2026-08-29T10:31:30Z",
       "windows": [
         {
           "window_id": "claude_primary",
           "state": "available",
           "reset_at": "2026-08-30T02:40:00Z",
-          "countdown_seconds": 58999,
+          "countdown_seconds": 58109,
           "usage_percent": null,
           "confidence": 0.09,
           "source": "estimated"
@@ -379,15 +379,15 @@
     },
     {
       "product_id": "grok",
-      "availability": "available",
-      "overall_state": "cooling",
-      "updated_at": "2026-08-29T10:16:40Z",
+      "availability": "unknown",
+      "overall_state": "unknown",
+      "updated_at": "2026-08-29T10:31:30Z",
       "windows": [
         {
           "window_id": "grok_primary",
           "state": "available",
           "reset_at": "2026-08-29T11:00:00Z",
-          "countdown_seconds": 2599,
+          "countdown_seconds": 1709,
           "usage_percent": null,
           "confidence": 0.09,
           "source": "estimated"
@@ -396,15 +396,15 @@
     },
     {
       "product_id": "kimi",
-      "availability": "available",
-      "overall_state": "cooling",
-      "updated_at": "2026-08-29T10:16:40Z",
+      "availability": "unknown",
+      "overall_state": "unknown",
+      "updated_at": "2026-08-29T10:31:30Z",
       "windows": [
         {
           "window_id": "kimi_primary",
           "state": "available",
           "reset_at": "2026-08-29T22:40:00Z",
-          "countdown_seconds": 44599,
+          "countdown_seconds": 43709,
           "usage_percent": null,
           "confidence": 0.09,
           "source": "estimated"
@@ -413,15 +413,15 @@
     },
     {
       "product_id": "minimax",
-      "availability": "available",
-      "overall_state": "cooling",
-      "updated_at": "2026-08-29T10:16:40Z",
+      "availability": "unknown",
+      "overall_state": "unknown",
+      "updated_at": "2026-08-29T10:31:30Z",
       "windows": [
         {
           "window_id": "minimax_primary",
           "state": "available",
           "reset_at": "2026-08-30T05:40:00Z",
-          "countdown_seconds": 69799,
+          "countdown_seconds": 68909,
           "usage_percent": null,
           "confidence": 0.09,
           "source": "estimated"
@@ -430,15 +430,15 @@
     },
     {
       "product_id": "antigravity",
-      "availability": "available",
-      "overall_state": "cooling",
-      "updated_at": "2026-08-29T10:16:40Z",
+      "availability": "unknown",
+      "overall_state": "unknown",
+      "updated_at": "2026-08-29T10:31:30Z",
       "windows": [
         {
           "window_id": "antigravity_primary",
           "state": "available",
           "reset_at": "2026-08-30T11:40:00Z",
-          "countdown_seconds": 91399,
+          "countdown_seconds": 90509,
           "usage_percent": null,
           "confidence": 0.09,
           "source": "estimated"
@@ -447,15 +447,15 @@
     },
     {
       "product_id": "qwen_code",
-      "availability": "available",
-      "overall_state": "cooling",
-      "updated_at": "2026-08-29T10:16:40Z",
+      "availability": "unknown",
+      "overall_state": "unknown",
+      "updated_at": "2026-08-29T10:31:30Z",
       "windows": [
         {
           "window_id": "qwen_code_primary",
           "state": "available",
           "reset_at": "2026-08-30T15:20:00Z",
-          "countdown_seconds": 104599,
+          "countdown_seconds": 103709,
           "usage_percent": null,
           "confidence": 0.09,
           "source": "estimated"
@@ -968,10 +968,10 @@
   ],
   "signals": [
     {
-      "id": "sig_claude_0_202608291016",
+      "id": "sig_claude_0_202608291031",
       "product_id": "claude",
       "type": "service_anomaly",
-      "occurred_at": "2026-08-29T10:16:40Z",
+      "occurred_at": "2026-08-29T10:31:30Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -995,10 +995,10 @@
       "freshness": 0.5
     },
     {
-      "id": "sig_kimi_0_202608291016",
+      "id": "sig_kimi_0_202608291031",
       "product_id": "kimi",
       "type": "official_announcement",
-      "occurred_at": "2026-08-29T10:16:40Z",
+      "occurred_at": "2026-08-29T10:31:30Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1024,13 +1024,13 @@
   ],
   "forecasts": [
     {
-      "id": "fc_recovery_codex_202608291016",
+      "id": "fc_recovery_codex_202608291031",
       "product_id": "codex",
       "target": {
         "type": "normal_recovery",
         "window_id": "codex_primary"
       },
-      "generated_at": "2026-08-29T10:16:40Z",
+      "generated_at": "2026-08-29T10:31:30Z",
       "prediction": {
         "expected_at": "2026-08-31T03:30:00Z",
         "interval": {
@@ -1054,15 +1054,15 @@
       }
     },
     {
-      "id": "fc_hazard_codex_202608291016",
+      "id": "fc_hazard_codex_202608291031",
       "product_id": "codex",
       "target": {
         "type": "global_reset",
         "horizon_hours": 24
       },
-      "generated_at": "2026-08-29T10:16:40Z",
+      "generated_at": "2026-08-29T10:31:30Z",
       "prediction": {
-        "probability": 0.0782,
+        "probability": 0.0781,
         "expected_at": null,
         "interval": {
           "p50": null,
@@ -1088,13 +1088,13 @@
       }
     },
     {
-      "id": "fc_recovery_claude_202608291016",
+      "id": "fc_recovery_claude_202608291031",
       "product_id": "claude",
       "target": {
         "type": "normal_recovery",
         "window_id": "claude_primary"
       },
-      "generated_at": "2026-08-29T10:16:40Z",
+      "generated_at": "2026-08-29T10:31:30Z",
       "prediction": {
         "expected_at": "2026-08-30T02:40:00Z",
         "interval": {
@@ -1118,13 +1118,13 @@
       }
     },
     {
-      "id": "fc_hazard_claude_202608291016",
+      "id": "fc_hazard_claude_202608291031",
       "product_id": "claude",
       "target": {
         "type": "global_reset",
         "horizon_hours": 24
       },
-      "generated_at": "2026-08-29T10:16:40Z",
+      "generated_at": "2026-08-29T10:31:30Z",
       "prediction": {
         "probability": 0.0024,
         "expected_at": null,
@@ -1152,13 +1152,13 @@
       }
     },
     {
-      "id": "fc_recovery_grok_202608291016",
+      "id": "fc_recovery_grok_202608291031",
       "product_id": "grok",
       "target": {
         "type": "normal_recovery",
         "window_id": "grok_primary"
       },
-      "generated_at": "2026-08-29T10:16:40Z",
+      "generated_at": "2026-08-29T10:31:30Z",
       "prediction": {
         "expected_at": "2026-08-29T11:00:00Z",
         "interval": {
@@ -1182,13 +1182,13 @@
       }
     },
     {
-      "id": "fc_hazard_grok_202608291016",
+      "id": "fc_hazard_grok_202608291031",
       "product_id": "grok",
       "target": {
         "type": "global_reset",
         "horizon_hours": 24
       },
-      "generated_at": "2026-08-29T10:16:40Z",
+      "generated_at": "2026-08-29T10:31:30Z",
       "prediction": {
         "probability": 0.0024,
         "expected_at": null,
@@ -1216,13 +1216,13 @@
       }
     },
     {
-      "id": "fc_recovery_kimi_202608291016",
+      "id": "fc_recovery_kimi_202608291031",
       "product_id": "kimi",
       "target": {
         "type": "normal_recovery",
         "window_id": "kimi_primary"
       },
-      "generated_at": "2026-08-29T10:16:40Z",
+      "generated_at": "2026-08-29T10:31:30Z",
       "prediction": {
         "expected_at": "2026-08-29T22:40:00Z",
         "interval": {
@@ -1246,13 +1246,13 @@
       }
     },
     {
-      "id": "fc_hazard_kimi_202608291016",
+      "id": "fc_hazard_kimi_202608291031",
       "product_id": "kimi",
       "target": {
         "type": "global_reset",
         "horizon_hours": 24
       },
-      "generated_at": "2026-08-29T10:16:40Z",
+      "generated_at": "2026-08-29T10:31:30Z",
       "prediction": {
         "probability": 0.0024,
         "expected_at": null,
@@ -1280,13 +1280,13 @@
       }
     },
     {
-      "id": "fc_recovery_minimax_202608291016",
+      "id": "fc_recovery_minimax_202608291031",
       "product_id": "minimax",
       "target": {
         "type": "normal_recovery",
         "window_id": "minimax_primary"
       },
-      "generated_at": "2026-08-29T10:16:40Z",
+      "generated_at": "2026-08-29T10:31:30Z",
       "prediction": {
         "expected_at": "2026-08-30T05:40:00Z",
         "interval": {
@@ -1310,13 +1310,13 @@
       }
     },
     {
-      "id": "fc_hazard_minimax_202608291016",
+      "id": "fc_hazard_minimax_202608291031",
       "product_id": "minimax",
       "target": {
         "type": "global_reset",
         "horizon_hours": 24
       },
-      "generated_at": "2026-08-29T10:16:40Z",
+      "generated_at": "2026-08-29T10:31:30Z",
       "prediction": {
         "probability": 0.0024,
         "expected_at": null,
@@ -1344,13 +1344,13 @@
       }
     },
     {
-      "id": "fc_recovery_antigravity_202608291016",
+      "id": "fc_recovery_antigravity_202608291031",
       "product_id": "antigravity",
       "target": {
         "type": "normal_recovery",
         "window_id": "antigravity_primary"
       },
-      "generated_at": "2026-08-29T10:16:40Z",
+      "generated_at": "2026-08-29T10:31:30Z",
       "prediction": {
         "expected_at": "2026-08-30T11:40:00Z",
         "interval": {
@@ -1374,13 +1374,13 @@
       }
     },
     {
-      "id": "fc_hazard_antigravity_202608291016",
+      "id": "fc_hazard_antigravity_202608291031",
       "product_id": "antigravity",
       "target": {
         "type": "global_reset",
         "horizon_hours": 24
       },
-      "generated_at": "2026-08-29T10:16:40Z",
+      "generated_at": "2026-08-29T10:31:30Z",
       "prediction": {
         "probability": 0.0024,
         "expected_at": null,
@@ -1408,13 +1408,13 @@
       }
     },
     {
-      "id": "fc_recovery_qwen_code_202608291016",
+      "id": "fc_recovery_qwen_code_202608291031",
       "product_id": "qwen_code",
       "target": {
         "type": "normal_recovery",
         "window_id": "qwen_code_primary"
       },
-      "generated_at": "2026-08-29T10:16:40Z",
+      "generated_at": "2026-08-29T10:31:30Z",
       "prediction": {
         "expected_at": "2026-08-30T15:20:00Z",
         "interval": {
@@ -1438,13 +1438,13 @@
       }
     },
     {
-      "id": "fc_hazard_qwen_code_202608291016",
+      "id": "fc_hazard_qwen_code_202608291031",
       "product_id": "qwen_code",
       "target": {
         "type": "global_reset",
         "horizon_hours": 24
       },
-      "generated_at": "2026-08-29T10:16:40Z",
+      "generated_at": "2026-08-29T10:31:30Z",
       "prediction": {
         "probability": 0.0024,
         "expected_at": null,

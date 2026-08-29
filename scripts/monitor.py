@@ -6,18 +6,14 @@
   （见 record_reset.py 与 update.py 说明）。因此本脚本不「凭空猜测重置」，
   只在下列两种**可信**情形下写入实测记录，避免把推断数据当实测污染历史：
 
-  1) 信号佐证（全自动）：
-       某平台预测窗口（默认预测点 ±3h）内出现真实 GitHub Release
-       （source=github，真实版本 + 发布时间）。把该 Release 发布时间视作
-       重置标记，自动调用 record_reset.py 写一条 observed 记录。
-       ⚠ 说明：Release 是「重置可信标记」，非严格证明；reason 会写明引用版本。
-
-  2) 交互确认（半自动，终端）：
+  1) 交互确认（半自动，终端）：
        窗口期内若在终端运行且可以交互（--ask / -a，或自动启用），向用户询问
        「该平台是否在预测点附近重置」，按回答记录重置(y，可给精确时间) 或
        未重置(n)。这是最可靠的路径。
 
-  无任何佐证 → 不写入（保持诚实），由 update.py 自动补「未重置」标记即可。
+  GitHub Release、Statuspage 事件和社区帖只能作为 signal/observation，
+  不能证明配额已重置，因此本脚本绝不把它们自动写成 reset event。
+  无交互确认 → 不写入（保持诚实）。
 
 用法：
     python monitor.py                 # 单次巡检（适合 cron / 定时任务）
@@ -39,7 +35,6 @@ from datetime import datetime, timezone, timedelta
 
 import config
 import update
-import fetchers
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -81,18 +76,6 @@ def call_record(pid, iso, reason, extra_args, dry_run):
         print(f"  [preview] {' '.join(cmd)}")
         return
     subprocess.run(cmd, check=False)
-
-
-def newest_release_in_window(cfg, early, late):
-    """返回窗口 [early, late] 内最新一条 GitHub Release，否则 None。"""
-    repo = cfg.get("github_repo", "")
-    if not repo:
-        return None
-    releases, _ok = fetchers.fetch_github_releases(repo, 10)
-    for rel in releases:
-        if rel["published_at"] and early <= rel["published_at"] <= late:
-            return rel
-    return None
 
 
 def confirm_interactive(pid, pred, ask, dry_run):
@@ -162,18 +145,8 @@ def check_platform(pid, cfg, state, ask, dry_run):
         print(f"  [~] {pid} 交互确认未重置（不写记录，update 会自动标记）")
         return "no_record"
 
-    # 2) 信号佐证：窗口内真实 GitHub Release
-    rel = newest_release_in_window(cfg, early, late)
-    if rel:
-        rt = rel["published_at"]
-        reason = f"Observed marker: GitHub release {rel['tag']}"
-        call_record(pid, rt.strftime("%Y-%m-%dT%H:%M:%SZ"), reason, [], dry_run)
-        print(f"  [ok] {pid} 信号佐证(Release {rel['tag']} @ {rt.isoformat()}) -> 记录重置")
-        done.append(key)
-        state[pid] = done
-        return "recorded"
-
-    # 3) 无佐证：窗口已过(晚于 late)才定论跳过，避免过早放弃
+    # No public signal is sufficient evidence for a reset event.
+    # Window elapsed: mark it handled, but do not invent a no-reset observation.
     if now > late:
         done.append(key)
         state[pid] = done

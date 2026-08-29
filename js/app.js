@@ -8,14 +8,15 @@ function renderTopMeta(data) {
   document.getElementById("meta").innerHTML = `<span class="dot">●</span> ${escapeHtml(t("Updated ", "更新于 "))}${escapeHtml(when)}`;
 }
 function availabilityCard(p) {
-  const availability = p.state.availability === "available" ? t("Available", "可用") : t("Limited", "受限");
-  return `<a class="answer-row" href="detail.html?id=${encodeURIComponent(p.id)}"><span class="answer-name">${logoOrIcon(p)}${productName(p)}</span><span><b class="availability">${availability}</b><small>${escapeHtml(fmtCountdown(countdownOf(p)))}</small></span></a>`;
+  const labels = { available: t("Available", "可用"), limited: t("Limited", "受限"), unknown: t("Unknown", "未知") };
+  const availability = labels[p.state.availability] || labels.unknown;
+  return `<a class="answer-row" href="detail.html?id=${encodeURIComponent(p.id)}"><span class="answer-name">${logoOrIcon(p)}${productName(p)}</span><span><b class="availability ${escapeHtml(p.state.availability || "unknown")}">${availability}</b><small>${escapeHtml(fmtCountdown(countdownOf(p)))}</small></span></a>`;
 }
 function section(title, body) { return `<section class="dashboard-section"><h2>${title}</h2>${body}</section>`; }
 function renderDashboard(products) {
   const available = products.filter((p) => p.state.availability === "available").length;
   const next = [...products].sort((a, b) => countdownOf(a) - countdownOf(b)).slice(0, 4);
-  const recent = products.flatMap((p) => p.events.filter((e) => e.event_type === "global_reset").slice(0, 1).map((e) => [p, e])).sort((a, b) => b[1].effective_at.localeCompare(a[1].effective_at)).slice(0, 4);
+  const recent = products.flatMap((p) => p.events.filter((e) => e.event_type === "global_reset" && e.status === "confirmed").slice(0, 1).map((e) => [p, e])).sort((a, b) => b[1].effective_at.localeCompare(a[1].effective_at)).slice(0, 4);
   const nextRows = next.map((p) => `<a href="detail.html?id=${encodeURIComponent(p.id)}"><span>${productName(p)}</span><b>${escapeHtml(fmtCountdown(countdownOf(p)))}</b></a>`).join("");
   const eventRows = recent.length ? recent.map(([p, e]) => `<a class="event-row" href="detail.html?id=${encodeURIComponent(p.id)}"><span>⚡ ${productName(p)}</span><span>${escapeHtml(fmtWhen(e.effective_at))} · ${escapeHtml(e.status)}</span></a>`).join("") : `<p class="muted">${t("No confirmed global resets yet.", "暂无已确认的全局额外重置。")}</p>`;
   const radarRows = products.map((p) => { const chance = Math.round(hazardOf(p)); return `<a class="radar-row" href="detail.html?id=${encodeURIComponent(p.id)}"><span>${logoOrIcon(p)}${productName(p)}<small>${t("Extra reset in 24h", "24小时额外重置")}</small></span><b style="color:${colorFor(chance)}">${chance}%</b></a>`; }).join("");

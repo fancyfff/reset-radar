@@ -27,10 +27,6 @@ jobs:
         run: |
           pip install -r scripts/requirements.txt
 
-      - name: 运行重置监控（信号佐证：窗口内真实 GitHub Release 自动记录）
-        run: |
-          python scripts/monitor.py
-
       - name: 运行采集脚本
         run: |
           python scripts/update.py
@@ -47,4 +43,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "🤖 Auto update: 数据刷新"
-          file_pattern: "data/data.json data/fallback.js data/resets.json"
+          file_pattern: "data/data.json data/fallback.js data/resets.json data/events.json data/observations.json data/forecasts.json data/evaluation.json"

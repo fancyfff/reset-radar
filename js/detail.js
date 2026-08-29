@@ -8,8 +8,9 @@ function windowsHtml(p) {
   return `<div class="window-row"><div><b>${escapeHtml(I18N.pick((p.windows[0] || {}).name) || local("Usage cycle", "额度周期"))}</b><small>${local("Recovery", "恢复")} · ${escapeHtml(fmtCountdown(current.countdown_seconds))}</small></div><span class="window-confidence">${Math.round(((p.recovery || {}).confidence || 0) * 100)}%</span></div>`;
 }
 function historyHtml(p) {
-  if (!p.events.length) return `<p class="muted">${local("No reset events recorded.", "暂无重置事件。")}</p>`;
-  return `<div class="timeline">${p.events.map((event) => `<div class="tl-item ${event.reset_kind === "extra" ? "tl-extra" : "tl-reset"}"><span class="tl-mark">${event.reset_kind === "extra" ? "⚡" : "●"}</span><span class="tl-time">${escapeHtml(fmtWhen(event.effective_at))}</span><span class="tl-reason">${escapeHtml(I18N.pick(event.reason) || event.event_type)}</span><span class="src">· ${escapeHtml(event.status)}</span></div>`).join("")}</div>`;
+  const confirmed = p.events.filter((event) => event.status === "confirmed");
+  if (!confirmed.length) return `<p class="muted">${local("No confirmed reset events. Seed data is not shown as history.", "暂无已确认的重置事件；种子数据不会作为历史展示。")}</p>`;
+  return `<div class="timeline">${confirmed.map((event) => `<div class="tl-item ${event.reset_kind === "extra" ? "tl-extra" : "tl-reset"}"><span class="tl-mark">${event.reset_kind === "extra" ? "⚡" : "●"}</span><span class="tl-time">${escapeHtml(fmtWhen(event.effective_at))}</span><span class="tl-reason">${escapeHtml(I18N.pick(event.reason) || event.event_type)}</span><span class="src">· ${escapeHtml(event.status)}</span></div>`).join("")}</div>`;
 }
 function whyHtml(p) {
   const evidence = (p.recovery || {}).evidence || {}; const estimate = recovery(p);
@@ -18,7 +19,8 @@ function whyHtml(p) {
 function render(p) {
   const current = stateWindow(p); const estimate = recovery(p); const chance = Math.round((((p.hazard || {}).prediction || {}).probability || 0) * 100);
   document.getElementById("ptitle").innerHTML = logoOrIcon(p); document.getElementById("dtitle").textContent = I18N.pick(p.name);
-  document.getElementById("detail").innerHTML = `<section class="detail-hero"><span class="availability">${local("AVAILABLE", "可用")}</span><h1>${productLabel(p)}</h1><p>${local("Next recovery", "下次恢复")} · <b>${escapeHtml(fmtCountdown(current.countdown_seconds))}</b></p></section>
+  const availability = p.state.availability === "available" ? local("AVAILABLE", "可用") : local("USAGE UNKNOWN", "额度状态未知");
+  document.getElementById("detail").innerHTML = `<section class="detail-hero"><span class="availability ${escapeHtml(p.state.availability || "unknown")}">${availability}</span><h1>${productLabel(p)}</h1><p>${local("Next recovery estimate", "下次恢复估计")} · <b>${escapeHtml(fmtCountdown(current.countdown_seconds))}</b></p></section>
   <section class="block"><h3>${local("USAGE WINDOWS", "额度窗口")}</h3>${windowsHtml(p)}</section>
   <section class="block"><h3>${local("WHY THIS ESTIMATE?", "为何这样预测？")}</h3>${whyHtml(p)}<p class="muted">${local("Most likely", "最可能")} ${escapeHtml(fmtWhen(estimate.expected_at))} · ${local("95% before", "95% 前恢复")} ${escapeHtml(fmtWhen((estimate.interval || {}).p95))}</p></section>
   <section class="block"><h3>${local("RESET HISTORY", "重置历史")}</h3>${historyHtml(p)}</section>

@@ -520,7 +520,7 @@ def main():
                 existing_version = json.load(f).get("schema_version")
         except Exception:
             pass
-        if existing_version == "2.0":
+        if existing_version == "2.0" and os.environ.get("RESET_RADAR_ALLOW_DEGRADED") != "1":
             print("[warn] 本轮所有平台均未抓到真实数据源（全降级），保留上次 V2 数据。")
             return
         print("[warn] 全部数据源降级；正在写入一次 V2 种子迁移快照。")
@@ -528,6 +528,9 @@ def main():
     out = v2.build(now, platform_inputs, service_status, speakers)
     if degraded:
         out["data_freshness"]["degraded_products"] = degraded
+    if live_count == 0:
+        out["data_freshness"]["status"] = "degraded"
+        out["data_freshness"]["sources_ok"] = 0
 
     os.makedirs(DATA_DIR, exist_ok=True)
     with open(DATA_JSON, "w", encoding="utf-8") as f:

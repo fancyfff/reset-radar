@@ -400,6 +400,8 @@ body {
 .answer-name, .radar-row > span { display: flex; align-items: center; gap: 8px; font-weight: 700; }
 .answer-row small, .radar-row small { display: block; color: var(--text-dim); font-size: 11px; font-weight: 400; text-align: right; }
 .availability { color: var(--ok); font-size: 11px; letter-spacing: .08em; }
+.availability.unknown { color: var(--medium); }
+.availability.limited { color: var(--high); }
 .dashboard-section h2 { font-size: 12px; letter-spacing: .08em; color: var(--text-dim); margin: 18px 0 8px; }
 .dashboard-section h2 em { color: var(--accent); font-style: normal; float: right; }
 .next-list a b, .radar-row b { font-variant-numeric: tabular-nums; }
@@ -411,4 +413,17 @@ body {
 .window-row small { display: block; color: var(--text-dim); }.window-confidence { color: var(--accent); font-weight: 700; }
 .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }.why-grid span { color: var(--text-dim); font-size: 11px; }.why-grid b { display: block; color: var(--text); font-size: 13px; }
 .hazard b { font-size: 30px; }
+
+/* V2 sections are full-width dashboard blocks.  The former card grid is only
+   valid for the retired platform-card homepage and breaks desktop ordering. */
+#cards { display: block; }
+
+@media (min-width: 768px) {
+  #cards { max-width: 760px; margin: 0 auto; padding: 6px 0 20px; }
+  .hero, .dashboard-section, .detail-hero { margin-left: 0; margin-right: 0; }
+  .hero > p { font-size: 15px; }
+  .answer-row, .next-list a, .radar-row, .event-row { padding: 14px 18px; }
+  .dashboard-section h2 { margin-top: 26px; }
+  .bottomnav { justify-content: center; }
+}
 

@@ -1,12 +1,12 @@
 [
   {
-    "id": "fc_recovery_codex_202608291031",
+    "id": "fc_recovery_codex_202608300152",
     "product_id": "codex",
     "target": {
       "type": "normal_recovery",
       "window_id": "codex_primary"
     },
-    "generated_at": "2026-08-29T10:31:30Z",
+    "generated_at": "2026-08-30T01:52:43Z",
     "prediction": {
       "expected_at": "2026-08-31T03:30:00Z",
       "interval": {
@@ -30,15 +30,15 @@
     }
   },
   {
-    "id": "fc_hazard_codex_202608291031",
+    "id": "fc_hazard_codex_202608300152",
     "product_id": "codex",
     "target": {
       "type": "global_reset",
       "horizon_hours": 24
     },
-    "generated_at": "2026-08-29T10:31:30Z",
+    "generated_at": "2026-08-30T01:52:43Z",
     "prediction": {
-      "probability": 0.0781,
+      "probability": 0.0773,
       "expected_at": null,
       "interval": {
         "p50": null,
@@ -52,9 +52,9 @@
     },
     "evidence": {
       "historical_events": 1,
-      "recent_signals": 0,
-      "independent_sources": 0,
-      "signal_score": 0.0
+      "recent_signals": 10,
+      "independent_sources": 5,
+      "signal_score": 0.039
     },
     "calibration": {
       "status": "experimental"
@@ -64,13 +64,13 @@
     }
   },
   {
-    "id": "fc_recovery_claude_202608291031",
+    "id": "fc_recovery_claude_202608300152",
     "product_id": "claude",
     "target": {
       "type": "normal_recovery",
       "window_id": "claude_primary"
     },
-    "generated_at": "2026-08-29T10:31:30Z",
+    "generated_at": "2026-08-30T01:52:43Z",
     "prediction": {
       "expected_at": "2026-08-30T02:40:00Z",
       "interval": {
@@ -94,13 +94,13 @@
     }
   },
   {
-    "id": "fc_hazard_claude_202608291031",
+    "id": "fc_hazard_claude_202608300152",
     "product_id": "claude",
     "target": {
       "type": "global_reset",
       "horizon_hours": 24
     },
-    "generated_at": "2026-08-29T10:31:30Z",
+    "generated_at": "2026-08-30T01:52:43Z",
     "prediction": {
       "probability": 0.0024,
       "expected_at": null,
@@ -116,9 +116,9 @@
     },
     "evidence": {
       "historical_events": 0,
-      "recent_signals": 1,
-      "independent_sources": 1,
-      "signal_score": -0.008
+      "recent_signals": 10,
+      "independent_sources": 10,
+      "signal_score": -0.207
     },
     "calibration": {
       "status": "experimental"
@@ -128,19 +128,19 @@
     }
   },
   {
-    "id": "fc_recovery_grok_202608291031",
+    "id": "fc_recovery_grok_202608300152",
     "product_id": "grok",
     "target": {
       "type": "normal_recovery",
       "window_id": "grok_primary"
     },
-    "generated_at": "2026-08-29T10:31:30Z",
+    "generated_at": "2026-08-30T01:52:43Z",
     "prediction": {
-      "expected_at": "2026-08-29T11:00:00Z",
+      "expected_at": "2026-08-31T11:30:00Z",
       "interval": {
-        "p50": "2026-08-29T11:00:00Z",
-        "p80": "2026-08-29T12:07:30Z",
-        "p95": "2026-08-29T13:15:00Z"
+        "p50": "2026-08-31T11:30:00Z",
+        "p80": "2026-08-31T12:37:30Z",
+        "p95": "2026-08-31T13:45:00Z"
       }
     },
     "model": {
@@ -158,13 +158,13 @@
     }
   },
   {
-    "id": "fc_hazard_grok_202608291031",
+    "id": "fc_hazard_grok_202608300152",
     "product_id": "grok",
     "target": {
       "type": "global_reset",
       "horizon_hours": 24
     },
-    "generated_at": "2026-08-29T10:31:30Z",
+    "generated_at": "2026-08-30T01:52:43Z",
     "prediction": {
       "probability": 0.0024,
       "expected_at": null,
@@ -192,19 +192,19 @@
     }
   },
   {
-    "id": "fc_recovery_kimi_202608291031",
+    "id": "fc_recovery_kimi_202608300152",
     "product_id": "kimi",
     "target": {
       "type": "normal_recovery",
       "window_id": "kimi_primary"
     },
-    "generated_at": "2026-08-29T10:31:30Z",
+    "generated_at": "2026-08-30T01:52:43Z",
     "prediction": {
-      "expected_at": "2026-08-29T22:40:00Z",
+      "expected_at": "2026-08-30T22:30:00Z",
       "interval": {
-        "p50": "2026-08-29T22:40:00Z",
-        "p80": "2026-08-29T23:10:00Z",
-        "p95": "2026-08-29T23:40:00Z"
+        "p50": "2026-08-30T22:30:00Z",
+        "p80": "2026-08-30T23:00:00Z",
+        "p95": "2026-08-30T23:30:00Z"
       }
     },
     "model": {
@@ -222,13 +222,13 @@
     }
   },
   {
-    "id": "fc_hazard_kimi_202608291031",
+    "id": "fc_hazard_kimi_202608300152",
     "product_id": "kimi",
     "target": {
       "type": "global_reset",
       "horizon_hours": 24
     },
-    "generated_at": "2026-08-29T10:31:30Z",
+    "generated_at": "2026-08-30T01:52:43Z",
     "prediction": {
       "probability": 0.0024,
       "expected_at": null,
@@ -244,9 +244,9 @@
     },
     "evidence": {
       "historical_events": 0,
-      "recent_signals": 1,
-      "independent_sources": 1,
-      "signal_score": 0.04
+      "recent_signals": 9,
+      "independent_sources": 9,
+      "signal_score": -0.269
     },
     "calibration": {
       "status": "experimental"
@@ -256,13 +256,13 @@
     }
   },
   {
-    "id": "fc_recovery_minimax_202608291031",
+    "id": "fc_recovery_minimax_202608300152",
     "product_id": "minimax",
     "target": {
       "type": "normal_recovery",
       "window_id": "minimax_primary"
     },
-    "generated_at": "2026-08-29T10:31:30Z",
+    "generated_at": "2026-08-30T01:52:43Z",
     "prediction": {
       "expected_at": "2026-08-30T05:40:00Z",
       "interval": {
@@ -286,13 +286,13 @@
     }
   },
   {
-    "id": "fc_hazard_minimax_202608291031",
+    "id": "fc_hazard_minimax_202608300152",
     "product_id": "minimax",
     "target": {
       "type": "global_reset",
       "horizon_hours": 24
     },
-    "generated_at": "2026-08-29T10:31:30Z",
+    "generated_at": "2026-08-30T01:52:43Z",
     "prediction": {
       "probability": 0.0024,
       "expected_at": null,
@@ -308,9 +308,9 @@
     },
     "evidence": {
       "historical_events": 0,
-      "recent_signals": 0,
-      "independent_sources": 0,
-      "signal_score": 0.0
+      "recent_signals": 6,
+      "independent_sources": 6,
+      "signal_score": -0.528
     },
     "calibration": {
       "status": "experimental"
@@ -320,13 +320,13 @@
     }
   },
   {
-    "id": "fc_recovery_antigravity_202608291031",
+    "id": "fc_recovery_antigravity_202608300152",
     "product_id": "antigravity",
     "target": {
       "type": "normal_recovery",
       "window_id": "antigravity_primary"
     },
-    "generated_at": "2026-08-29T10:31:30Z",
+    "generated_at": "2026-08-30T01:52:43Z",
     "prediction": {
       "expected_at": "2026-08-30T11:40:00Z",
       "interval": {
@@ -350,13 +350,13 @@
     }
   },
   {
-    "id": "fc_hazard_antigravity_202608291031",
+    "id": "fc_hazard_antigravity_202608300152",
     "product_id": "antigravity",
     "target": {
       "type": "global_reset",
       "horizon_hours": 24
     },
-    "generated_at": "2026-08-29T10:31:30Z",
+    "generated_at": "2026-08-30T01:52:43Z",
     "prediction": {
       "probability": 0.0024,
       "expected_at": null,
@@ -384,13 +384,13 @@
     }
   },
   {
-    "id": "fc_recovery_qwen_code_202608291031",
+    "id": "fc_recovery_qwen_code_202608300152",
     "product_id": "qwen_code",
     "target": {
       "type": "normal_recovery",
       "window_id": "qwen_code_primary"
     },
-    "generated_at": "2026-08-29T10:31:30Z",
+    "generated_at": "2026-08-30T01:52:43Z",
     "prediction": {
       "expected_at": "2026-08-30T15:20:00Z",
       "interval": {
@@ -414,13 +414,13 @@
     }
   },
   {
-    "id": "fc_hazard_qwen_code_202608291031",
+    "id": "fc_hazard_qwen_code_202608300152",
     "product_id": "qwen_code",
     "target": {
       "type": "global_reset",
       "horizon_hours": 24
     },
-    "generated_at": "2026-08-29T10:31:30Z",
+    "generated_at": "2026-08-30T01:52:43Z",
     "prediction": {
       "probability": 0.0024,
       "expected_at": null,
@@ -436,9 +436,9 @@
     },
     "evidence": {
       "historical_events": 0,
-      "recent_signals": 0,
-      "independent_sources": 0,
-      "signal_score": 0.0
+      "recent_signals": 2,
+      "independent_sources": 2,
+      "signal_score": 0.219
     },
     "calibration": {
       "status": "experimental"

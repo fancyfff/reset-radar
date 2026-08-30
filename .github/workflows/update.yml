@@ -16,10 +16,10 @@ jobs:
 
     steps:
       - name: 检出代码
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: 设置 Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
 
@@ -40,7 +40,7 @@ jobs:
           X_API_BEARER: ${{ secrets.X_API_BEARER }}
 
       - name: 提交更新
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v6
         with:
           commit_message: "🤖 Auto update: 数据刷新"
           file_pattern: "data/data.json data/fallback.js data/resets.json data/events.json data/observations.json data/forecasts.json data/evaluation.json"

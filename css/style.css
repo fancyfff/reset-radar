@@ -419,7 +419,9 @@ body {
 #cards { display: block; }
 
 @media (min-width: 768px) {
-  #cards { max-width: 760px; margin: 0 auto; padding: 6px 0 20px; }
+  /* Let dashboard cards use the whole desktop app width (960px), rather
+     than constraining them to the former mobile-oriented 760px column. */
+  #cards { width: 100%; max-width: none; margin: 0; padding: 6px 24px 20px; }
   .hero, .dashboard-section, .detail-hero { margin-left: 0; margin-right: 0; }
   .hero > p { font-size: 15px; }
   .answer-row, .next-list a, .radar-row, .event-row { padding: 14px 18px; }

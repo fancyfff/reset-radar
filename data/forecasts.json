@@ -1,12 +1,12 @@
 [
   {
-    "id": "fc_recovery_codex_202608311434",
+    "id": "fc_recovery_codex_202608312027",
     "product_id": "codex",
     "target": {
       "type": "normal_recovery",
       "window_id": "codex_primary"
     },
-    "generated_at": "2026-08-31T14:34:18Z",
+    "generated_at": "2026-08-31T20:27:46Z",
     "prediction": {
       "expected_at": "2026-09-02T03:30:00Z",
       "interval": {
@@ -30,15 +30,15 @@
     }
   },
   {
-    "id": "fc_hazard_codex_202608311434",
+    "id": "fc_hazard_codex_202608312027",
     "product_id": "codex",
     "target": {
       "type": "global_reset",
       "horizon_hours": 24
     },
-    "generated_at": "2026-08-31T14:34:18Z",
+    "generated_at": "2026-08-31T20:27:46Z",
     "prediction": {
-      "probability": 0.0694,
+      "probability": 0.0683,
       "expected_at": null,
       "interval": {
         "p50": null,
@@ -64,13 +64,13 @@
     }
   },
   {
-    "id": "fc_recovery_claude_202608311434",
+    "id": "fc_recovery_claude_202608312027",
     "product_id": "claude",
     "target": {
       "type": "normal_recovery",
       "window_id": "claude_primary"
     },
-    "generated_at": "2026-08-31T14:34:18Z",
+    "generated_at": "2026-08-31T20:27:46Z",
     "prediction": {
       "expected_at": "2026-09-01T02:35:00Z",
       "interval": {
@@ -94,13 +94,13 @@
     }
   },
   {
-    "id": "fc_hazard_claude_202608311434",
+    "id": "fc_hazard_claude_202608312027",
     "product_id": "claude",
     "target": {
       "type": "global_reset",
       "horizon_hours": 24
     },
-    "generated_at": "2026-08-31T14:34:18Z",
+    "generated_at": "2026-08-31T20:27:46Z",
     "prediction": {
       "probability": 0.0024,
       "expected_at": null,
@@ -116,9 +116,9 @@
     },
     "evidence": {
       "historical_events": 0,
-      "recent_signals": 10,
-      "independent_sources": 10,
-      "signal_score": -0.207
+      "recent_signals": 11,
+      "independent_sources": 11,
+      "signal_score": 0.031
     },
     "calibration": {
       "status": "experimental"
@@ -128,13 +128,13 @@
     }
   },
   {
-    "id": "fc_recovery_grok_202608311434",
+    "id": "fc_recovery_grok_202608312027",
     "product_id": "grok",
     "target": {
       "type": "normal_recovery",
       "window_id": "grok_primary"
     },
-    "generated_at": "2026-08-31T14:34:18Z",
+    "generated_at": "2026-08-31T20:27:46Z",
     "prediction": {
       "expected_at": "2026-09-02T12:00:00Z",
       "interval": {
@@ -158,13 +158,13 @@
     }
   },
   {
-    "id": "fc_hazard_grok_202608311434",
+    "id": "fc_hazard_grok_202608312027",
     "product_id": "grok",
     "target": {
       "type": "global_reset",
       "horizon_hours": 24
     },
-    "generated_at": "2026-08-31T14:34:18Z",
+    "generated_at": "2026-08-31T20:27:46Z",
     "prediction": {
       "probability": 0.0024,
       "expected_at": null,
@@ -192,13 +192,13 @@
     }
   },
   {
-    "id": "fc_recovery_kimi_202608311434",
+    "id": "fc_recovery_kimi_202608312027",
     "product_id": "kimi",
     "target": {
       "type": "normal_recovery",
       "window_id": "kimi_primary"
     },
-    "generated_at": "2026-08-31T14:34:18Z",
+    "generated_at": "2026-08-31T20:27:46Z",
     "prediction": {
       "expected_at": "2026-08-31T22:20:00Z",
       "interval": {
@@ -222,13 +222,13 @@
     }
   },
   {
-    "id": "fc_hazard_kimi_202608311434",
+    "id": "fc_hazard_kimi_202608312027",
     "product_id": "kimi",
     "target": {
       "type": "global_reset",
       "horizon_hours": 24
     },
-    "generated_at": "2026-08-31T14:34:18Z",
+    "generated_at": "2026-08-31T20:27:46Z",
     "prediction": {
       "probability": 0.0024,
       "expected_at": null,
@@ -256,13 +256,13 @@
     }
   },
   {
-    "id": "fc_recovery_minimax_202608311434",
+    "id": "fc_recovery_minimax_202608312027",
     "product_id": "minimax",
     "target": {
       "type": "normal_recovery",
       "window_id": "minimax_primary"
     },
-    "generated_at": "2026-08-31T14:34:18Z",
+    "generated_at": "2026-08-31T20:27:46Z",
     "prediction": {
       "expected_at": "2026-09-01T05:50:00Z",
       "interval": {
@@ -286,13 +286,13 @@
     }
   },
   {
-    "id": "fc_hazard_minimax_202608311434",
+    "id": "fc_hazard_minimax_202608312027",
     "product_id": "minimax",
     "target": {
       "type": "global_reset",
       "horizon_hours": 24
     },
-    "generated_at": "2026-08-31T14:34:18Z",
+    "generated_at": "2026-08-31T20:27:46Z",
     "prediction": {
       "probability": 0.0024,
       "expected_at": null,
@@ -308,9 +308,9 @@
     },
     "evidence": {
       "historical_events": 0,
-      "recent_signals": 7,
-      "independent_sources": 7,
-      "signal_score": -0.29
+      "recent_signals": 8,
+      "independent_sources": 8,
+      "signal_score": -0.18
     },
     "calibration": {
       "status": "experimental"
@@ -320,13 +320,13 @@
     }
   },
   {
-    "id": "fc_recovery_antigravity_202608311434",
+    "id": "fc_recovery_antigravity_202608312027",
     "product_id": "antigravity",
     "target": {
       "type": "normal_recovery",
       "window_id": "antigravity_primary"
     },
-    "generated_at": "2026-08-31T14:34:18Z",
+    "generated_at": "2026-08-31T20:27:46Z",
     "prediction": {
       "expected_at": "2026-09-01T11:35:00Z",
       "interval": {
@@ -350,13 +350,13 @@
     }
   },
   {
-    "id": "fc_hazard_antigravity_202608311434",
+    "id": "fc_hazard_antigravity_202608312027",
     "product_id": "antigravity",
     "target": {
       "type": "global_reset",
       "horizon_hours": 24
     },
-    "generated_at": "2026-08-31T14:34:18Z",
+    "generated_at": "2026-08-31T20:27:46Z",
     "prediction": {
       "probability": 0.0024,
       "expected_at": null,
@@ -372,9 +372,9 @@
     },
     "evidence": {
       "historical_events": 0,
-      "recent_signals": 1,
-      "independent_sources": 1,
-      "signal_score": 0.11
+      "recent_signals": 0,
+      "independent_sources": 0,
+      "signal_score": 0.0
     },
     "calibration": {
       "status": "experimental"
@@ -384,13 +384,13 @@
     }
   },
   {
-    "id": "fc_recovery_qwen_code_202608311434",
+    "id": "fc_recovery_qwen_code_202608312027",
     "product_id": "qwen_code",
     "target": {
       "type": "normal_recovery",
       "window_id": "qwen_code_primary"
     },
-    "generated_at": "2026-08-31T14:34:18Z",
+    "generated_at": "2026-08-31T20:27:46Z",
     "prediction": {
       "expected_at": "2026-09-01T15:10:00Z",
       "interval": {
@@ -414,13 +414,13 @@
     }
   },
   {
-    "id": "fc_hazard_qwen_code_202608311434",
+    "id": "fc_hazard_qwen_code_202608312027",
     "product_id": "qwen_code",
     "target": {
       "type": "global_reset",
       "horizon_hours": 24
     },
-    "generated_at": "2026-08-31T14:34:18Z",
+    "generated_at": "2026-08-31T20:27:46Z",
     "prediction": {
       "probability": 0.0024,
       "expected_at": null,
@@ -438,7 +438,7 @@
       "historical_events": 0,
       "recent_signals": 3,
       "independent_sources": 3,
-      "signal_score": 0.329
+      "signal_score": 0.457
     },
     "calibration": {
       "status": "experimental"

@@ -1,12 +1,12 @@
 [
   {
-    "id": "fc_recovery_codex_202609051050",
+    "id": "fc_recovery_codex_202609051336",
     "product_id": "codex",
     "target": {
       "type": "normal_recovery",
       "window_id": "codex_primary"
     },
-    "generated_at": "2026-09-05T10:50:43Z",
+    "generated_at": "2026-09-05T13:36:15Z",
     "prediction": {
       "expected_at": "2026-09-06T03:30:00Z",
       "interval": {
@@ -30,15 +30,15 @@
     }
   },
   {
-    "id": "fc_hazard_codex_202609051050",
+    "id": "fc_hazard_codex_202609051336",
     "product_id": "codex",
     "target": {
       "type": "global_reset",
       "horizon_hours": 24
     },
-    "generated_at": "2026-09-05T10:50:43Z",
+    "generated_at": "2026-09-05T13:36:15Z",
     "prediction": {
-      "probability": 0.0524,
+      "probability": 0.0521,
       "expected_at": null,
       "interval": {
         "p50": null,
@@ -64,13 +64,13 @@
     }
   },
   {
-    "id": "fc_recovery_claude_202609051050",
+    "id": "fc_recovery_claude_202609051336",
     "product_id": "claude",
     "target": {
       "type": "normal_recovery",
       "window_id": "claude_primary"
     },
-    "generated_at": "2026-09-05T10:50:43Z",
+    "generated_at": "2026-09-05T13:36:15Z",
     "prediction": {
       "expected_at": "2026-09-07T02:20:00Z",
       "interval": {
@@ -94,13 +94,13 @@
     }
   },
   {
-    "id": "fc_hazard_claude_202609051050",
+    "id": "fc_hazard_claude_202609051336",
     "product_id": "claude",
     "target": {
       "type": "global_reset",
       "horizon_hours": 24
     },
-    "generated_at": "2026-09-05T10:50:43Z",
+    "generated_at": "2026-09-05T13:36:15Z",
     "prediction": {
       "probability": 0.0024,
       "expected_at": null,
@@ -128,13 +128,13 @@
     }
   },
   {
-    "id": "fc_recovery_grok_202609051050",
+    "id": "fc_recovery_grok_202609051336",
     "product_id": "grok",
     "target": {
       "type": "normal_recovery",
       "window_id": "grok_primary"
     },
-    "generated_at": "2026-09-05T10:50:43Z",
+    "generated_at": "2026-09-05T13:36:15Z",
     "prediction": {
       "expected_at": "2026-09-06T13:00:00Z",
       "interval": {
@@ -158,13 +158,13 @@
     }
   },
   {
-    "id": "fc_hazard_grok_202609051050",
+    "id": "fc_hazard_grok_202609051336",
     "product_id": "grok",
     "target": {
       "type": "global_reset",
       "horizon_hours": 24
     },
-    "generated_at": "2026-09-05T10:50:43Z",
+    "generated_at": "2026-09-05T13:36:15Z",
     "prediction": {
       "probability": 0.0024,
       "expected_at": null,
@@ -192,13 +192,13 @@
     }
   },
   {
-    "id": "fc_recovery_kimi_202609051050",
+    "id": "fc_recovery_kimi_202609051336",
     "product_id": "kimi",
     "target": {
       "type": "normal_recovery",
       "window_id": "kimi_primary"
     },
-    "generated_at": "2026-09-05T10:50:43Z",
+    "generated_at": "2026-09-05T13:36:15Z",
     "prediction": {
       "expected_at": "2026-09-05T21:30:00Z",
       "interval": {
@@ -222,13 +222,13 @@
     }
   },
   {
-    "id": "fc_hazard_kimi_202609051050",
+    "id": "fc_hazard_kimi_202609051336",
     "product_id": "kimi",
     "target": {
       "type": "global_reset",
       "horizon_hours": 24
     },
-    "generated_at": "2026-09-05T10:50:43Z",
+    "generated_at": "2026-09-05T13:36:15Z",
     "prediction": {
       "probability": 0.0024,
       "expected_at": null,
@@ -244,9 +244,9 @@
     },
     "evidence": {
       "historical_events": 0,
-      "recent_signals": 8,
-      "independent_sources": 8,
-      "signal_score": -0.25
+      "recent_signals": 7,
+      "independent_sources": 7,
+      "signal_score": -0.488
     },
     "calibration": {
       "status": "experimental"
@@ -256,13 +256,13 @@
     }
   },
   {
-    "id": "fc_recovery_minimax_202609051050",
+    "id": "fc_recovery_minimax_202609051336",
     "product_id": "minimax",
     "target": {
       "type": "normal_recovery",
       "window_id": "minimax_primary"
     },
-    "generated_at": "2026-09-05T10:50:43Z",
+    "generated_at": "2026-09-05T13:36:15Z",
     "prediction": {
       "expected_at": "2026-09-07T06:20:00Z",
       "interval": {
@@ -286,13 +286,13 @@
     }
   },
   {
-    "id": "fc_hazard_minimax_202609051050",
+    "id": "fc_hazard_minimax_202609051336",
     "product_id": "minimax",
     "target": {
       "type": "global_reset",
       "horizon_hours": 24
     },
-    "generated_at": "2026-09-05T10:50:43Z",
+    "generated_at": "2026-09-05T13:36:15Z",
     "prediction": {
       "probability": 0.0024,
       "expected_at": null,
@@ -320,19 +320,19 @@
     }
   },
   {
-    "id": "fc_recovery_antigravity_202609051050",
+    "id": "fc_recovery_antigravity_202609051336",
     "product_id": "antigravity",
     "target": {
       "type": "normal_recovery",
       "window_id": "antigravity_primary"
     },
-    "generated_at": "2026-09-05T10:50:43Z",
+    "generated_at": "2026-09-05T13:36:15Z",
     "prediction": {
-      "expected_at": "2026-09-05T11:25:00Z",
+      "expected_at": "2026-09-07T11:20:00Z",
       "interval": {
-        "p50": "2026-09-05T11:25:00Z",
-        "p80": "2026-09-05T11:55:00Z",
-        "p95": "2026-09-05T12:25:00Z"
+        "p50": "2026-09-07T11:20:00Z",
+        "p80": "2026-09-07T11:50:00Z",
+        "p95": "2026-09-07T12:20:00Z"
       }
     },
     "model": {
@@ -350,13 +350,13 @@
     }
   },
   {
-    "id": "fc_hazard_antigravity_202609051050",
+    "id": "fc_hazard_antigravity_202609051336",
     "product_id": "antigravity",
     "target": {
       "type": "global_reset",
       "horizon_hours": 24
     },
-    "generated_at": "2026-09-05T10:50:43Z",
+    "generated_at": "2026-09-05T13:36:15Z",
     "prediction": {
       "probability": 0.0024,
       "expected_at": null,
@@ -384,13 +384,13 @@
     }
   },
   {
-    "id": "fc_recovery_qwen_code_202609051050",
+    "id": "fc_recovery_qwen_code_202609051336",
     "product_id": "qwen_code",
     "target": {
       "type": "normal_recovery",
       "window_id": "qwen_code_primary"
     },
-    "generated_at": "2026-09-05T10:50:43Z",
+    "generated_at": "2026-09-05T13:36:15Z",
     "prediction": {
       "expected_at": "2026-09-05T14:50:00Z",
       "interval": {
@@ -414,13 +414,13 @@
     }
   },
   {
-    "id": "fc_hazard_qwen_code_202609051050",
+    "id": "fc_hazard_qwen_code_202609051336",
     "product_id": "qwen_code",
     "target": {
       "type": "global_reset",
       "horizon_hours": 24
     },
-    "generated_at": "2026-09-05T10:50:43Z",
+    "generated_at": "2026-09-05T13:36:15Z",
     "prediction": {
       "probability": 0.0024,
       "expected_at": null,

@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0",
-  "generated_at": "2026-09-16T15:04:20Z",
+  "generated_at": "2026-09-16T18:57:57Z",
   "data_freshness": {
     "status": "fresh",
     "max_age_seconds": 1800,
@@ -341,13 +341,13 @@
       "product_id": "codex",
       "availability": "unknown",
       "overall_state": "unknown",
-      "updated_at": "2026-09-16T15:04:20Z",
+      "updated_at": "2026-09-16T18:57:57Z",
       "windows": [
         {
           "window_id": "codex_primary",
           "state": "available",
           "reset_at": "2026-09-18T03:30:00Z",
-          "countdown_seconds": 131139,
+          "countdown_seconds": 117122,
           "usage_percent": null,
           "confidence": 0.04,
           "source": "observed"
@@ -358,13 +358,13 @@
       "product_id": "claude",
       "availability": "unknown",
       "overall_state": "unknown",
-      "updated_at": "2026-09-16T15:04:20Z",
+      "updated_at": "2026-09-16T18:57:57Z",
       "windows": [
         {
           "window_id": "claude_primary",
           "state": "available",
           "reset_at": "2026-09-17T01:55:00Z",
-          "countdown_seconds": 39039,
+          "countdown_seconds": 25022,
           "usage_percent": null,
           "confidence": 0.09,
           "source": "observed"
@@ -375,13 +375,13 @@
       "product_id": "grok",
       "availability": "unknown",
       "overall_state": "unknown",
-      "updated_at": "2026-09-16T15:04:20Z",
+      "updated_at": "2026-09-16T18:57:57Z",
       "windows": [
         {
           "window_id": "grok_primary",
           "state": "available",
-          "reset_at": "2026-09-16T15:30:00Z",
-          "countdown_seconds": 1539,
+          "reset_at": "2026-09-18T16:00:00Z",
+          "countdown_seconds": 162122,
           "usage_percent": null,
           "confidence": 0.09,
           "source": "estimated"
@@ -392,13 +392,13 @@
       "product_id": "kimi",
       "availability": "unknown",
       "overall_state": "unknown",
-      "updated_at": "2026-09-16T15:04:20Z",
+      "updated_at": "2026-09-16T18:57:57Z",
       "windows": [
         {
           "window_id": "kimi_primary",
           "state": "available",
           "reset_at": "2026-09-16T19:40:00Z",
-          "countdown_seconds": 16539,
+          "countdown_seconds": 2522,
           "usage_percent": null,
           "confidence": 0.09,
           "source": "observed"
@@ -409,13 +409,13 @@
       "product_id": "minimax",
       "availability": "unknown",
       "overall_state": "unknown",
-      "updated_at": "2026-09-16T15:04:20Z",
+      "updated_at": "2026-09-16T18:57:57Z",
       "windows": [
         {
           "window_id": "minimax_primary",
           "state": "available",
           "reset_at": "2026-09-17T07:10:00Z",
-          "countdown_seconds": 57939,
+          "countdown_seconds": 43922,
           "usage_percent": null,
           "confidence": 0.09,
           "source": "observed"
@@ -426,13 +426,13 @@
       "product_id": "antigravity",
       "availability": "unknown",
       "overall_state": "unknown",
-      "updated_at": "2026-09-16T15:04:20Z",
+      "updated_at": "2026-09-16T18:57:57Z",
       "windows": [
         {
           "window_id": "antigravity_primary",
           "state": "available",
           "reset_at": "2026-09-17T10:55:00Z",
-          "countdown_seconds": 71439,
+          "countdown_seconds": 57422,
           "usage_percent": null,
           "confidence": 0.09,
           "source": "observed"
@@ -443,13 +443,13 @@
       "product_id": "qwen_code",
       "availability": "unknown",
       "overall_state": "unknown",
-      "updated_at": "2026-09-16T15:04:20Z",
+      "updated_at": "2026-09-16T18:57:57Z",
       "windows": [
         {
           "window_id": "qwen_code_primary",
           "state": "available",
           "reset_at": "2026-09-17T13:50:00Z",
-          "countdown_seconds": 81939,
+          "countdown_seconds": 67922,
           "usage_percent": null,
           "confidence": 0.09,
           "source": "observed"
@@ -962,10 +962,10 @@
   ],
   "signals": [
     {
-      "id": "sig_codex_0_202609161504",
+      "id": "sig_codex_0_202609161857",
       "product_id": "codex",
       "type": "official_announcement",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -973,8 +973,8 @@
         "severity": 0.65
       },
       "text": {
-        "en": "GitHub release(s) in last 24h: rusty-v8-v152.2.0, 0.155.0-alpha.9, 0.155.0-alpha.2.5, 0.155.0-alpha.10, 0.155.0-alpha.8, 0.155.0-alpha.7",
-        "zh": "近24小时 GitHub 发布：rusty-v8-v152.2.0, 0.155.0-alpha.9, 0.155.0-alpha.2.5, 0.155.0-alpha.10, 0.155.0-alpha.8, 0.155.0-alpha.7"
+        "en": "GitHub release(s) in last 24h: rusty-v8-v152.2.0, 0.155.0-alpha.9, 0.155.0-alpha.2.5, 0.155.0-alpha.12, 0.155.0-alpha.11, 0.155.0-alpha.10, 0.155.0-alpha.8, 0.155.0-alpha.7",
+        "zh": "近24小时 GitHub 发布：rusty-v8-v152.2.0, 0.155.0-alpha.9, 0.155.0-alpha.2.5, 0.155.0-alpha.12, 0.155.0-alpha.11, 0.155.0-alpha.10, 0.155.0-alpha.8, 0.155.0-alpha.7"
       },
       "source": {
         "type": "community",
@@ -989,10 +989,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_codex_1_202609161504",
+      "id": "sig_codex_1_202609161857",
       "product_id": "codex",
       "type": "community_report",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1000,13 +1000,13 @@
         "severity": 0.3
       },
       "text": {
-        "en": "Community: Desktop send_message_to_thread accepts unsupported thinking override, persists it to an Astra target, and reports success (issue #45955)",
-        "zh": "社区：Desktop send_message_to_thread accepts unsupported thinking override, persists it to an Astra target, and reports success（issue #45955）"
+        "en": "Community: Codex persists in Shopify operation refusal after plugin removal and gives unsupported broad explanations (issue #46000)",
+        "zh": "社区：Codex persists in Shopify operation refusal after plugin removal and gives unsupported broad explanations（issue #46000）"
       },
       "source": {
         "type": "community",
         "provider": "github",
-        "url": "https://github.com/openai/codex/issues/45955"
+        "url": "https://github.com/openai/codex/issues/46000"
       },
       "evidence": {
         "freshness": 0.95,
@@ -1016,10 +1016,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_codex_2_202609161504",
+      "id": "sig_codex_2_202609161857",
       "product_id": "codex",
       "type": "community_report",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1027,13 +1027,13 @@
         "severity": 0.3
       },
       "text": {
-        "en": "Community: App Server init/proxy failure blocks programmatic archival fallback (issue #45954)",
-        "zh": "社区：App Server init/proxy failure blocks programmatic archival fallback（issue #45954）"
+        "en": "Community: Windows Computer Use returns apps: [] and cannot access native apps such as CapCut (issue #45995)",
+        "zh": "社区：Windows Computer Use returns apps: [] and cannot access native apps such as CapCut（issue #45995）"
       },
       "source": {
         "type": "community",
         "provider": "github",
-        "url": "https://github.com/openai/codex/issues/45954"
+        "url": "https://github.com/openai/codex/issues/45995"
       },
       "evidence": {
         "freshness": 0.95,
@@ -1043,10 +1043,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_codex_3_202609161504",
+      "id": "sig_codex_3_202609161857",
       "product_id": "codex",
       "type": "community_report",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1054,13 +1054,13 @@
         "severity": 0.3
       },
       "text": {
-        "en": "Community: macOS: Codex browser control via Chrome extension fails at startup — `node_repl` exits (code 65) with `sandbox-exec: unbound variable: TIOCSTI` (issue #45950)",
-        "zh": "社区：macOS: Codex browser control via Chrome extension fails at startup — `node_repl` exits (code 65) with `sandbox-exec: unbound variable: TIOCSTI`（issue #45950）"
+        "en": "Community: Windows: node_repl/js fails with missing sandboxPolicy (Codex CLI 0.154.0) (issue #45988)",
+        "zh": "社区：Windows: node_repl/js fails with missing sandboxPolicy (Codex CLI 0.154.0)（issue #45988）"
       },
       "source": {
         "type": "community",
         "provider": "github",
-        "url": "https://github.com/openai/codex/issues/45950"
+        "url": "https://github.com/openai/codex/issues/45988"
       },
       "evidence": {
         "freshness": 0.95,
@@ -1070,10 +1070,37 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_codex_4_202609161504",
+      "id": "sig_codex_4_202609161857",
       "product_id": "codex",
       "type": "service_anomaly",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
+      "direction": "decrease",
+      "features": {
+        "reset_related": false,
+        "quota_related": true,
+        "severity": 0.3
+      },
+      "text": {
+        "en": "Official status: Elevated errors in ChatGPT Work (investigating, 2026-09-16)",
+        "zh": "官方状态：Elevated errors in ChatGPT Work（investigating, 2026-09-16）"
+      },
+      "source": {
+        "type": "official",
+        "provider": "statuspage",
+        "url": null
+      },
+      "evidence": {
+        "freshness": 0.95,
+        "independence": 0.7,
+        "strength": 0.8
+      },
+      "freshness": 0.95
+    },
+    {
+      "id": "sig_codex_5_202609161857",
+      "product_id": "codex",
+      "type": "service_anomaly",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1097,10 +1124,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_codex_5_202609161504",
+      "id": "sig_codex_6_202609161857",
       "product_id": "codex",
       "type": "service_anomaly",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1124,10 +1151,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_codex_6_202609161504",
+      "id": "sig_codex_7_202609161857",
       "product_id": "codex",
       "type": "service_anomaly",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1151,10 +1178,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_codex_7_202609161504",
+      "id": "sig_codex_8_202609161857",
       "product_id": "codex",
       "type": "service_anomaly",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1178,10 +1205,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_codex_8_202609161504",
+      "id": "sig_codex_9_202609161857",
       "product_id": "codex",
       "type": "service_anomaly",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1205,37 +1232,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_codex_9_202609161504",
-      "product_id": "codex",
-      "type": "service_anomaly",
-      "occurred_at": "2026-09-16T15:04:20Z",
-      "direction": "decrease",
-      "features": {
-        "reset_related": false,
-        "quota_related": true,
-        "severity": 0.3
-      },
-      "text": {
-        "en": "Official status: Elevated error rates for Codex and ChatGPT Work (resolved, 2026-09-14)",
-        "zh": "官方状态：Elevated error rates for Codex and ChatGPT Work（resolved, 2026-09-14）"
-      },
-      "source": {
-        "type": "official",
-        "provider": "statuspage",
-        "url": null
-      },
-      "evidence": {
-        "freshness": 0.95,
-        "independence": 0.7,
-        "strength": 0.8
-      },
-      "freshness": 0.95
-    },
-    {
-      "id": "sig_claude_0_202609161504",
+      "id": "sig_claude_0_202609161857",
       "product_id": "claude",
       "type": "service_anomaly",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1259,10 +1259,10 @@
       "freshness": 0.5
     },
     {
-      "id": "sig_claude_1_202609161504",
+      "id": "sig_claude_1_202609161857",
       "product_id": "claude",
       "type": "official_announcement",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1286,10 +1286,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_claude_2_202609161504",
+      "id": "sig_claude_2_202609161857",
       "product_id": "claude",
       "type": "community_report",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1297,13 +1297,13 @@
         "severity": 0.3
       },
       "text": {
-        "en": "Community: [Bug] Desktop app Claude Code tab: inline \\( ... \\) math silently fails above 58 characters (issue #94787)",
-        "zh": "社区：[Bug] Desktop app Claude Code tab: inline \\( ... \\) math silently fails above 58 characters（issue #94787）"
+        "en": "Community: Model selection has been unreliable since 2026-04-28, and the issue naming the mechanism (#73881) has been open 75 days — users are still billed at a tier they explicitly left (issue #94827)",
+        "zh": "社区：Model selection has been unreliable since 2026-04-28, and the issue naming the mechanism (#73881) has been open 75 days — users are still billed at a tier they explicitly left（issue #94827）"
       },
       "source": {
         "type": "community",
         "provider": "github",
-        "url": "https://github.com/anthropics/claude-code/issues/94787"
+        "url": "https://github.com/anthropics/claude-code/issues/94827"
       },
       "evidence": {
         "freshness": 0.95,
@@ -1313,10 +1313,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_claude_3_202609161504",
+      "id": "sig_claude_3_202609161857",
       "product_id": "claude",
       "type": "community_report",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1324,13 +1324,13 @@
         "severity": 0.3
       },
       "text": {
-        "en": "Community: [BUG] Token Usage count (issue #94781)",
-        "zh": "社区：[BUG] Token Usage count（issue #94781）"
+        "en": "Community: [FEATURE] Expose session readiness to orchestrators: error class on StopFailure and a degraded state in ListAgents (issue #94811)",
+        "zh": "社区：[FEATURE] Expose session readiness to orchestrators: error class on StopFailure and a degraded state in ListAgents（issue #94811）"
       },
       "source": {
         "type": "community",
         "provider": "github",
-        "url": "https://github.com/anthropics/claude-code/issues/94781"
+        "url": "https://github.com/anthropics/claude-code/issues/94811"
       },
       "evidence": {
         "freshness": 0.95,
@@ -1340,10 +1340,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_claude_4_202609161504",
+      "id": "sig_claude_4_202609161857",
       "product_id": "claude",
       "type": "community_report",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1351,13 +1351,13 @@
         "severity": 0.3
       },
       "text": {
-        "en": "Community: [BUG] Initial agent-type listing never emitted on turn 1 of a session created by plan approval with \"clear context\" (issue #94776)",
-        "zh": "社区：[BUG] Initial agent-type listing never emitted on turn 1 of a session created by plan approval with \"clear context\"（issue #94776）"
+        "en": "Community: Invalid tool_use name (>200 chars) persisted to transcript poisons the session with 400 on every later request (issue #94799)",
+        "zh": "社区：Invalid tool_use name (>200 chars) persisted to transcript poisons the session with 400 on every later request（issue #94799）"
       },
       "source": {
         "type": "community",
         "provider": "github",
-        "url": "https://github.com/anthropics/claude-code/issues/94776"
+        "url": "https://github.com/anthropics/claude-code/issues/94799"
       },
       "evidence": {
         "freshness": 0.95,
@@ -1367,10 +1367,37 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_claude_5_202609161504",
+      "id": "sig_claude_5_202609161857",
       "product_id": "claude",
       "type": "service_anomaly",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
+      "direction": "decrease",
+      "features": {
+        "reset_related": false,
+        "quota_related": true,
+        "severity": 0.3
+      },
+      "text": {
+        "en": "Official status: Issues with Google Play subscriptions (resolved, 2026-09-16)",
+        "zh": "官方状态：Issues with Google Play subscriptions（resolved, 2026-09-16）"
+      },
+      "source": {
+        "type": "official",
+        "provider": "statuspage",
+        "url": "https://stspg.io/wzwyxh4x9t39"
+      },
+      "evidence": {
+        "freshness": 0.95,
+        "independence": 0.7,
+        "strength": 0.8
+      },
+      "freshness": 0.95
+    },
+    {
+      "id": "sig_claude_6_202609161857",
+      "product_id": "claude",
+      "type": "service_anomaly",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1394,10 +1421,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_claude_6_202609161504",
+      "id": "sig_claude_7_202609161857",
       "product_id": "claude",
       "type": "service_anomaly",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1421,10 +1448,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_claude_7_202609161504",
+      "id": "sig_claude_8_202609161857",
       "product_id": "claude",
       "type": "service_anomaly",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1448,10 +1475,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_claude_8_202609161504",
+      "id": "sig_claude_9_202609161857",
       "product_id": "claude",
       "type": "service_anomaly",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1475,10 +1502,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_claude_9_202609161504",
+      "id": "sig_claude_10_202609161857",
       "product_id": "claude",
       "type": "service_anomaly",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1502,37 +1529,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_claude_10_202609161504",
-      "product_id": "claude",
-      "type": "service_anomaly",
-      "occurred_at": "2026-09-16T15:04:20Z",
-      "direction": "decrease",
-      "features": {
-        "reset_related": false,
-        "quota_related": true,
-        "severity": 0.3
-      },
-      "text": {
-        "en": "Official status: Elevated errors for Claude Sonnet 5 (resolved, 2026-09-03)",
-        "zh": "官方状态：Elevated errors for Claude Sonnet 5（resolved, 2026-09-03）"
-      },
-      "source": {
-        "type": "official",
-        "provider": "statuspage",
-        "url": "https://stspg.io/jt14jk41pjsf"
-      },
-      "evidence": {
-        "freshness": 0.95,
-        "independence": 0.7,
-        "strength": 0.8
-      },
-      "freshness": 0.95
-    },
-    {
-      "id": "sig_kimi_0_202609161504",
+      "id": "sig_kimi_0_202609161857",
       "product_id": "kimi",
       "type": "official_announcement",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1556,10 +1556,10 @@
       "freshness": 0.5
     },
     {
-      "id": "sig_kimi_1_202609161504",
+      "id": "sig_kimi_1_202609161857",
       "product_id": "kimi",
       "type": "community_report",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1583,10 +1583,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_kimi_2_202609161504",
+      "id": "sig_kimi_2_202609161857",
       "product_id": "kimi",
       "type": "service_anomaly",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1610,10 +1610,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_kimi_3_202609161504",
+      "id": "sig_kimi_3_202609161857",
       "product_id": "kimi",
       "type": "service_anomaly",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1637,10 +1637,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_kimi_4_202609161504",
+      "id": "sig_kimi_4_202609161857",
       "product_id": "kimi",
       "type": "service_anomaly",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1664,10 +1664,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_kimi_5_202609161504",
+      "id": "sig_kimi_5_202609161857",
       "product_id": "kimi",
       "type": "service_anomaly",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1691,10 +1691,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_kimi_6_202609161504",
+      "id": "sig_kimi_6_202609161857",
       "product_id": "kimi",
       "type": "service_anomaly",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1718,10 +1718,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_kimi_7_202609161504",
+      "id": "sig_kimi_7_202609161857",
       "product_id": "kimi",
       "type": "service_anomaly",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1745,10 +1745,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_minimax_0_202609161504",
+      "id": "sig_minimax_0_202609161857",
       "product_id": "minimax",
       "type": "service_anomaly",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1772,10 +1772,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_minimax_1_202609161504",
+      "id": "sig_minimax_1_202609161857",
       "product_id": "minimax",
       "type": "service_anomaly",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1799,10 +1799,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_minimax_2_202609161504",
+      "id": "sig_minimax_2_202609161857",
       "product_id": "minimax",
       "type": "service_anomaly",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1826,10 +1826,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_minimax_3_202609161504",
+      "id": "sig_minimax_3_202609161857",
       "product_id": "minimax",
       "type": "service_anomaly",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1853,10 +1853,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_minimax_4_202609161504",
+      "id": "sig_minimax_4_202609161857",
       "product_id": "minimax",
       "type": "service_anomaly",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1880,10 +1880,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_minimax_5_202609161504",
+      "id": "sig_minimax_5_202609161857",
       "product_id": "minimax",
       "type": "service_anomaly",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1907,10 +1907,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_antigravity_0_202609161504",
+      "id": "sig_antigravity_0_202609161857",
       "product_id": "antigravity",
       "type": "official_announcement",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1934,10 +1934,37 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_qwen_code_0_202609161504",
+      "id": "sig_antigravity_1_202609161857",
+      "product_id": "antigravity",
+      "type": "community_report",
+      "occurred_at": "2026-09-16T18:57:57Z",
+      "direction": "increase",
+      "features": {
+        "reset_related": true,
+        "quota_related": true,
+        "severity": 0.3
+      },
+      "text": {
+        "en": "Community: [Bug]: macOS Keychain rejects oversized enterprise/WIF token, forcing re-login on every start (issue #1037)",
+        "zh": "社区：[Bug]: macOS Keychain rejects oversized enterprise/WIF token, forcing re-login on every start（issue #1037）"
+      },
+      "source": {
+        "type": "community",
+        "provider": "github",
+        "url": "https://github.com/google-antigravity/antigravity-cli/issues/1037"
+      },
+      "evidence": {
+        "freshness": 0.95,
+        "independence": 0.7,
+        "strength": 0.8
+      },
+      "freshness": 0.95
+    },
+    {
+      "id": "sig_qwen_code_0_202609161857",
       "product_id": "qwen_code",
       "type": "official_announcement",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1961,10 +1988,37 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_qwen_code_1_202609161504",
+      "id": "sig_qwen_code_1_202609161857",
       "product_id": "qwen_code",
       "type": "community_report",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
+      "direction": "increase",
+      "features": {
+        "reset_related": true,
+        "quota_related": true,
+        "severity": 0.3
+      },
+      "text": {
+        "en": "Community: web-shell: a rejected `?daemon=` override files the URL fragment credential under the page origin's key (issue #12040)",
+        "zh": "社区：web-shell: a rejected `?daemon=` override files the URL fragment credential under the page origin's key（issue #12040）"
+      },
+      "source": {
+        "type": "community",
+        "provider": "github",
+        "url": "https://github.com/QwenLM/qwen-code/issues/12040"
+      },
+      "evidence": {
+        "freshness": 0.95,
+        "independence": 0.7,
+        "strength": 0.8
+      },
+      "freshness": 0.95
+    },
+    {
+      "id": "sig_qwen_code_2_202609161857",
+      "product_id": "qwen_code",
+      "type": "community_report",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1988,10 +2042,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_qwen_code_2_202609161504",
+      "id": "sig_qwen_code_3_202609161857",
       "product_id": "qwen_code",
       "type": "community_report",
-      "occurred_at": "2026-09-16T15:04:20Z",
+      "occurred_at": "2026-09-16T18:57:57Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -2013,44 +2067,17 @@
         "strength": 0.8
       },
       "freshness": 0.95
-    },
-    {
-      "id": "sig_qwen_code_3_202609161504",
-      "product_id": "qwen_code",
-      "type": "community_report",
-      "occurred_at": "2026-09-16T15:04:20Z",
-      "direction": "increase",
-      "features": {
-        "reset_related": true,
-        "quota_related": true,
-        "severity": 0.3
-      },
-      "text": {
-        "en": "Community: ACP auto-memory extraction fails after successful turns with no cache-safe params (issue #12012)",
-        "zh": "社区：ACP auto-memory extraction fails after successful turns with no cache-safe params（issue #12012）"
-      },
-      "source": {
-        "type": "community",
-        "provider": "github",
-        "url": "https://github.com/QwenLM/qwen-code/issues/12012"
-      },
-      "evidence": {
-        "freshness": 0.95,
-        "independence": 0.7,
-        "strength": 0.8
-      },
-      "freshness": 0.95
     }
   ],
   "forecasts": [
     {
-      "id": "fc_recovery_codex_202609161504",
+      "id": "fc_recovery_codex_202609161857",
       "product_id": "codex",
       "target": {
         "type": "normal_recovery",
         "window_id": "codex_primary"
       },
-      "generated_at": "2026-09-16T15:04:20Z",
+      "generated_at": "2026-09-16T18:57:57Z",
       "prediction": {
         "expected_at": "2026-09-18T03:30:00Z",
         "interval": {
@@ -2074,15 +2101,15 @@
       }
     },
     {
-      "id": "fc_hazard_codex_202609161504",
+      "id": "fc_hazard_codex_202609161857",
       "product_id": "codex",
       "target": {
         "type": "global_reset",
         "horizon_hours": 24
       },
-      "generated_at": "2026-09-16T15:04:20Z",
+      "generated_at": "2026-09-16T18:57:57Z",
       "prediction": {
-        "probability": 0.0335,
+        "probability": 0.0334,
         "expected_at": null,
         "interval": {
           "p50": null,
@@ -2108,13 +2135,13 @@
       }
     },
     {
-      "id": "fc_recovery_claude_202609161504",
+      "id": "fc_recovery_claude_202609161857",
       "product_id": "claude",
       "target": {
         "type": "normal_recovery",
         "window_id": "claude_primary"
       },
-      "generated_at": "2026-09-16T15:04:20Z",
+      "generated_at": "2026-09-16T18:57:57Z",
       "prediction": {
         "expected_at": "2026-09-17T01:55:00Z",
         "interval": {
@@ -2138,13 +2165,13 @@
       }
     },
     {
-      "id": "fc_hazard_claude_202609161504",
+      "id": "fc_hazard_claude_202609161857",
       "product_id": "claude",
       "target": {
         "type": "global_reset",
         "horizon_hours": 24
       },
-      "generated_at": "2026-09-16T15:04:20Z",
+      "generated_at": "2026-09-16T18:57:57Z",
       "prediction": {
         "probability": 0.0024,
         "expected_at": null,
@@ -2172,19 +2199,19 @@
       }
     },
     {
-      "id": "fc_recovery_grok_202609161504",
+      "id": "fc_recovery_grok_202609161857",
       "product_id": "grok",
       "target": {
         "type": "normal_recovery",
         "window_id": "grok_primary"
       },
-      "generated_at": "2026-09-16T15:04:20Z",
+      "generated_at": "2026-09-16T18:57:57Z",
       "prediction": {
-        "expected_at": "2026-09-16T15:30:00Z",
+        "expected_at": "2026-09-18T16:00:00Z",
         "interval": {
-          "p50": "2026-09-16T15:30:00Z",
-          "p80": "2026-09-16T16:37:30Z",
-          "p95": "2026-09-16T17:45:00Z"
+          "p50": "2026-09-18T16:00:00Z",
+          "p80": "2026-09-18T17:07:30Z",
+          "p95": "2026-09-18T18:15:00Z"
         }
       },
       "model": {
@@ -2202,13 +2229,13 @@
       }
     },
     {
-      "id": "fc_hazard_grok_202609161504",
+      "id": "fc_hazard_grok_202609161857",
       "product_id": "grok",
       "target": {
         "type": "global_reset",
         "horizon_hours": 24
       },
-      "generated_at": "2026-09-16T15:04:20Z",
+      "generated_at": "2026-09-16T18:57:57Z",
       "prediction": {
         "probability": 0.0024,
         "expected_at": null,
@@ -2236,13 +2263,13 @@
       }
     },
     {
-      "id": "fc_recovery_kimi_202609161504",
+      "id": "fc_recovery_kimi_202609161857",
       "product_id": "kimi",
       "target": {
         "type": "normal_recovery",
         "window_id": "kimi_primary"
       },
-      "generated_at": "2026-09-16T15:04:20Z",
+      "generated_at": "2026-09-16T18:57:57Z",
       "prediction": {
         "expected_at": "2026-09-16T19:40:00Z",
         "interval": {
@@ -2266,13 +2293,13 @@
       }
     },
     {
-      "id": "fc_hazard_kimi_202609161504",
+      "id": "fc_hazard_kimi_202609161857",
       "product_id": "kimi",
       "target": {
         "type": "global_reset",
         "horizon_hours": 24
       },
-      "generated_at": "2026-09-16T15:04:20Z",
+      "generated_at": "2026-09-16T18:57:57Z",
       "prediction": {
         "probability": 0.0024,
         "expected_at": null,
@@ -2300,13 +2327,13 @@
       }
     },
     {
-      "id": "fc_recovery_minimax_202609161504",
+      "id": "fc_recovery_minimax_202609161857",
       "product_id": "minimax",
       "target": {
         "type": "normal_recovery",
         "window_id": "minimax_primary"
       },
-      "generated_at": "2026-09-16T15:04:20Z",
+      "generated_at": "2026-09-16T18:57:57Z",
       "prediction": {
         "expected_at": "2026-09-17T07:10:00Z",
         "interval": {
@@ -2330,13 +2357,13 @@
       }
     },
     {
-      "id": "fc_hazard_minimax_202609161504",
+      "id": "fc_hazard_minimax_202609161857",
       "product_id": "minimax",
       "target": {
         "type": "global_reset",
         "horizon_hours": 24
       },
-      "generated_at": "2026-09-16T15:04:20Z",
+      "generated_at": "2026-09-16T18:57:57Z",
       "prediction": {
         "probability": 0.0024,
         "expected_at": null,
@@ -2364,13 +2391,13 @@
       }
     },
     {
-      "id": "fc_recovery_antigravity_202609161504",
+      "id": "fc_recovery_antigravity_202609161857",
       "product_id": "antigravity",
       "target": {
         "type": "normal_recovery",
         "window_id": "antigravity_primary"
       },
-      "generated_at": "2026-09-16T15:04:20Z",
+      "generated_at": "2026-09-16T18:57:57Z",
       "prediction": {
         "expected_at": "2026-09-17T10:55:00Z",
         "interval": {
@@ -2394,13 +2421,13 @@
       }
     },
     {
-      "id": "fc_hazard_antigravity_202609161504",
+      "id": "fc_hazard_antigravity_202609161857",
       "product_id": "antigravity",
       "target": {
         "type": "global_reset",
         "horizon_hours": 24
       },
-      "generated_at": "2026-09-16T15:04:20Z",
+      "generated_at": "2026-09-16T18:57:57Z",
       "prediction": {
         "probability": 0.0024,
         "expected_at": null,
@@ -2416,9 +2443,9 @@
       },
       "evidence": {
         "historical_events": 0,
-        "recent_signals": 1,
-        "independent_sources": 1,
-        "signal_score": 0.238
+        "recent_signals": 2,
+        "independent_sources": 2,
+        "signal_score": 0.347
       },
       "calibration": {
         "status": "experimental"
@@ -2428,13 +2455,13 @@
       }
     },
     {
-      "id": "fc_recovery_qwen_code_202609161504",
+      "id": "fc_recovery_qwen_code_202609161857",
       "product_id": "qwen_code",
       "target": {
         "type": "normal_recovery",
         "window_id": "qwen_code_primary"
       },
-      "generated_at": "2026-09-16T15:04:20Z",
+      "generated_at": "2026-09-16T18:57:57Z",
       "prediction": {
         "expected_at": "2026-09-17T13:50:00Z",
         "interval": {
@@ -2458,13 +2485,13 @@
       }
     },
     {
-      "id": "fc_hazard_qwen_code_202609161504",
+      "id": "fc_hazard_qwen_code_202609161857",
       "product_id": "qwen_code",
       "target": {
         "type": "global_reset",
         "horizon_hours": 24
       },
-      "generated_at": "2026-09-16T15:04:20Z",
+      "generated_at": "2026-09-16T18:57:57Z",
       "prediction": {
         "probability": 0.0024,
         "expected_at": null,
@@ -2501,7 +2528,7 @@
         "en": "OpenAI official status",
         "zh": "OpenAI 官方状态"
       },
-      "status": "operational",
+      "status": "degraded",
       "summary": {
         "en": "Chat service incident, now recovered",
         "zh": "对话服务出现服务异常，已恢复"

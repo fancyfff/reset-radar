@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0",
-  "generated_at": "2026-10-14T05:36:27Z",
+  "generated_at": "2026-10-14T10:49:10Z",
   "data_freshness": {
     "status": "fresh",
     "max_age_seconds": 1800,
@@ -341,13 +341,13 @@
       "product_id": "codex",
       "availability": "unknown",
       "overall_state": "unknown",
-      "updated_at": "2026-10-14T05:36:27Z",
+      "updated_at": "2026-10-14T10:49:10Z",
       "windows": [
         {
           "window_id": "codex_primary",
           "state": "available",
           "reset_at": "2026-10-16T03:30:00Z",
-          "countdown_seconds": 165212,
+          "countdown_seconds": 146449,
           "usage_percent": null,
           "confidence": 0.04,
           "source": "observed"
@@ -358,13 +358,13 @@
       "product_id": "claude",
       "availability": "unknown",
       "overall_state": "unknown",
-      "updated_at": "2026-10-14T05:36:27Z",
+      "updated_at": "2026-10-14T10:49:10Z",
       "windows": [
         {
           "window_id": "claude_primary",
           "state": "available",
           "reset_at": "2026-10-15T00:45:00Z",
-          "countdown_seconds": 68912,
+          "countdown_seconds": 50149,
           "usage_percent": null,
           "confidence": 0.09,
           "source": "observed"
@@ -375,13 +375,13 @@
       "product_id": "grok",
       "availability": "unknown",
       "overall_state": "unknown",
-      "updated_at": "2026-10-14T05:36:27Z",
+      "updated_at": "2026-10-14T10:49:10Z",
       "windows": [
         {
           "window_id": "grok_primary",
           "state": "available",
           "reset_at": "2026-10-14T22:30:00Z",
-          "countdown_seconds": 60812,
+          "countdown_seconds": 42049,
           "usage_percent": null,
           "confidence": 0.09,
           "source": "estimated"
@@ -392,13 +392,13 @@
       "product_id": "kimi",
       "availability": "unknown",
       "overall_state": "unknown",
-      "updated_at": "2026-10-14T05:36:27Z",
+      "updated_at": "2026-10-14T10:49:10Z",
       "windows": [
         {
           "window_id": "kimi_primary",
           "state": "available",
           "reset_at": "2026-10-14T15:00:00Z",
-          "countdown_seconds": 33812,
+          "countdown_seconds": 15049,
           "usage_percent": null,
           "confidence": 0.09,
           "source": "observed"
@@ -409,13 +409,13 @@
       "product_id": "minimax",
       "availability": "unknown",
       "overall_state": "unknown",
-      "updated_at": "2026-10-14T05:36:27Z",
+      "updated_at": "2026-10-14T10:49:10Z",
       "windows": [
         {
           "window_id": "minimax_primary",
           "state": "available",
           "reset_at": "2026-10-15T09:30:00Z",
-          "countdown_seconds": 100412,
+          "countdown_seconds": 81649,
           "usage_percent": null,
           "confidence": 0.09,
           "source": "observed"
@@ -426,13 +426,13 @@
       "product_id": "antigravity",
       "availability": "unknown",
       "overall_state": "unknown",
-      "updated_at": "2026-10-14T05:36:27Z",
+      "updated_at": "2026-10-14T10:49:10Z",
       "windows": [
         {
           "window_id": "antigravity_primary",
           "state": "available",
           "reset_at": "2026-10-15T09:45:00Z",
-          "countdown_seconds": 101312,
+          "countdown_seconds": 82549,
           "usage_percent": null,
           "confidence": 0.09,
           "source": "observed"
@@ -443,13 +443,13 @@
       "product_id": "qwen_code",
       "availability": "unknown",
       "overall_state": "unknown",
-      "updated_at": "2026-10-14T05:36:27Z",
+      "updated_at": "2026-10-14T10:49:10Z",
       "windows": [
         {
           "window_id": "qwen_code_primary",
           "state": "available",
           "reset_at": "2026-10-15T11:30:00Z",
-          "countdown_seconds": 107612,
+          "countdown_seconds": 88849,
           "usage_percent": null,
           "confidence": 0.09,
           "source": "observed"
@@ -962,10 +962,10 @@
   ],
   "signals": [
     {
-      "id": "sig_codex_0_202610140536",
+      "id": "sig_codex_0_202610141049",
       "product_id": "codex",
       "type": "official_announcement",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -989,10 +989,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_codex_1_202610140536",
+      "id": "sig_codex_1_202610141049",
       "product_id": "codex",
       "type": "community_report",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1000,13 +1000,13 @@
         "severity": 0.3
       },
       "text": {
-        "en": "Community: [Windows][26.1007.21434 build 13901] Remote chat opening repeatedly crashes renderer: chrome.dll +0x4DA250D, null read 0xC0000005 (issue #53864)",
-        "zh": "社区：[Windows][26.1007.21434 build 13901] Remote chat opening repeatedly crashes renderer: chrome.dll +0x4DA250D, null read 0xC0000005（issue #53864）"
+        "en": "Community: off limits file created. .md is explicitly not allowed- created anyway (issue #53942)",
+        "zh": "社区：off limits file created. .md is explicitly not allowed- created anyway（issue #53942）"
       },
       "source": {
         "type": "community",
         "provider": "github",
-        "url": "https://github.com/openai/codex/issues/53864"
+        "url": "https://github.com/openai/codex/issues/53942"
       },
       "evidence": {
         "freshness": 0.95,
@@ -1016,10 +1016,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_codex_2_202610140536",
+      "id": "sig_codex_2_202610141049",
       "product_id": "codex",
       "type": "community_report",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1027,13 +1027,13 @@
         "severity": 0.3
       },
       "text": {
-        "en": "Community: Why did 34 web-tool actions produce 15.9 million input tokens in a single turn? (issue #53855)",
-        "zh": "社区：Why did 34 web-tool actions produce 15.9 million input tokens in a single turn?（issue #53855）"
+        "en": "Community: Windows: PC and browser control unavailable in Work — MXC 0x80070003 (issue #53941)",
+        "zh": "社区：Windows: PC and browser control unavailable in Work — MXC 0x80070003（issue #53941）"
       },
       "source": {
         "type": "community",
         "provider": "github",
-        "url": "https://github.com/openai/codex/issues/53855"
+        "url": "https://github.com/openai/codex/issues/53941"
       },
       "evidence": {
         "freshness": 0.95,
@@ -1043,10 +1043,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_codex_3_202610140536",
+      "id": "sig_codex_3_202610141049",
       "product_id": "codex",
       "type": "community_report",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1054,13 +1054,13 @@
         "severity": 0.3
       },
       "text": {
-        "en": "Community: Windows desktop freezes during automatic Git review when spawning a ~32K-character diff command (issue #53850)",
-        "zh": "社区：Windows desktop freezes during automatic Git review when spawning a ~32K-character diff command（issue #53850）"
+        "en": "Community: TUI renders an assistant message twice when a tool call interleaves between the streamed delta and item completion (issue #53936)",
+        "zh": "社区：TUI renders an assistant message twice when a tool call interleaves between the streamed delta and item completion（issue #53936）"
       },
       "source": {
         "type": "community",
         "provider": "github",
-        "url": "https://github.com/openai/codex/issues/53850"
+        "url": "https://github.com/openai/codex/issues/53936"
       },
       "evidence": {
         "freshness": 0.95,
@@ -1070,10 +1070,64 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_codex_4_202610140536",
+      "id": "sig_codex_4_202610141049",
       "product_id": "codex",
       "type": "service_anomaly",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
+      "direction": "decrease",
+      "features": {
+        "reset_related": false,
+        "quota_related": true,
+        "severity": 0.3
+      },
+      "text": {
+        "en": "Official status: Limited availability on gpt-image-2.5-flare and gpt-image-2.5-sunburst (monitoring, 2026-10-14)",
+        "zh": "官方状态：Limited availability on gpt-image-2.5-flare and gpt-image-2.5-sunburst（monitoring, 2026-10-14）"
+      },
+      "source": {
+        "type": "official",
+        "provider": "statuspage",
+        "url": null
+      },
+      "evidence": {
+        "freshness": 0.95,
+        "independence": 0.7,
+        "strength": 0.8
+      },
+      "freshness": 0.95
+    },
+    {
+      "id": "sig_codex_5_202610141049",
+      "product_id": "codex",
+      "type": "service_anomaly",
+      "occurred_at": "2026-10-14T10:49:10Z",
+      "direction": "decrease",
+      "features": {
+        "reset_related": false,
+        "quota_related": true,
+        "severity": 0.3
+      },
+      "text": {
+        "en": "Official status: Degraded performance in Codex and ChatGPT Work (resolved, 2026-10-14)",
+        "zh": "官方状态：Degraded performance in Codex and ChatGPT Work（resolved, 2026-10-14）"
+      },
+      "source": {
+        "type": "official",
+        "provider": "statuspage",
+        "url": null
+      },
+      "evidence": {
+        "freshness": 0.95,
+        "independence": 0.7,
+        "strength": 0.8
+      },
+      "freshness": 0.95
+    },
+    {
+      "id": "sig_codex_6_202610141049",
+      "product_id": "codex",
+      "type": "service_anomaly",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1097,10 +1151,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_codex_5_202610140536",
+      "id": "sig_codex_7_202610141049",
       "product_id": "codex",
       "type": "service_anomaly",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1124,10 +1178,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_codex_6_202610140536",
+      "id": "sig_codex_8_202610141049",
       "product_id": "codex",
       "type": "service_anomaly",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1151,10 +1205,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_codex_7_202610140536",
+      "id": "sig_codex_9_202610141049",
       "product_id": "codex",
       "type": "service_anomaly",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1178,64 +1232,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_codex_8_202610140536",
-      "product_id": "codex",
-      "type": "service_anomaly",
-      "occurred_at": "2026-10-14T05:36:27Z",
-      "direction": "decrease",
-      "features": {
-        "reset_related": false,
-        "quota_related": true,
-        "severity": 0.3
-      },
-      "text": {
-        "en": "Official status: Some APAC users are seeing errors in ChatGPT Work, conversations, and GPTs. (resolved, 2026-10-08)",
-        "zh": "官方状态：Some APAC users are seeing errors in ChatGPT Work, conversations, and GPTs.（resolved, 2026-10-08）"
-      },
-      "source": {
-        "type": "official",
-        "provider": "statuspage",
-        "url": null
-      },
-      "evidence": {
-        "freshness": 0.95,
-        "independence": 0.7,
-        "strength": 0.8
-      },
-      "freshness": 0.95
-    },
-    {
-      "id": "sig_codex_9_202610140536",
-      "product_id": "codex",
-      "type": "service_anomaly",
-      "occurred_at": "2026-10-14T05:36:27Z",
-      "direction": "decrease",
-      "features": {
-        "reset_related": false,
-        "quota_related": true,
-        "severity": 0.3
-      },
-      "text": {
-        "en": "Official status: Elevated errors with GPT-5.6 Instant in FedRAMP workspaces (resolved, 2026-10-08)",
-        "zh": "官方状态：Elevated errors with GPT-5.6 Instant in FedRAMP workspaces（resolved, 2026-10-08）"
-      },
-      "source": {
-        "type": "official",
-        "provider": "statuspage",
-        "url": null
-      },
-      "evidence": {
-        "freshness": 0.95,
-        "independence": 0.7,
-        "strength": 0.8
-      },
-      "freshness": 0.95
-    },
-    {
-      "id": "sig_claude_0_202610140536",
+      "id": "sig_claude_0_202610141049",
       "product_id": "claude",
       "type": "service_anomaly",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1259,10 +1259,10 @@
       "freshness": 0.5
     },
     {
-      "id": "sig_claude_1_202610140536",
+      "id": "sig_claude_1_202610141049",
       "product_id": "claude",
       "type": "official_announcement",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1286,10 +1286,64 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_claude_2_202610140536",
+      "id": "sig_claude_2_202610141049",
       "product_id": "claude",
       "type": "community_report",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
+      "direction": "increase",
+      "features": {
+        "reset_related": true,
+        "quota_related": true,
+        "severity": 0.3
+      },
+      "text": {
+        "en": "Community: [FEATURE] Mod API: let a mod set and see fast mode per model request (subagents included) (issue #102007)",
+        "zh": "社区：[FEATURE] Mod API: let a mod set and see fast mode per model request (subagents included)（issue #102007）"
+      },
+      "source": {
+        "type": "community",
+        "provider": "github",
+        "url": "https://github.com/anthropics/claude-code/issues/102007"
+      },
+      "evidence": {
+        "freshness": 0.95,
+        "independence": 0.7,
+        "strength": 0.8
+      },
+      "freshness": 0.95
+    },
+    {
+      "id": "sig_claude_3_202610141049",
+      "product_id": "claude",
+      "type": "community_report",
+      "occurred_at": "2026-10-14T10:49:10Z",
+      "direction": "increase",
+      "features": {
+        "reset_related": true,
+        "quota_related": true,
+        "severity": 0.3
+      },
+      "text": {
+        "en": "Community: [Bug] Graph scale resets from linear to log when other settings change (issue #101979)",
+        "zh": "社区：[Bug] Graph scale resets from linear to log when other settings change（issue #101979）"
+      },
+      "source": {
+        "type": "community",
+        "provider": "github",
+        "url": "https://github.com/anthropics/claude-code/issues/101979"
+      },
+      "evidence": {
+        "freshness": 0.95,
+        "independence": 0.7,
+        "strength": 0.8
+      },
+      "freshness": 0.95
+    },
+    {
+      "id": "sig_claude_4_202610141049",
+      "product_id": "claude",
+      "type": "community_report",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1313,64 +1367,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_claude_3_202610140536",
-      "product_id": "claude",
-      "type": "community_report",
-      "occurred_at": "2026-10-14T05:36:27Z",
-      "direction": "increase",
-      "features": {
-        "reset_related": true,
-        "quota_related": true,
-        "severity": 0.3
-      },
-      "text": {
-        "en": "Community: You've hit your session limit · resets 12:30pm (issue #101965)",
-        "zh": "社区：You've hit your session limit · resets 12:30pm（issue #101965）"
-      },
-      "source": {
-        "type": "community",
-        "provider": "github",
-        "url": "https://github.com/anthropics/claude-code/issues/101965"
-      },
-      "evidence": {
-        "freshness": 0.95,
-        "independence": 0.7,
-        "strength": 0.8
-      },
-      "freshness": 0.95
-    },
-    {
-      "id": "sig_claude_4_202610140536",
-      "product_id": "claude",
-      "type": "community_report",
-      "occurred_at": "2026-10-14T05:36:27Z",
-      "direction": "increase",
-      "features": {
-        "reset_related": true,
-        "quota_related": true,
-        "severity": 0.3
-      },
-      "text": {
-        "en": "Community: [BUG] Subagent loops re-reading the same images after Claude Code removes older images from its context, which exhausts usage limits (issue #101964)",
-        "zh": "社区：[BUG] Subagent loops re-reading the same images after Claude Code removes older images from its context, which exhausts usage limits（issue #101964）"
-      },
-      "source": {
-        "type": "community",
-        "provider": "github",
-        "url": "https://github.com/anthropics/claude-code/issues/101964"
-      },
-      "evidence": {
-        "freshness": 0.95,
-        "independence": 0.7,
-        "strength": 0.8
-      },
-      "freshness": 0.95
-    },
-    {
-      "id": "sig_claude_5_202610140536",
+      "id": "sig_claude_5_202610141049",
       "product_id": "claude",
       "type": "service_anomaly",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1394,10 +1394,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_claude_6_202610140536",
+      "id": "sig_claude_6_202610141049",
       "product_id": "claude",
       "type": "service_anomaly",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1421,10 +1421,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_claude_7_202610140536",
+      "id": "sig_claude_7_202610141049",
       "product_id": "claude",
       "type": "service_anomaly",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1448,10 +1448,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_claude_8_202610140536",
+      "id": "sig_claude_8_202610141049",
       "product_id": "claude",
       "type": "service_anomaly",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1475,10 +1475,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_claude_9_202610140536",
+      "id": "sig_claude_9_202610141049",
       "product_id": "claude",
       "type": "service_anomaly",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1502,10 +1502,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_claude_10_202610140536",
+      "id": "sig_claude_10_202610141049",
       "product_id": "claude",
       "type": "service_anomaly",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1529,10 +1529,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_kimi_0_202610140536",
+      "id": "sig_kimi_0_202610141049",
       "product_id": "kimi",
       "type": "official_announcement",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1556,10 +1556,10 @@
       "freshness": 0.5
     },
     {
-      "id": "sig_kimi_1_202610140536",
+      "id": "sig_kimi_1_202610141049",
       "product_id": "kimi",
       "type": "service_anomaly",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1583,10 +1583,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_kimi_2_202610140536",
+      "id": "sig_kimi_2_202610141049",
       "product_id": "kimi",
       "type": "service_anomaly",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1610,10 +1610,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_kimi_3_202610140536",
+      "id": "sig_kimi_3_202610141049",
       "product_id": "kimi",
       "type": "service_anomaly",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1637,10 +1637,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_kimi_4_202610140536",
+      "id": "sig_kimi_4_202610141049",
       "product_id": "kimi",
       "type": "service_anomaly",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1664,10 +1664,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_kimi_5_202610140536",
+      "id": "sig_kimi_5_202610141049",
       "product_id": "kimi",
       "type": "service_anomaly",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1691,10 +1691,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_kimi_6_202610140536",
+      "id": "sig_kimi_6_202610141049",
       "product_id": "kimi",
       "type": "service_anomaly",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1718,10 +1718,64 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_minimax_0_202610140536",
+      "id": "sig_minimax_0_202610141049",
       "product_id": "minimax",
       "type": "service_anomaly",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
+      "direction": "decrease",
+      "features": {
+        "reset_related": false,
+        "quota_related": true,
+        "severity": 0.3
+      },
+      "text": {
+        "en": "Official status: Elevated errors on Large Language Models (LLM) (resolved, 2026-10-14)",
+        "zh": "官方状态：Elevated errors on Large Language Models (LLM)（resolved, 2026-10-14）"
+      },
+      "source": {
+        "type": "official",
+        "provider": "statuspage",
+        "url": "https://stspg.io/xzlkyvc1fnkj"
+      },
+      "evidence": {
+        "freshness": 0.95,
+        "independence": 0.7,
+        "strength": 0.8
+      },
+      "freshness": 0.95
+    },
+    {
+      "id": "sig_minimax_1_202610141049",
+      "product_id": "minimax",
+      "type": "service_anomaly",
+      "occurred_at": "2026-10-14T10:49:10Z",
+      "direction": "decrease",
+      "features": {
+        "reset_related": false,
+        "quota_related": true,
+        "severity": 0.3
+      },
+      "text": {
+        "en": "Official status: Elevated errors on Large Language Models (LLM) (resolved, 2026-10-14)",
+        "zh": "官方状态：Elevated errors on Large Language Models (LLM)（resolved, 2026-10-14）"
+      },
+      "source": {
+        "type": "official",
+        "provider": "statuspage",
+        "url": "https://stspg.io/8228r2rvdvgr"
+      },
+      "evidence": {
+        "freshness": 0.95,
+        "independence": 0.7,
+        "strength": 0.8
+      },
+      "freshness": 0.95
+    },
+    {
+      "id": "sig_minimax_2_202610141049",
+      "product_id": "minimax",
+      "type": "service_anomaly",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1745,10 +1799,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_minimax_1_202610140536",
+      "id": "sig_minimax_3_202610141049",
       "product_id": "minimax",
       "type": "service_anomaly",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1772,10 +1826,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_minimax_2_202610140536",
+      "id": "sig_minimax_4_202610141049",
       "product_id": "minimax",
       "type": "service_anomaly",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1799,10 +1853,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_minimax_3_202610140536",
+      "id": "sig_minimax_5_202610141049",
       "product_id": "minimax",
       "type": "service_anomaly",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1826,64 +1880,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_minimax_4_202610140536",
-      "product_id": "minimax",
-      "type": "service_anomaly",
-      "occurred_at": "2026-10-14T05:36:27Z",
-      "direction": "decrease",
-      "features": {
-        "reset_related": false,
-        "quota_related": true,
-        "severity": 0.3
-      },
-      "text": {
-        "en": "Official status: Elevated errors on Large Language Models (LLM) (resolved, 2026-10-12)",
-        "zh": "官方状态：Elevated errors on Large Language Models (LLM)（resolved, 2026-10-12）"
-      },
-      "source": {
-        "type": "official",
-        "provider": "statuspage",
-        "url": "https://stspg.io/2sytpncts1lb"
-      },
-      "evidence": {
-        "freshness": 0.95,
-        "independence": 0.7,
-        "strength": 0.8
-      },
-      "freshness": 0.95
-    },
-    {
-      "id": "sig_minimax_5_202610140536",
-      "product_id": "minimax",
-      "type": "service_anomaly",
-      "occurred_at": "2026-10-14T05:36:27Z",
-      "direction": "decrease",
-      "features": {
-        "reset_related": false,
-        "quota_related": true,
-        "severity": 0.3
-      },
-      "text": {
-        "en": "Official status: Elevated errors on Large Language Models (LLM) (resolved, 2026-10-10)",
-        "zh": "官方状态：Elevated errors on Large Language Models (LLM)（resolved, 2026-10-10）"
-      },
-      "source": {
-        "type": "official",
-        "provider": "statuspage",
-        "url": "https://stspg.io/67lztd5z121r"
-      },
-      "evidence": {
-        "freshness": 0.95,
-        "independence": 0.7,
-        "strength": 0.8
-      },
-      "freshness": 0.95
-    },
-    {
-      "id": "sig_antigravity_0_202610140536",
+      "id": "sig_antigravity_0_202610141049",
       "product_id": "antigravity",
       "type": "official_announcement",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1907,10 +1907,64 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_antigravity_1_202610140536",
+      "id": "sig_antigravity_1_202610141049",
       "product_id": "antigravity",
       "type": "community_report",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
+      "direction": "increase",
+      "features": {
+        "reset_related": true,
+        "quota_related": true,
+        "severity": 0.3
+      },
+      "text": {
+        "en": "Community: [Feature Request]: Programmatic model and reasoning effort selection when dispatching subagents (invoke_subagent & define_subagent) (issue #1237)",
+        "zh": "社区：[Feature Request]: Programmatic model and reasoning effort selection when dispatching subagents (invoke_subagent & define_subagent)（issue #1237）"
+      },
+      "source": {
+        "type": "community",
+        "provider": "github",
+        "url": "https://github.com/google-antigravity/antigravity-cli/issues/1237"
+      },
+      "evidence": {
+        "freshness": 0.95,
+        "independence": 0.7,
+        "strength": 0.8
+      },
+      "freshness": 0.95
+    },
+    {
+      "id": "sig_antigravity_2_202610141049",
+      "product_id": "antigravity",
+      "type": "community_report",
+      "occurred_at": "2026-10-14T10:49:10Z",
+      "direction": "increase",
+      "features": {
+        "reset_related": true,
+        "quota_related": true,
+        "severity": 0.3
+      },
+      "text": {
+        "en": "Community: [Feature Request]: Programmatic access to session context window usage and percentage (issue #1236)",
+        "zh": "社区：[Feature Request]: Programmatic access to session context window usage and percentage（issue #1236）"
+      },
+      "source": {
+        "type": "community",
+        "provider": "github",
+        "url": "https://github.com/google-antigravity/antigravity-cli/issues/1236"
+      },
+      "evidence": {
+        "freshness": 0.95,
+        "independence": 0.7,
+        "strength": 0.8
+      },
+      "freshness": 0.95
+    },
+    {
+      "id": "sig_antigravity_3_202610141049",
+      "product_id": "antigravity",
+      "type": "community_report",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1934,37 +1988,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_antigravity_2_202610140536",
-      "product_id": "antigravity",
-      "type": "community_report",
-      "occurred_at": "2026-10-14T05:36:27Z",
-      "direction": "increase",
-      "features": {
-        "reset_related": true,
-        "quota_related": true,
-        "severity": 0.3
-      },
-      "text": {
-        "en": "Community: [Feature Request]: Built-in HUD status bar with real-time session telemetry (Tokens, Cost, Context, Git & Subagents) (issue #1230)",
-        "zh": "社区：[Feature Request]: Built-in HUD status bar with real-time session telemetry (Tokens, Cost, Context, Git & Subagents)（issue #1230）"
-      },
-      "source": {
-        "type": "community",
-        "provider": "github",
-        "url": "https://github.com/google-antigravity/antigravity-cli/issues/1230"
-      },
-      "evidence": {
-        "freshness": 0.95,
-        "independence": 0.7,
-        "strength": 0.8
-      },
-      "freshness": 0.95
-    },
-    {
-      "id": "sig_qwen_code_0_202610140536",
+      "id": "sig_qwen_code_0_202610141049",
       "product_id": "qwen_code",
       "type": "official_announcement",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1988,10 +2015,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_qwen_code_1_202610140536",
+      "id": "sig_qwen_code_1_202610141049",
       "product_id": "qwen_code",
       "type": "community_report",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1999,13 +2026,13 @@
         "severity": 0.3
       },
       "text": {
-        "en": "Community: [H4f follow-up] Hosted Harness event stream heartbeat: bound idle half-open reads (issue #14135)",
-        "zh": "社区：[H4f follow-up] Hosted Harness event stream heartbeat: bound idle half-open reads（issue #14135）"
+        "en": "Community: feat(managed-agent): D7-1 durable command delivery for general input and cancel (issue #14168)",
+        "zh": "社区：feat(managed-agent): D7-1 durable command delivery for general input and cancel（issue #14168）"
       },
       "source": {
         "type": "community",
         "provider": "github",
-        "url": "https://github.com/QwenLM/qwen-code/issues/14135"
+        "url": "https://github.com/QwenLM/qwen-code/issues/14168"
       },
       "evidence": {
         "freshness": 0.95,
@@ -2015,10 +2042,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_qwen_code_2_202610140536",
+      "id": "sig_qwen_code_2_202610141049",
       "product_id": "qwen_code",
       "type": "community_report",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -2026,13 +2053,13 @@
         "severity": 0.3
       },
       "text": {
-        "en": "Community: feat(managed-agent): Stage D7 the java_durable admission profile and its two durable-command prerequisites (issue #14122)",
-        "zh": "社区：feat(managed-agent): Stage D7 the java_durable admission profile and its two durable-command prerequisites（issue #14122）"
+        "en": "Community: feat(managed-agent): D7-3 the opt-in java_durable admission profile and its switch (issue #14167)",
+        "zh": "社区：feat(managed-agent): D7-3 the opt-in java_durable admission profile and its switch（issue #14167）"
       },
       "source": {
         "type": "community",
         "provider": "github",
-        "url": "https://github.com/QwenLM/qwen-code/issues/14122"
+        "url": "https://github.com/QwenLM/qwen-code/issues/14167"
       },
       "evidence": {
         "freshness": 0.95,
@@ -2042,10 +2069,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_qwen_code_3_202610140536",
+      "id": "sig_qwen_code_3_202610141049",
       "product_id": "qwen_code",
       "type": "community_report",
-      "occurred_at": "2026-10-14T05:36:27Z",
+      "occurred_at": "2026-10-14T10:49:10Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -2053,13 +2080,13 @@
         "severity": 0.3
       },
       "text": {
-        "en": "Community: SGLang context overflow errors are missed or lose their token counts (issue #14097)",
-        "zh": "社区：SGLang context overflow errors are missed or lose their token counts（issue #14097）"
+        "en": "Community: feat(managed-agent): D7-2 original-command reconciliation for java_durable operations (issue #14166)",
+        "zh": "社区：feat(managed-agent): D7-2 original-command reconciliation for java_durable operations（issue #14166）"
       },
       "source": {
         "type": "community",
         "provider": "github",
-        "url": "https://github.com/QwenLM/qwen-code/issues/14097"
+        "url": "https://github.com/QwenLM/qwen-code/issues/14166"
       },
       "evidence": {
         "freshness": 0.95,
@@ -2071,13 +2098,13 @@
   ],
   "forecasts": [
     {
-      "id": "fc_recovery_codex_202610140536",
+      "id": "fc_recovery_codex_202610141049",
       "product_id": "codex",
       "target": {
         "type": "normal_recovery",
         "window_id": "codex_primary"
       },
-      "generated_at": "2026-10-14T05:36:27Z",
+      "generated_at": "2026-10-14T10:49:10Z",
       "prediction": {
         "expected_at": "2026-10-16T03:30:00Z",
         "interval": {
@@ -2101,13 +2128,13 @@
       }
     },
     {
-      "id": "fc_hazard_codex_202610140536",
+      "id": "fc_hazard_codex_202610141049",
       "product_id": "codex",
       "target": {
         "type": "global_reset",
         "horizon_hours": 24
       },
-      "generated_at": "2026-10-14T05:36:27Z",
+      "generated_at": "2026-10-14T10:49:10Z",
       "prediction": {
         "probability": 0.0177,
         "expected_at": null,
@@ -2135,13 +2162,13 @@
       }
     },
     {
-      "id": "fc_recovery_claude_202610140536",
+      "id": "fc_recovery_claude_202610141049",
       "product_id": "claude",
       "target": {
         "type": "normal_recovery",
         "window_id": "claude_primary"
       },
-      "generated_at": "2026-10-14T05:36:27Z",
+      "generated_at": "2026-10-14T10:49:10Z",
       "prediction": {
         "expected_at": "2026-10-15T00:45:00Z",
         "interval": {
@@ -2165,13 +2192,13 @@
       }
     },
     {
-      "id": "fc_hazard_claude_202610140536",
+      "id": "fc_hazard_claude_202610141049",
       "product_id": "claude",
       "target": {
         "type": "global_reset",
         "horizon_hours": 24
       },
-      "generated_at": "2026-10-14T05:36:27Z",
+      "generated_at": "2026-10-14T10:49:10Z",
       "prediction": {
         "probability": 0.0024,
         "expected_at": null,
@@ -2199,13 +2226,13 @@
       }
     },
     {
-      "id": "fc_recovery_grok_202610140536",
+      "id": "fc_recovery_grok_202610141049",
       "product_id": "grok",
       "target": {
         "type": "normal_recovery",
         "window_id": "grok_primary"
       },
-      "generated_at": "2026-10-14T05:36:27Z",
+      "generated_at": "2026-10-14T10:49:10Z",
       "prediction": {
         "expected_at": "2026-10-14T22:30:00Z",
         "interval": {
@@ -2229,13 +2256,13 @@
       }
     },
     {
-      "id": "fc_hazard_grok_202610140536",
+      "id": "fc_hazard_grok_202610141049",
       "product_id": "grok",
       "target": {
         "type": "global_reset",
         "horizon_hours": 24
       },
-      "generated_at": "2026-10-14T05:36:27Z",
+      "generated_at": "2026-10-14T10:49:10Z",
       "prediction": {
         "probability": 0.0024,
         "expected_at": null,
@@ -2263,13 +2290,13 @@
       }
     },
     {
-      "id": "fc_recovery_kimi_202610140536",
+      "id": "fc_recovery_kimi_202610141049",
       "product_id": "kimi",
       "target": {
         "type": "normal_recovery",
         "window_id": "kimi_primary"
       },
-      "generated_at": "2026-10-14T05:36:27Z",
+      "generated_at": "2026-10-14T10:49:10Z",
       "prediction": {
         "expected_at": "2026-10-14T15:00:00Z",
         "interval": {
@@ -2293,13 +2320,13 @@
       }
     },
     {
-      "id": "fc_hazard_kimi_202610140536",
+      "id": "fc_hazard_kimi_202610141049",
       "product_id": "kimi",
       "target": {
         "type": "global_reset",
         "horizon_hours": 24
       },
-      "generated_at": "2026-10-14T05:36:27Z",
+      "generated_at": "2026-10-14T10:49:10Z",
       "prediction": {
         "probability": 0.0024,
         "expected_at": null,
@@ -2327,13 +2354,13 @@
       }
     },
     {
-      "id": "fc_recovery_minimax_202610140536",
+      "id": "fc_recovery_minimax_202610141049",
       "product_id": "minimax",
       "target": {
         "type": "normal_recovery",
         "window_id": "minimax_primary"
       },
-      "generated_at": "2026-10-14T05:36:27Z",
+      "generated_at": "2026-10-14T10:49:10Z",
       "prediction": {
         "expected_at": "2026-10-15T09:30:00Z",
         "interval": {
@@ -2357,13 +2384,13 @@
       }
     },
     {
-      "id": "fc_hazard_minimax_202610140536",
+      "id": "fc_hazard_minimax_202610141049",
       "product_id": "minimax",
       "target": {
         "type": "global_reset",
         "horizon_hours": 24
       },
-      "generated_at": "2026-10-14T05:36:27Z",
+      "generated_at": "2026-10-14T10:49:10Z",
       "prediction": {
         "probability": 0.0024,
         "expected_at": null,
@@ -2391,13 +2418,13 @@
       }
     },
     {
-      "id": "fc_recovery_antigravity_202610140536",
+      "id": "fc_recovery_antigravity_202610141049",
       "product_id": "antigravity",
       "target": {
         "type": "normal_recovery",
         "window_id": "antigravity_primary"
       },
-      "generated_at": "2026-10-14T05:36:27Z",
+      "generated_at": "2026-10-14T10:49:10Z",
       "prediction": {
         "expected_at": "2026-10-15T09:45:00Z",
         "interval": {
@@ -2421,13 +2448,13 @@
       }
     },
     {
-      "id": "fc_hazard_antigravity_202610140536",
+      "id": "fc_hazard_antigravity_202610141049",
       "product_id": "antigravity",
       "target": {
         "type": "global_reset",
         "horizon_hours": 24
       },
-      "generated_at": "2026-10-14T05:36:27Z",
+      "generated_at": "2026-10-14T10:49:10Z",
       "prediction": {
         "probability": 0.0024,
         "expected_at": null,
@@ -2443,9 +2470,9 @@
       },
       "evidence": {
         "historical_events": 0,
-        "recent_signals": 3,
-        "independent_sources": 3,
-        "signal_score": 0.457
+        "recent_signals": 4,
+        "independent_sources": 4,
+        "signal_score": 0.567
       },
       "calibration": {
         "status": "experimental"
@@ -2455,13 +2482,13 @@
       }
     },
     {
-      "id": "fc_recovery_qwen_code_202610140536",
+      "id": "fc_recovery_qwen_code_202610141049",
       "product_id": "qwen_code",
       "target": {
         "type": "normal_recovery",
         "window_id": "qwen_code_primary"
       },
-      "generated_at": "2026-10-14T05:36:27Z",
+      "generated_at": "2026-10-14T10:49:10Z",
       "prediction": {
         "expected_at": "2026-10-15T11:30:00Z",
         "interval": {
@@ -2485,13 +2512,13 @@
       }
     },
     {
-      "id": "fc_hazard_qwen_code_202610140536",
+      "id": "fc_hazard_qwen_code_202610141049",
       "product_id": "qwen_code",
       "target": {
         "type": "global_reset",
         "horizon_hours": 24
       },
-      "generated_at": "2026-10-14T05:36:27Z",
+      "generated_at": "2026-10-14T10:49:10Z",
       "prediction": {
         "probability": 0.0024,
         "expected_at": null,
@@ -2528,7 +2555,7 @@
         "en": "OpenAI official status",
         "zh": "OpenAI 官方状态"
       },
-      "status": "operational",
+      "status": "degraded",
       "summary": {
         "en": "Chat service incident, now recovered",
         "zh": "对话服务出现服务异常，已恢复"

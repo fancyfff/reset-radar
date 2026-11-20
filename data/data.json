@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0",
-  "generated_at": "2026-11-20T10:42:41Z",
+  "generated_at": "2026-11-20T18:54:23Z",
   "data_freshness": {
     "status": "fresh",
     "max_age_seconds": 1800,
@@ -341,13 +341,13 @@
       "product_id": "codex",
       "availability": "unknown",
       "overall_state": "unknown",
-      "updated_at": "2026-11-20T10:42:41Z",
+      "updated_at": "2026-11-20T18:54:23Z",
       "windows": [
         {
           "window_id": "codex_primary",
           "state": "available",
           "reset_at": "2026-11-21T03:30:00Z",
-          "countdown_seconds": 60438,
+          "countdown_seconds": 30936,
           "usage_percent": null,
           "confidence": 0.04,
           "source": "observed"
@@ -358,13 +358,13 @@
       "product_id": "claude",
       "availability": "unknown",
       "overall_state": "unknown",
-      "updated_at": "2026-11-20T10:42:41Z",
+      "updated_at": "2026-11-20T18:54:23Z",
       "windows": [
         {
           "window_id": "claude_primary",
           "state": "available",
           "reset_at": "2026-11-21T23:10:00Z",
-          "countdown_seconds": 131238,
+          "countdown_seconds": 101736,
           "usage_percent": null,
           "confidence": 0.09,
           "source": "observed"
@@ -375,13 +375,13 @@
       "product_id": "grok",
       "availability": "unknown",
       "overall_state": "unknown",
-      "updated_at": "2026-11-20T10:42:41Z",
+      "updated_at": "2026-11-20T18:54:23Z",
       "windows": [
         {
           "window_id": "grok_primary",
           "state": "available",
           "reset_at": "2026-11-22T08:00:00Z",
-          "countdown_seconds": 163038,
+          "countdown_seconds": 133536,
           "usage_percent": null,
           "confidence": 0.09,
           "source": "estimated"
@@ -392,13 +392,13 @@
       "product_id": "kimi",
       "availability": "unknown",
       "overall_state": "unknown",
-      "updated_at": "2026-11-20T10:42:41Z",
+      "updated_at": "2026-11-20T18:54:23Z",
       "windows": [
         {
           "window_id": "kimi_primary",
           "state": "available",
           "reset_at": "2026-11-21T08:40:00Z",
-          "countdown_seconds": 79038,
+          "countdown_seconds": 49536,
           "usage_percent": null,
           "confidence": 0.09,
           "source": "observed"
@@ -409,13 +409,13 @@
       "product_id": "minimax",
       "availability": "unknown",
       "overall_state": "unknown",
-      "updated_at": "2026-11-20T10:42:41Z",
+      "updated_at": "2026-11-20T18:54:23Z",
       "windows": [
         {
           "window_id": "minimax_primary",
           "state": "available",
-          "reset_at": "2026-11-20T12:30:00Z",
-          "countdown_seconds": 6438,
+          "reset_at": "2026-11-22T12:40:00Z",
+          "countdown_seconds": 150336,
           "usage_percent": null,
           "confidence": 0.09,
           "source": "observed"
@@ -426,13 +426,13 @@
       "product_id": "antigravity",
       "availability": "unknown",
       "overall_state": "unknown",
-      "updated_at": "2026-11-20T10:42:41Z",
+      "updated_at": "2026-11-20T18:54:23Z",
       "windows": [
         {
           "window_id": "antigravity_primary",
           "state": "available",
           "reset_at": "2026-11-22T08:10:00Z",
-          "countdown_seconds": 163638,
+          "countdown_seconds": 134136,
           "usage_percent": null,
           "confidence": 0.09,
           "source": "observed"
@@ -443,13 +443,13 @@
       "product_id": "qwen_code",
       "availability": "unknown",
       "overall_state": "unknown",
-      "updated_at": "2026-11-20T10:42:41Z",
+      "updated_at": "2026-11-20T18:54:23Z",
       "windows": [
         {
           "window_id": "qwen_code_primary",
           "state": "available",
           "reset_at": "2026-11-22T08:20:00Z",
-          "countdown_seconds": 164238,
+          "countdown_seconds": 134736,
           "usage_percent": null,
           "confidence": 0.09,
           "source": "observed"
@@ -962,10 +962,10 @@
   ],
   "signals": [
     {
-      "id": "sig_codex_0_202611201042",
+      "id": "sig_codex_0_202611201854",
       "product_id": "codex",
       "type": "official_announcement",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -973,8 +973,8 @@
         "severity": 0.65
       },
       "text": {
-        "en": "GitHub release(s) in last 24h: 0.173.0-alpha.1, 0.171.0, 0.172.0-alpha.2, 0.171.0-alpha.13.1",
-        "zh": "近24小时 GitHub 发布：0.173.0-alpha.1, 0.171.0, 0.172.0-alpha.2, 0.171.0-alpha.13.1"
+        "en": "GitHub release(s) in last 24h: 0.173.0-alpha.1, 0.171.0, 0.171.0-alpha.13.1",
+        "zh": "近24小时 GitHub 发布：0.173.0-alpha.1, 0.171.0, 0.171.0-alpha.13.1"
       },
       "source": {
         "type": "community",
@@ -989,10 +989,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_codex_1_202611201042",
+      "id": "sig_codex_1_202611201854",
       "product_id": "codex",
       "type": "community_report",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1000,13 +1000,13 @@
         "severity": 0.3
       },
       "text": {
-        "en": "Community: [TUI] Clarify fan-out/fan-in intent across wait_threads/read_thread and native multi-agent semantics (issue #62718)",
-        "zh": "社区：[TUI] Clarify fan-out/fan-in intent across wait_threads/read_thread and native multi-agent semantics（issue #62718）"
+        "en": "Community: Responses streams closed without close_notify mid-turn (~20% of large turns, macOS) (issue #62819)",
+        "zh": "社区：Responses streams closed without close_notify mid-turn (~20% of large turns, macOS)（issue #62819）"
       },
       "source": {
         "type": "community",
         "provider": "github",
-        "url": "https://github.com/openai/codex/issues/62718"
+        "url": "https://github.com/openai/codex/issues/62819"
       },
       "evidence": {
         "freshness": 0.95,
@@ -1016,10 +1016,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_codex_2_202611201042",
+      "id": "sig_codex_2_202611201854",
       "product_id": "codex",
       "type": "community_report",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1027,13 +1027,13 @@
         "severity": 0.3
       },
       "text": {
-        "en": "Community: [Windows][WSL] GPT-6.2 Sol Fast mode control is missing in Codex Desktop (issue #62711)",
-        "zh": "社区：[Windows][WSL] GPT-6.2 Sol Fast mode control is missing in Codex Desktop（issue #62711）"
+        "en": "Community: CLI status line intermittently hides context usage despite saved configuration (issue #62815)",
+        "zh": "社区：CLI status line intermittently hides context usage despite saved configuration（issue #62815）"
       },
       "source": {
         "type": "community",
         "provider": "github",
-        "url": "https://github.com/openai/codex/issues/62711"
+        "url": "https://github.com/openai/codex/issues/62815"
       },
       "evidence": {
         "freshness": 0.95,
@@ -1043,10 +1043,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_codex_3_202611201042",
+      "id": "sig_codex_3_202611201854",
       "product_id": "codex",
       "type": "community_report",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1054,13 +1054,13 @@
         "severity": 0.3
       },
       "text": {
-        "en": "Community: [macOS] ChatGPT Desktop 26.1117.31558 crashes on launch — valueForUndefinedKey exception persists across macOS 26 and 27 (issue #62702)",
-        "zh": "社区：[macOS] ChatGPT Desktop 26.1117.31558 crashes on launch — valueForUndefinedKey exception persists across macOS 26 and 27（issue #62702）"
+        "en": "Community: Custom provider named \"OpenAI\" defaults to remote compaction v2 and long threads become unusable (issue #62809)",
+        "zh": "社区：Custom provider named \"OpenAI\" defaults to remote compaction v2 and long threads become unusable（issue #62809）"
       },
       "source": {
         "type": "community",
         "provider": "github",
-        "url": "https://github.com/openai/codex/issues/62702"
+        "url": "https://github.com/openai/codex/issues/62809"
       },
       "evidence": {
         "freshness": 0.95,
@@ -1070,10 +1070,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_codex_4_202611201042",
+      "id": "sig_codex_4_202611201854",
       "product_id": "codex",
       "type": "service_anomaly",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1097,10 +1097,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_codex_5_202611201042",
+      "id": "sig_codex_5_202611201854",
       "product_id": "codex",
       "type": "service_anomaly",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1124,10 +1124,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_codex_6_202611201042",
+      "id": "sig_codex_6_202611201854",
       "product_id": "codex",
       "type": "service_anomaly",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1151,10 +1151,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_codex_7_202611201042",
+      "id": "sig_codex_7_202611201854",
       "product_id": "codex",
       "type": "service_anomaly",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1178,10 +1178,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_codex_8_202611201042",
+      "id": "sig_codex_8_202611201854",
       "product_id": "codex",
       "type": "service_anomaly",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1205,10 +1205,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_codex_9_202611201042",
+      "id": "sig_codex_9_202611201854",
       "product_id": "codex",
       "type": "service_anomaly",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1232,10 +1232,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_claude_0_202611201042",
+      "id": "sig_claude_0_202611201854",
       "product_id": "claude",
       "type": "service_anomaly",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1259,10 +1259,10 @@
       "freshness": 0.5
     },
     {
-      "id": "sig_claude_1_202611201042",
+      "id": "sig_claude_1_202611201854",
       "product_id": "claude",
       "type": "official_announcement",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1286,10 +1286,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_claude_2_202611201042",
+      "id": "sig_claude_2_202611201854",
       "product_id": "claude",
       "type": "community_report",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1297,13 +1297,13 @@
         "severity": 0.3
       },
       "text": {
-        "en": "Community: Any HTTP 403 from the API endpoint (e.g. a Cloudflare HTML block page) is classified as `authentication_failed` and clears an active `/goal`, although credentials are valid (issue #111337)",
-        "zh": "社区：Any HTTP 403 from the API endpoint (e.g. a Cloudflare HTML block page) is classified as `authentication_failed` and clears an active `/goal`, although credentials are valid（issue #111337）"
+        "en": "Community: VS Code extension 2.1.220: extension host crashes with code 134 roughly 80 seconds after every activation, killing the in-flight turn; resume then writes a synthetic \"No response requested.\" instead of continuing (issue #111420)",
+        "zh": "社区：VS Code extension 2.1.220: extension host crashes with code 134 roughly 80 seconds after every activation, killing the in-flight turn; resume then writes a synthetic \"No response requested.\" instead of continuing（issue #111420）"
       },
       "source": {
         "type": "community",
         "provider": "github",
-        "url": "https://github.com/anthropics/claude-code/issues/111337"
+        "url": "https://github.com/anthropics/claude-code/issues/111420"
       },
       "evidence": {
         "freshness": 0.95,
@@ -1313,10 +1313,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_claude_3_202611201042",
+      "id": "sig_claude_3_202611201854",
       "product_id": "claude",
       "type": "community_report",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1324,13 +1324,13 @@
         "severity": 0.3
       },
       "text": {
-        "en": "Community: [BUG] macOS sandbox still blocks AF_UNIX bind() for MSBuild worker nodes (re #39257) (issue #111333)",
-        "zh": "社区：[BUG] macOS sandbox still blocks AF_UNIX bind() for MSBuild worker nodes (re #39257)（issue #111333）"
+        "en": "Community: [DOCS] Code Mode: which subagents run in Code Mode depends on their tools list, and nothing documents it (issue #111385)",
+        "zh": "社区：[DOCS] Code Mode: which subagents run in Code Mode depends on their tools list, and nothing documents it（issue #111385）"
       },
       "source": {
         "type": "community",
         "provider": "github",
-        "url": "https://github.com/anthropics/claude-code/issues/111333"
+        "url": "https://github.com/anthropics/claude-code/issues/111385"
       },
       "evidence": {
         "freshness": 0.95,
@@ -1340,10 +1340,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_claude_4_202611201042",
+      "id": "sig_claude_4_202611201854",
       "product_id": "claude",
       "type": "community_report",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1351,13 +1351,13 @@
         "severity": 0.3
       },
       "text": {
-        "en": "Community: [BUG] [BUG] Severe Claude Code Pro usage degradation: 3 rate limits in 12 hours, repeated failures, ignored instructions and endless debugging loops (issue #111315)",
-        "zh": "社区：[BUG] [BUG] Severe Claude Code Pro usage degradation: 3 rate limits in 12 hours, repeated failures, ignored instructions and endless debugging loops（issue #111315）"
+        "en": "Community: Max 5x weekly limit runs out mid-week for daily Claude Code work (issue #111369)",
+        "zh": "社区：Max 5x weekly limit runs out mid-week for daily Claude Code work（issue #111369）"
       },
       "source": {
         "type": "community",
         "provider": "github",
-        "url": "https://github.com/anthropics/claude-code/issues/111315"
+        "url": "https://github.com/anthropics/claude-code/issues/111369"
       },
       "evidence": {
         "freshness": 0.95,
@@ -1367,10 +1367,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_claude_5_202611201042",
+      "id": "sig_claude_5_202611201854",
       "product_id": "claude",
       "type": "service_anomaly",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1394,10 +1394,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_claude_6_202611201042",
+      "id": "sig_claude_6_202611201854",
       "product_id": "claude",
       "type": "service_anomaly",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1421,10 +1421,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_claude_7_202611201042",
+      "id": "sig_claude_7_202611201854",
       "product_id": "claude",
       "type": "service_anomaly",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1448,10 +1448,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_claude_8_202611201042",
+      "id": "sig_claude_8_202611201854",
       "product_id": "claude",
       "type": "service_anomaly",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1475,10 +1475,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_claude_9_202611201042",
+      "id": "sig_claude_9_202611201854",
       "product_id": "claude",
       "type": "service_anomaly",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1502,10 +1502,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_claude_10_202611201042",
+      "id": "sig_claude_10_202611201854",
       "product_id": "claude",
       "type": "service_anomaly",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1529,10 +1529,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_kimi_0_202611201042",
+      "id": "sig_kimi_0_202611201854",
       "product_id": "kimi",
       "type": "official_announcement",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1556,10 +1556,10 @@
       "freshness": 0.5
     },
     {
-      "id": "sig_kimi_1_202611201042",
+      "id": "sig_kimi_1_202611201854",
       "product_id": "kimi",
       "type": "official_announcement",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1567,8 +1567,8 @@
         "severity": 0.65
       },
       "text": {
-        "en": "GitHub release(s) in last 24h: Kimi Code Desktop 1.4.2, Kimi Code Desktop 1.4.1, Kimi Code CLI 2.7.2, Kimi Code CLI 2.7.1, Kimi Code Desktop 1.4.0-canary.20261120032344-9364a3f, Kimi Code Desktop 1.4.0, Kimi Code CLI 2.7.0, Kimi Code Desktop 1.4.0-canary.20261119110740-a5e355e, Kimi Code Desktop 1.4.0-canary.20261119102134-44bcf37",
-        "zh": "近24小时 GitHub 发布：Kimi Code Desktop 1.4.2, Kimi Code Desktop 1.4.1, Kimi Code CLI 2.7.2, Kimi Code CLI 2.7.1, Kimi Code Desktop 1.4.0-canary.20261120032344-9364a3f, Kimi Code Desktop 1.4.0, Kimi Code CLI 2.7.0, Kimi Code Desktop 1.4.0-canary.20261119110740-a5e355e, Kimi Code Desktop 1.4.0-canary.20261119102134-44bcf37"
+        "en": "GitHub release(s) in last 24h: Kimi Code Desktop 1.4.2, Kimi Code Desktop 1.4.1, Kimi Code CLI 2.7.2, Kimi Code CLI 2.7.1, Kimi Code Desktop 1.4.0-canary.20261120032344-9364a3f",
+        "zh": "近24小时 GitHub 发布：Kimi Code Desktop 1.4.2, Kimi Code Desktop 1.4.1, Kimi Code CLI 2.7.2, Kimi Code CLI 2.7.1, Kimi Code Desktop 1.4.0-canary.20261120032344-9364a3f"
       },
       "source": {
         "type": "community",
@@ -1583,24 +1583,24 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_kimi_2_202611201042",
+      "id": "sig_kimi_2_202611201854",
       "product_id": "kimi",
-      "type": "community_report",
-      "occurred_at": "2026-11-20T10:42:41Z",
-      "direction": "increase",
+      "type": "service_anomaly",
+      "occurred_at": "2026-11-20T18:54:23Z",
+      "direction": "decrease",
       "features": {
-        "reset_related": true,
+        "reset_related": false,
         "quota_related": true,
         "severity": 0.3
       },
       "text": {
-        "en": "Community: Suspected quota miscalculation: ~88% of monthly quota consumed with minimal usage over 2 weeks (issue #5145)",
-        "zh": "社区：Suspected quota miscalculation: ~88% of monthly quota consumed with minimal usage over 2 weeks（issue #5145）"
+        "en": "Official status: Kimi Code K3.1 Pro 请求处理严重异常 (resolved, 2026-11-20)",
+        "zh": "官方状态：Kimi Code K3.1 Pro 请求处理严重异常（resolved, 2026-11-20）"
       },
       "source": {
-        "type": "community",
-        "provider": "github",
-        "url": "https://github.com/MoonshotAI/kimi-code/issues/5145"
+        "type": "official",
+        "provider": "statuspage",
+        "url": "https://stspg.io/140y4386n6rj"
       },
       "evidence": {
         "freshness": 0.95,
@@ -1610,10 +1610,91 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_kimi_3_202611201042",
+      "id": "sig_kimi_3_202611201854",
       "product_id": "kimi",
       "type": "service_anomaly",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
+      "direction": "decrease",
+      "features": {
+        "reset_related": false,
+        "quota_related": true,
+        "severity": 0.3
+      },
+      "text": {
+        "en": "Official status: Kimi Code K2.8 Preview 请求处理严重异常 (resolved, 2026-11-20)",
+        "zh": "官方状态：Kimi Code K2.8 Preview 请求处理严重异常（resolved, 2026-11-20）"
+      },
+      "source": {
+        "type": "official",
+        "provider": "statuspage",
+        "url": "https://stspg.io/4r3xq304tx4m"
+      },
+      "evidence": {
+        "freshness": 0.95,
+        "independence": 0.7,
+        "strength": 0.8
+      },
+      "freshness": 0.95
+    },
+    {
+      "id": "sig_kimi_4_202611201854",
+      "product_id": "kimi",
+      "type": "service_anomaly",
+      "occurred_at": "2026-11-20T18:54:23Z",
+      "direction": "decrease",
+      "features": {
+        "reset_related": false,
+        "quota_related": true,
+        "severity": 0.3
+      },
+      "text": {
+        "en": "Official status: Kimi Code K3.1 Pro Highspeed 请求处理严重异常 (resolved, 2026-11-20)",
+        "zh": "官方状态：Kimi Code K3.1 Pro Highspeed 请求处理严重异常（resolved, 2026-11-20）"
+      },
+      "source": {
+        "type": "official",
+        "provider": "statuspage",
+        "url": "https://stspg.io/4qc14v5m1nx3"
+      },
+      "evidence": {
+        "freshness": 0.95,
+        "independence": 0.7,
+        "strength": 0.8
+      },
+      "freshness": 0.95
+    },
+    {
+      "id": "sig_kimi_5_202611201854",
+      "product_id": "kimi",
+      "type": "service_anomaly",
+      "occurred_at": "2026-11-20T18:54:23Z",
+      "direction": "decrease",
+      "features": {
+        "reset_related": false,
+        "quota_related": true,
+        "severity": 0.3
+      },
+      "text": {
+        "en": "Official status: Kimi Code K3 请求处理严重异常 (resolved, 2026-11-20)",
+        "zh": "官方状态：Kimi Code K3 请求处理严重异常（resolved, 2026-11-20）"
+      },
+      "source": {
+        "type": "official",
+        "provider": "statuspage",
+        "url": "https://stspg.io/wgs63blgmmhm"
+      },
+      "evidence": {
+        "freshness": 0.95,
+        "independence": 0.7,
+        "strength": 0.8
+      },
+      "freshness": 0.95
+    },
+    {
+      "id": "sig_kimi_6_202611201854",
+      "product_id": "kimi",
+      "type": "service_anomaly",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1637,10 +1718,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_kimi_4_202611201042",
+      "id": "sig_kimi_7_202611201854",
       "product_id": "kimi",
       "type": "service_anomaly",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1664,118 +1745,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_kimi_5_202611201042",
-      "product_id": "kimi",
-      "type": "service_anomaly",
-      "occurred_at": "2026-11-20T10:42:41Z",
-      "direction": "decrease",
-      "features": {
-        "reset_related": false,
-        "quota_related": true,
-        "severity": 0.3
-      },
-      "text": {
-        "en": "Official status: google登录异常 (resolved, 2026-11-19)",
-        "zh": "官方状态：google登录异常（resolved, 2026-11-19）"
-      },
-      "source": {
-        "type": "official",
-        "provider": "statuspage",
-        "url": "https://stspg.io/4zt7grpf4jc7"
-      },
-      "evidence": {
-        "freshness": 0.95,
-        "independence": 0.7,
-        "strength": 0.8
-      },
-      "freshness": 0.95
-    },
-    {
-      "id": "sig_kimi_6_202611201042",
-      "product_id": "kimi",
-      "type": "service_anomaly",
-      "occurred_at": "2026-11-20T10:42:41Z",
-      "direction": "decrease",
-      "features": {
-        "reset_related": false,
-        "quota_related": true,
-        "severity": 0.3
-      },
-      "text": {
-        "en": "Official status: Kimi Code K3 TTFT 响应延迟升高 (resolved, 2026-11-17)",
-        "zh": "官方状态：Kimi Code K3 TTFT 响应延迟升高（resolved, 2026-11-17）"
-      },
-      "source": {
-        "type": "official",
-        "provider": "statuspage",
-        "url": "https://stspg.io/6r5vjt477n16"
-      },
-      "evidence": {
-        "freshness": 0.95,
-        "independence": 0.7,
-        "strength": 0.8
-      },
-      "freshness": 0.95
-    },
-    {
-      "id": "sig_kimi_7_202611201042",
-      "product_id": "kimi",
-      "type": "service_anomaly",
-      "occurred_at": "2026-11-20T10:42:41Z",
-      "direction": "decrease",
-      "features": {
-        "reset_related": false,
-        "quota_related": true,
-        "severity": 0.3
-      },
-      "text": {
-        "en": "Official status: Kimi Code K3 TTFT 响应延迟升高 (resolved, 2026-11-17)",
-        "zh": "官方状态：Kimi Code K3 TTFT 响应延迟升高（resolved, 2026-11-17）"
-      },
-      "source": {
-        "type": "official",
-        "provider": "statuspage",
-        "url": "https://stspg.io/35g3z539m0mv"
-      },
-      "evidence": {
-        "freshness": 0.95,
-        "independence": 0.7,
-        "strength": 0.8
-      },
-      "freshness": 0.95
-    },
-    {
-      "id": "sig_kimi_8_202611201042",
-      "product_id": "kimi",
-      "type": "service_anomaly",
-      "occurred_at": "2026-11-20T10:42:41Z",
-      "direction": "decrease",
-      "features": {
-        "reset_related": false,
-        "quota_related": true,
-        "severity": 0.3
-      },
-      "text": {
-        "en": "Official status: Kimi Code K2.8 Preview TTFT 响应延迟升高 (resolved, 2026-11-17)",
-        "zh": "官方状态：Kimi Code K2.8 Preview TTFT 响应延迟升高（resolved, 2026-11-17）"
-      },
-      "source": {
-        "type": "official",
-        "provider": "statuspage",
-        "url": "https://stspg.io/qchgk0rqv36q"
-      },
-      "evidence": {
-        "freshness": 0.95,
-        "independence": 0.7,
-        "strength": 0.8
-      },
-      "freshness": 0.95
-    },
-    {
-      "id": "sig_minimax_0_202611201042",
+      "id": "sig_minimax_0_202611201854",
       "product_id": "minimax",
       "type": "service_anomaly",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1799,10 +1772,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_minimax_1_202611201042",
+      "id": "sig_minimax_1_202611201854",
       "product_id": "minimax",
       "type": "service_anomaly",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1826,10 +1799,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_minimax_2_202611201042",
+      "id": "sig_minimax_2_202611201854",
       "product_id": "minimax",
       "type": "service_anomaly",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1853,10 +1826,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_minimax_3_202611201042",
+      "id": "sig_minimax_3_202611201854",
       "product_id": "minimax",
       "type": "service_anomaly",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1880,10 +1853,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_minimax_4_202611201042",
+      "id": "sig_minimax_4_202611201854",
       "product_id": "minimax",
       "type": "service_anomaly",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1907,10 +1880,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_minimax_5_202611201042",
+      "id": "sig_minimax_5_202611201854",
       "product_id": "minimax",
       "type": "service_anomaly",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "decrease",
       "features": {
         "reset_related": false,
@@ -1934,10 +1907,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_antigravity_0_202611201042",
+      "id": "sig_antigravity_0_202611201854",
       "product_id": "antigravity",
       "type": "official_announcement",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1961,10 +1934,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_antigravity_1_202611201042",
+      "id": "sig_antigravity_1_202611201854",
       "product_id": "antigravity",
       "type": "community_report",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1972,13 +1945,13 @@
         "severity": 0.3
       },
       "text": {
-        "en": "Community: [Bug]: Switching group from exhausted group 5h quota causes the next group that had 100% remaining to drop to 0% instantly  on Gemini AI pro subscription (issue #1688)",
-        "zh": "社区：[Bug]: Switching group from exhausted group 5h quota causes the next group that had 100% remaining to drop to 0% instantly  on Gemini AI pro subscription（issue #1688）"
+        "en": "Community: [Feature Request]: Session-scoped sandbox failure cache to avoid repeated Standard Sandbox failures before BypassSandbox retries (issue #1700)",
+        "zh": "社区：[Feature Request]: Session-scoped sandbox failure cache to avoid repeated Standard Sandbox failures before BypassSandbox retries（issue #1700）"
       },
       "source": {
         "type": "community",
         "provider": "github",
-        "url": "https://github.com/google-antigravity/antigravity-cli/issues/1688"
+        "url": "https://github.com/google-antigravity/antigravity-cli/issues/1700"
       },
       "evidence": {
         "freshness": 0.95,
@@ -1988,10 +1961,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_antigravity_2_202611201042",
+      "id": "sig_antigravity_2_202611201854",
       "product_id": "antigravity",
       "type": "community_report",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -1999,13 +1972,13 @@
         "severity": 0.3
       },
       "text": {
-        "en": "Community: [Feature Request]: Native real-time inter-instance communication for multi-model collaboration (Carbon + Neon + Hydrogen) (issue #1685)",
-        "zh": "社区：[Feature Request]: Native real-time inter-instance communication for multi-model collaboration (Carbon + Neon + Hydrogen)（issue #1685）"
+        "en": "Community: [Bug]: Background task completion injected mid-stream into active assistant response without closing tag, triggering unbounded 166k-token repetition loop (issue #1697)",
+        "zh": "社区：[Bug]: Background task completion injected mid-stream into active assistant response without closing tag, triggering unbounded 166k-token repetition loop（issue #1697）"
       },
       "source": {
         "type": "community",
         "provider": "github",
-        "url": "https://github.com/google-antigravity/antigravity-cli/issues/1685"
+        "url": "https://github.com/google-antigravity/antigravity-cli/issues/1697"
       },
       "evidence": {
         "freshness": 0.95,
@@ -2015,10 +1988,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_antigravity_3_202611201042",
+      "id": "sig_antigravity_3_202611201854",
       "product_id": "antigravity",
       "type": "community_report",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -2026,13 +1999,13 @@
         "severity": 0.3
       },
       "text": {
-        "en": "Community: [Bug]: ACP session returns RESOURCE_EXHAUSTED (429) when systemPrompt.append contains \"tools.opencode.session_move\" (issue #1684)",
-        "zh": "社区：[Bug]: ACP session returns RESOURCE_EXHAUSTED (429) when systemPrompt.append contains \"tools.opencode.session_move\"（issue #1684）"
+        "en": "Community: [Feature Request]: Optional idle compaction before prompt cache expires (issue #1694)",
+        "zh": "社区：[Feature Request]: Optional idle compaction before prompt cache expires（issue #1694）"
       },
       "source": {
         "type": "community",
         "provider": "github",
-        "url": "https://github.com/google-antigravity/antigravity-cli/issues/1684"
+        "url": "https://github.com/google-antigravity/antigravity-cli/issues/1694"
       },
       "evidence": {
         "freshness": 0.95,
@@ -2042,10 +2015,37 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_qwen_code_0_202611201042",
+      "id": "sig_qwen_code_0_202611201854",
       "product_id": "qwen_code",
       "type": "community_report",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
+      "direction": "increase",
+      "features": {
+        "reset_related": true,
+        "quota_related": true,
+        "severity": 0.3
+      },
+      "text": {
+        "en": "Community: workflow-authoring SKILL.md understates which agent() schemas are refused before dispatch (issue #17946)",
+        "zh": "社区：workflow-authoring SKILL.md understates which agent() schemas are refused before dispatch（issue #17946）"
+      },
+      "source": {
+        "type": "community",
+        "provider": "github",
+        "url": "https://github.com/QwenLM/qwen-code/issues/17946"
+      },
+      "evidence": {
+        "freshness": 0.95,
+        "independence": 0.7,
+        "strength": 0.8
+      },
+      "freshness": 0.95
+    },
+    {
+      "id": "sig_qwen_code_1_202611201854",
+      "product_id": "qwen_code",
+      "type": "community_report",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -2069,10 +2069,10 @@
       "freshness": 0.95
     },
     {
-      "id": "sig_qwen_code_1_202611201042",
+      "id": "sig_qwen_code_2_202611201854",
       "product_id": "qwen_code",
       "type": "community_report",
-      "occurred_at": "2026-11-20T10:42:41Z",
+      "occurred_at": "2026-11-20T18:54:23Z",
       "direction": "increase",
       "features": {
         "reset_related": true,
@@ -2094,44 +2094,17 @@
         "strength": 0.8
       },
       "freshness": 0.95
-    },
-    {
-      "id": "sig_qwen_code_2_202611201042",
-      "product_id": "qwen_code",
-      "type": "community_report",
-      "occurred_at": "2026-11-20T10:42:41Z",
-      "direction": "increase",
-      "features": {
-        "reset_related": true,
-        "quota_related": true,
-        "severity": 0.3
-      },
-      "text": {
-        "en": "Community: bug(serve): no memory metrics, and every workspace runtime stays resident — the daemon is always the OOM killer's first pick (issue #17888)",
-        "zh": "社区：bug(serve): no memory metrics, and every workspace runtime stays resident — the daemon is always the OOM killer's first pick（issue #17888）"
-      },
-      "source": {
-        "type": "community",
-        "provider": "github",
-        "url": "https://github.com/QwenLM/qwen-code/issues/17888"
-      },
-      "evidence": {
-        "freshness": 0.95,
-        "independence": 0.7,
-        "strength": 0.8
-      },
-      "freshness": 0.95
     }
   ],
   "forecasts": [
     {
-      "id": "fc_recovery_codex_202611201042",
+      "id": "fc_recovery_codex_202611201854",
       "product_id": "codex",
       "target": {
         "type": "normal_recovery",
         "window_id": "codex_primary"
       },
-      "generated_at": "2026-11-20T10:42:41Z",
+      "generated_at": "2026-11-20T18:54:23Z",
       "prediction": {
         "expected_at": "2026-11-21T03:30:00Z",
         "interval": {
@@ -2155,15 +2128,15 @@
       }
     },
     {
-      "id": "fc_hazard_codex_202611201042",
+      "id": "fc_hazard_codex_202611201854",
       "product_id": "codex",
       "target": {
         "type": "global_reset",
         "horizon_hours": 24
       },
-      "generated_at": "2026-11-20T10:42:41Z",
+      "generated_at": "2026-11-20T18:54:23Z",
       "prediction": {
-        "probability": 0.0109,
+        "probability": 0.0108,
         "expected_at": null,
         "interval": {
           "p50": null,
@@ -2189,13 +2162,13 @@
       }
     },
     {
-      "id": "fc_recovery_claude_202611201042",
+      "id": "fc_recovery_claude_202611201854",
       "product_id": "claude",
       "target": {
         "type": "normal_recovery",
         "window_id": "claude_primary"
       },
-      "generated_at": "2026-11-20T10:42:41Z",
+      "generated_at": "2026-11-20T18:54:23Z",
       "prediction": {
         "expected_at": "2026-11-21T23:10:00Z",
         "interval": {
@@ -2219,13 +2192,13 @@
       }
     },
     {
-      "id": "fc_hazard_claude_202611201042",
+      "id": "fc_hazard_claude_202611201854",
       "product_id": "claude",
       "target": {
         "type": "global_reset",
         "horizon_hours": 24
       },
-      "generated_at": "2026-11-20T10:42:41Z",
+      "generated_at": "2026-11-20T18:54:23Z",
       "prediction": {
         "probability": 0.0024,
         "expected_at": null,
@@ -2253,13 +2226,13 @@
       }
     },
     {
-      "id": "fc_recovery_grok_202611201042",
+      "id": "fc_recovery_grok_202611201854",
       "product_id": "grok",
       "target": {
         "type": "normal_recovery",
         "window_id": "grok_primary"
       },
-      "generated_at": "2026-11-20T10:42:41Z",
+      "generated_at": "2026-11-20T18:54:23Z",
       "prediction": {
         "expected_at": "2026-11-22T08:00:00Z",
         "interval": {
@@ -2283,13 +2256,13 @@
       }
     },
     {
-      "id": "fc_hazard_grok_202611201042",
+      "id": "fc_hazard_grok_202611201854",
       "product_id": "grok",
       "target": {
         "type": "global_reset",
         "horizon_hours": 24
       },
-      "generated_at": "2026-11-20T10:42:41Z",
+      "generated_at": "2026-11-20T18:54:23Z",
       "prediction": {
         "probability": 0.0024,
         "expected_at": null,
@@ -2317,13 +2290,13 @@
       }
     },
     {
-      "id": "fc_recovery_kimi_202611201042",
+      "id": "fc_recovery_kimi_202611201854",
       "product_id": "kimi",
       "target": {
         "type": "normal_recovery",
         "window_id": "kimi_primary"
       },
-      "generated_at": "2026-11-20T10:42:41Z",
+      "generated_at": "2026-11-20T18:54:23Z",
       "prediction": {
         "expected_at": "2026-11-21T08:40:00Z",
         "interval": {
@@ -2347,13 +2320,13 @@
       }
     },
     {
-      "id": "fc_hazard_kimi_202611201042",
+      "id": "fc_hazard_kimi_202611201854",
       "product_id": "kimi",
       "target": {
         "type": "global_reset",
         "horizon_hours": 24
       },
-      "generated_at": "2026-11-20T10:42:41Z",
+      "generated_at": "2026-11-20T18:54:23Z",
       "prediction": {
         "probability": 0.0024,
         "expected_at": null,
@@ -2369,9 +2342,9 @@
       },
       "evidence": {
         "historical_events": 0,
-        "recent_signals": 9,
-        "independent_sources": 9,
-        "signal_score": -0.141
+        "recent_signals": 8,
+        "independent_sources": 8,
+        "signal_score": -0.25
       },
       "calibration": {
         "status": "experimental"
@@ -2381,19 +2354,19 @@
       }
     },
     {
-      "id": "fc_recovery_minimax_202611201042",
+      "id": "fc_recovery_minimax_202611201854",
       "product_id": "minimax",
       "target": {
         "type": "normal_recovery",
         "window_id": "minimax_primary"
       },
-      "generated_at": "2026-11-20T10:42:41Z",
+      "generated_at": "2026-11-20T18:54:23Z",
       "prediction": {
-        "expected_at": "2026-11-20T12:30:00Z",
+        "expected_at": "2026-11-22T12:40:00Z",
         "interval": {
-          "p50": "2026-11-20T12:30:00Z",
-          "p80": "2026-11-20T13:00:00Z",
-          "p95": "2026-11-20T13:30:00Z"
+          "p50": "2026-11-22T12:40:00Z",
+          "p80": "2026-11-22T13:10:00Z",
+          "p95": "2026-11-22T13:40:00Z"
         }
       },
       "model": {
@@ -2411,13 +2384,13 @@
       }
     },
     {
-      "id": "fc_hazard_minimax_202611201042",
+      "id": "fc_hazard_minimax_202611201854",
       "product_id": "minimax",
       "target": {
         "type": "global_reset",
         "horizon_hours": 24
       },
-      "generated_at": "2026-11-20T10:42:41Z",
+      "generated_at": "2026-11-20T18:54:23Z",
       "prediction": {
         "probability": 0.0024,
         "expected_at": null,
@@ -2445,13 +2418,13 @@
       }
     },
     {
-      "id": "fc_recovery_antigravity_202611201042",
+      "id": "fc_recovery_antigravity_202611201854",
       "product_id": "antigravity",
       "target": {
         "type": "normal_recovery",
         "window_id": "antigravity_primary"
       },
-      "generated_at": "2026-11-20T10:42:41Z",
+      "generated_at": "2026-11-20T18:54:23Z",
       "prediction": {
         "expected_at": "2026-11-22T08:10:00Z",
         "interval": {
@@ -2475,13 +2448,13 @@
       }
     },
     {
-      "id": "fc_hazard_antigravity_202611201042",
+      "id": "fc_hazard_antigravity_202611201854",
       "product_id": "antigravity",
       "target": {
         "type": "global_reset",
         "horizon_hours": 24
       },
-      "generated_at": "2026-11-20T10:42:41Z",
+      "generated_at": "2026-11-20T18:54:23Z",
       "prediction": {
         "probability": 0.0024,
         "expected_at": null,
@@ -2509,13 +2482,13 @@
       }
     },
     {
-      "id": "fc_recovery_qwen_code_202611201042",
+      "id": "fc_recovery_qwen_code_202611201854",
       "product_id": "qwen_code",
       "target": {
         "type": "normal_recovery",
         "window_id": "qwen_code_primary"
       },
-      "generated_at": "2026-11-20T10:42:41Z",
+      "generated_at": "2026-11-20T18:54:23Z",
       "prediction": {
         "expected_at": "2026-11-22T08:20:00Z",
         "interval": {
@@ -2539,13 +2512,13 @@
       }
     },
     {
-      "id": "fc_hazard_qwen_code_202611201042",
+      "id": "fc_hazard_qwen_code_202611201854",
       "product_id": "qwen_code",
       "target": {
         "type": "global_reset",
         "horizon_hours": 24
       },
-      "generated_at": "2026-11-20T10:42:41Z",
+      "generated_at": "2026-11-20T18:54:23Z",
       "prediction": {
         "probability": 0.0024,
         "expected_at": null,
